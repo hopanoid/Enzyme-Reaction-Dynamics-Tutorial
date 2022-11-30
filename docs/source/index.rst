@@ -14,7 +14,6 @@ Contents
 --------
 
 .. toctree::
-   
-   System-Setup
+   Parametrisation
    usage
    api
