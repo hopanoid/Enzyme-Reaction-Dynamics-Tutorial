@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'Oxime-Biocatalysis'
+copyright = '2022, Amit'
+author = 'Amit'
 
 release = '0.1'
 version = '0.1.0'
