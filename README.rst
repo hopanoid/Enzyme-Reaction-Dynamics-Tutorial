@@ -1,9 +1,6 @@
-Template for the Read the Docs tutorial
-=======================================
-
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
+Modelling of Enzyme-Reaction-Dynamics Tutorial
+==============================================
 
 Read the tutorial here:
 
-https://docs.readthedocs.io/en/stable/tutorial/
+https://enzyme-reaction-dynamics-tutorial.readthedocs.io/en/latest/index.html
