@@ -1,4 +1,4 @@
-Welcome to Lumache's documentation!
+Welcome to Modelling Bioctalysis documentation!
 ===================================
 
 This page devoted to the tutorial for modelling enzyme reaction dynamics 
