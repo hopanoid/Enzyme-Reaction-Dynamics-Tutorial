@@ -5,24 +5,13 @@
    
 .. updated links (2018)
 
-.. Gromacs
-.. _Gromacs: http://www.gromacs.org   
+.. Amber
+.. _Amber: https://ambermd.org/   
 
-.. _Gromacs manual: http://manual.gromacs.org/documentation/current/index.html
-.. _Gromacs documentation: http://manual.gromacs.org/documentation/
-.. _manual section:
-   http://manual.gromacs.org/documentation/current/user-guide/index.html
-.. _list of Gromacs commands:
-   http://manual.gromacs.org/documentation/current/user-guide/cmdline.html#commands-by-name
-.. _reference manual:
-   http://manual.gromacs.org/documentation/current/manual-2018.2.pdf
+.. _Amber manual: https://ambermd.org/Manuals.php
+.. _Amber download: https://ambermd.org/GetAmber.php
 
-.. _`mdp options`:
-   http://manual.gromacs.org/documentation/current/user-guide/mdp-options.html
-.. _`Run control options in the MDP file`:
-   http://manual.gromacs.org/documentation/current/user-guide/mdp-options.html#run-control
-
-.. Gromacs commands: use intersphinx: :ref:`gmx command`
+.. Amber commands: use intersphinx: :ref:`amber command`
 
 .. Protein Databank   
 .. _4AKE: http://www.rcsb.org/pdb/explore.do?structureId=4ake
