@@ -1,5 +1,5 @@
-Welcome to Modelling Bioctalysis documentation!
-===============================================
+Welcome to Modelling Bioctalysis Tutorial!
+==========================================
 
 This page devoted to the tutorial for modelling enzyme reaction dynamics 
 
