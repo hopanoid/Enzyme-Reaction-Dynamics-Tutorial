@@ -1,0 +1,9 @@
+source leaprc.protein.ff19SB
+source leaprc.gaff2
+OHP = loadmol2 OHP-gaff2.mol2 
+check OHP
+loadamberparams OHP.frcmod
+check OHP
+saveoff OHP OHP.lib
+saveamberparm OHP OHP.prmtop OHP.rst7
+quit
