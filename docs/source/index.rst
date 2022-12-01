@@ -65,7 +65,7 @@ directory, which can be easily obtained by git-cloning the repository::
 Workflow overview
 =================
 
-For this tutorial we'll use Gromacs_ (versions 5, 2016, 2018 should
+For this tutorial we'll use Amber_ (2021, 2022 should
 work) to set up the system, run the simulation, and perform
 analysis. An initial structure is provided, which can be found in the
 :file:`tutorial/metadata/input_structures` directory, as well as the MDP files that
