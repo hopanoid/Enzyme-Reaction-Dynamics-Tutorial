@@ -20,7 +20,7 @@ Oxime Catalysis Tutorial
 ..   (magenta: α-helices, yellow: β-sheets).
 
 
-:Gromacs: aiming for 2018 (maybe will work for 5.x, 2016)
+:Amber: aiming for 2021 (maybe will work for later)
 :Tutorial: |release|
 :Date: |today|
 
@@ -31,14 +31,8 @@ Oxime Catalysis Tutorial
 
 .. warning::
 
-   This tutorial was originally based on an `older tutorial for
-   Gromacs 4.x
-   <https://becksteinlab.physics.asu.edu/learning/33/tutorial-simulating-adk-with-gromacs>`_
-   and has not been completely transitioned to modern Gromacs
-   versions. It will not work seamlessly and a number of MDP options
-   are outdated and need to be updated. Please raise any problems in
-   the `issue tracker
-   <https://github.com/Becksteinlab/AdKGromacsTutorial/issues>`_.
+   Please raise any problems in the `issue tracker
+   <https://github.com/hopanoid/Enzyme-Reaction-Dynamics-Tutorial/issues>`_.
 
    
 .. seealso::
@@ -51,7 +45,7 @@ Oxime Catalysis Tutorial
 Objective
 =========
 
-Perform an all-atom molecular dynamics (MD) simulation—using the Gromacs_
+Perform an all-atom molecular dynamics (MD) simulation—using the Amber_
 MD package—of the apo enzyme adenylate kinase (AdK) in its open conformation in
 a physiologically realistic environment, and carry out a basic analysis of its
 structural properties in equilibrium.
@@ -61,11 +55,11 @@ Tutorial files
 ==============
 
 All of the necessary tutorial files can be found on GitHub in the
-`Becksteinlab/AdKGromacsTutorial/tutorial
-<https://github.com/Becksteinlab/AdKGromacsTutorial/tree/master/tutorial>`_
+`hopanoid/Enzyme-Reaction-Dynamics-Tutorial
+<https://github.com/hopanoid/Enzyme-Reaction-Dynamics-Tutorial/>`_
 directory, which can be easily obtained by git-cloning the repository::
 
-  git clone https://github.com/Becksteinlab/AdKGromacsTutorial.git
+  git clone https://github.com/hopanoid/Enzyme-Reaction-Dynamics-Tutorial.git
 
 
 Workflow overview
@@ -74,7 +68,7 @@ Workflow overview
 For this tutorial we'll use Gromacs_ (versions 5, 2016, 2018 should
 work) to set up the system, run the simulation, and perform
 analysis. An initial structure is provided, which can be found in the
-:file:`tutorial/templates` directory, as well as the MDP files that
+:file:`tutorial/metadata/input_structures` directory, as well as the MDP files that
 are necessary for input to Gromacs. The overall workflow consists of
 the following steps:
 
