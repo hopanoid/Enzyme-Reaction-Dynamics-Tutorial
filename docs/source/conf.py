@@ -41,7 +41,7 @@ templates_path = ['_templates']
 #latex_elements = {
 #    'extrapackages': r'\usepackage{chemfig}',
 #    'extrapackages': r'\usepackage[dvipdfmx]{graphicx}',
-}
+#}
 
 
 # -- Options for HTML output
