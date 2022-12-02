@@ -17,7 +17,5 @@ Parametrisation
         guess. Be careful at this point! Sometime a dobule bond might treated as single or vice-versa.
 
 .. math::
-    \chemfig{Na^+|^{-}O-[:45,,3]S(=[:45]O)(=[:135]O)-[:-45]O-[:45]-[:-45]-[:45]-[:-45]-[:45]-[:-45]-[:45]-[:-45]-[:45]-[:-45]-[:45]-[:-45]}
-.. math::
-    \definesubmol\alkyl{-[:45]-[:-45]-[:45]-[:-45]-[:45]-[:-45]-[:45]-[:-45]-[:45]-[:-45]-[:45]-[:-45]}
-    \chemfig{Na^+|^{-}O-[:45,,3]S(=[:45]O)(=[:135]O)-[:-45]O!\alkyl}
+
+        z(x) = \int_0^{\infty} f(x) dx
