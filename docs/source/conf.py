@@ -37,9 +37,10 @@ intersphinx_disabled_domains = ['std']
 templates_path = ['_templates']
 
 # Option for Latex
+latex_engine = 'xelatex'
 latex_elements = {
-    'extrapackages': r'\usepackage{chemfig}'
-    'extrapackages': r'\usepackage[dvipdfmx]{graphicx}'
+    'extrapackages': r'\usepackage{chemfig}',
+    'extrapackages': r'\usepackage[dvipdfmx]{graphicx}',
 }
 
 
