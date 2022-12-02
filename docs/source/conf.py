@@ -17,7 +17,10 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
+    'sphinx.ext.html_math_renderer',
 ]
+
+extensions.append('sphinx_execute_code')
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
