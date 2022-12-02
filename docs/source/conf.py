@@ -32,7 +32,7 @@ templates_path = ['_templates']
 
 # Option for Latex
 latex_elements = {
-    'extrapackages': r'\usepackage{xymtex}'
+    'extrapackages': r'\usepackage{chemfig}'
 }
 
 

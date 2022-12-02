@@ -22,4 +22,4 @@ Parametrisation
 
 .. math::
        
-        \cyclohexanev{2B==Cl;3A==Cl}
+        \chemfig{A-[1]B-[7]C}
