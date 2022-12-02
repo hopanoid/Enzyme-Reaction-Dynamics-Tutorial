@@ -16,6 +16,8 @@ Parametrisation
         guess bond order using supplied 3D coordinates and will assign ff parameter based on their 
         guess. Be careful at this point! Sometime a dobule bond might treated as single or vice-versa.
 
-
 .. math::
-        \chemfig{A-[1]B-[7]C}
+    \chemfig{Na^+|^{-}O-[:45,,3]S(=[:45]O)(=[:135]O)-[:-45]O-[:45]-[:-45]-[:45]-[:-45]-[:45]-[:-45]-[:45]-[:-45]-[:45]-[:-45]-[:45]-[:-45]}
+.. math::
+    \definesubmol\alkyl{-[:45]-[:-45]-[:45]-[:-45]-[:45]-[:-45]-[:45]-[:-45]-[:45]-[:-45]-[:45]-[:-45]}
+    \chemfig{Na^+|^{-}O-[:45,,3]S(=[:45]O)(=[:135]O)-[:-45]O!\alkyl}
