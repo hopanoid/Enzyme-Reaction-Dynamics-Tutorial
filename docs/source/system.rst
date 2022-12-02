@@ -17,6 +17,5 @@ Parametrisation
         guess. Be careful at this point! Sometime a dobule bond might treated as single or vice-versa.
 
 
-.. raw:: latex
-
-     \chemfig{A-[1]B-[7]C}
+.. math::
+        \chemfig{A-[1]B-[7]C}
