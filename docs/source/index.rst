@@ -12,7 +12,7 @@ Oxime Catalysis Tutorial
 ========================
 
 .. figure:: /figs/XenA-oxH-prod.png
-        :scale: 10%
+        :scale: 1%
         :align: right
 
         Xenobiotic reductase A (XenA) complexed with Flavin and Oxime Colored (Green, Yellow and Red, respectively)
