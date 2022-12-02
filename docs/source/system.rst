@@ -20,6 +20,3 @@ Parametrisation
 
         z(x) = \int_0^{\infty} f(x) dx
 
-.. math::
-       
-        \chemfig{A-[1]B-[7]C}
