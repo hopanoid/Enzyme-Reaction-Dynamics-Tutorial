@@ -18,5 +18,4 @@ Parametrisation
 
 .. math::
 
-        z(x) = \int_0^{\infty} f(x) dx
         \chemfig{-[:30]-[:-30]-[:30]}
