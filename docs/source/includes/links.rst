@@ -23,6 +23,10 @@
 
 .. Other programs
 .. _VMD: http://www.ks.uiuc.edu/Research/vmd/
+.. _Pymol: https://pymol.org
+.. _Chimera: https://www.cgl.ucsf.edu/chimera/ 
+.. _Maestro: https://www.schrodinger.com/products/maestro
+
 .. _DSSP: http://swift.cmbi.ru.nl/gv/dssp/
 .. _Python: https://www.python.org
 .. _matplotlib: https://matplotlib.org
