@@ -13,6 +13,9 @@
 
 .. Amber commands: use intersphinx: :ref:`amber command`
 
+.. Gaussian
+.. _Gaussian: https://gaussian.com/
+
 .. Protein Databank   
 .. _4AKE: http://www.rcsb.org/pdb/explore.do?structureId=4ake
 .. _`ATOM record of a PDB file`:

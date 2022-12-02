@@ -38,10 +38,10 @@ Oxime Catalysis Tutorial
 Objective
 =========
 
-Perform an all-atom molecular dynamics (MD) simulation—using the Amber_
-MD package—of the apo enzyme adenylate kinase (AdK) in its open conformation in
-a physiologically realistic environment, and carry out a basic analysis of its
-structural properties in equilibrium.
+To perform QM/MM simulation of XenA in complex with cofactor flavin (FMNH) and substrate
+Oxime (OHP), where flavin first reduces OHP to an intermediate Amine, which is further 
+converted into corresponding Imine by dehydration reaction. We aim to model the respective 
+reaction coordinates (Reactant, Transition States and Products) for each reaction.
 
 
 Tutorial files
@@ -59,10 +59,10 @@ Workflow overview
 =================
 
 For this tutorial we'll use Amber_ (2021, 2022 should
-work) to set up the system, run the simulation, and perform
+work) to set up the system, combined with Gaussian_ to run the QM/MM simulations, and perform
 analysis. An initial structure is provided, which can be found in the
-:file:`tutorial/metadata/input_structures` directory, as well as the MDP files that
-are necessary for input to Gromacs. The overall workflow consists of
+:file:`tutorial/metadata/input_structures` directory, as well as the IN files that
+are necessary for input to Amber. The overall workflow consists of
 the following steps:
 
 Contents
