@@ -3,8 +3,6 @@
 .. Commonly used links
 .. -------------------
    
-.. updated links (2018)
-
 .. Amber
 .. _Amber: https://ambermd.org/   
 
@@ -20,6 +18,8 @@
 .. _4AKE: http://www.rcsb.org/pdb/explore.do?structureId=4ake
 .. _`ATOM record of a PDB file`:
    https://www.wwpdb.org/documentation/file-format-content/format33/sect9.html#ATOM
+
+.. Other Programs
 
 .. VMD
 .. _VMD: http://www.ks.uiuc.edu/Research/vmd/
