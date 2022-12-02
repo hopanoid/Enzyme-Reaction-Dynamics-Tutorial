@@ -22,6 +22,12 @@ extensions = [
     'sphinx.ext.imgmath',
 ]
 
+# sphinx.ext.imgmath setup
+html_math_renderer = 'imgmath'
+imgmath_image_format = 'svg'
+imgmath_font_size = 14
+# sphinx.ext.imgmath setup END
+
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
     'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
