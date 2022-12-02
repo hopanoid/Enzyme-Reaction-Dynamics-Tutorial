@@ -6,7 +6,7 @@ System Preparation
 Parametrisation
 ---------------
 
-.. note::
+.. important::
 
         Know your ligands and enzyme! This is very important before start following this or
         any other tutorials. Use any structural visualisation program like VMD, Pymol, Chimera,
