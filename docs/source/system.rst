@@ -16,7 +16,7 @@ Parametrisation
         guess bond order using supplied 3D coordinates and will assign ff parameter based on their 
         guess. Be careful at this point! Sometime a dobule bond might treated as single or vice-versa.
 
-My raw code:
+
 .. raw:: latex
 
      \chemfig{A-[1]B-[7]C}

@@ -12,7 +12,7 @@ Oxime Catalysis Tutorial
 ========================
 
 .. figure:: /figs/XenA-oxH-prod.*
-   :height: 200px
+   :height: 100px
    :alt: Falvin in Action (XenA)
    :align: right
 
