@@ -29,7 +29,7 @@ templates_path = ['_templates']
 
 # Option for Latex
 latex_elements = {
-    'extrapackages': r'\usepackage{chemfig}'
+    'extrapackages': r'\usepackage{chemic}'
 }
 
 
