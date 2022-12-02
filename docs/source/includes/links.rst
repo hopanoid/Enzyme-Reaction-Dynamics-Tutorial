@@ -21,10 +21,16 @@
 .. _`ATOM record of a PDB file`:
    https://www.wwpdb.org/documentation/file-format-content/format33/sect9.html#ATOM
 
-.. Other programs
+.. VMD
 .. _VMD: http://www.ks.uiuc.edu/Research/vmd/
+
+.. Pymol
 .. _Pymol: https://pymol.org
+
+.. Chimera
 .. _Chimera: https://www.cgl.ucsf.edu/chimera/ 
+
+.. Maestro
 .. _Maestro: https://www.schrodinger.com/products/maestro
 
 .. _DSSP: http://swift.cmbi.ru.nl/gv/dssp/
