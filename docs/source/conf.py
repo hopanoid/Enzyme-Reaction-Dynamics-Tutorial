@@ -19,13 +19,13 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
-    'sphinx.ext.imgmath',
+#    'sphinx.ext.imgmath',
 ]
 
 # sphinx.ext.imgmath setup
-html_math_renderer = 'imgmath'
-imgmath_image_format = 'svg'
-imgmath_font_size = 14
+#html_math_renderer = 'imgmath'
+#imgmath_image_format = 'svg'
+#imgmath_font_size = 14
 # sphinx.ext.imgmath setup END
 
 intersphinx_mapping = {
@@ -37,10 +37,10 @@ intersphinx_disabled_domains = ['std']
 templates_path = ['_templates']
 
 # Option for Latex
-latex_engine = 'xelatex'
-latex_elements = {
-    'extrapackages': r'\usepackage{chemfig}',
-    'extrapackages': r'\usepackage[dvipdfmx]{graphicx}',
+#latex_engine = 'xelatex'
+#latex_elements = {
+#    'extrapackages': r'\usepackage{chemfig}',
+#    'extrapackages': r'\usepackage[dvipdfmx]{graphicx}',
 }
 
 
