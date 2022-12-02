@@ -21,5 +21,15 @@ Parametrisation
         z(x) = \int_0^{\infty} f(x) dx
 
 .. math::
+        
+        \usemodule[chemic]
+        \setupchemical[width=fit]
 
-        \chemfig{A=B}
+        \starttext
+
+        \startchemical
+        \chemical[SIX,B,C,MOV2,B,C,R234,RZ234,MOV5,MOV6,B,C,R561,RZ561]
+        [R,R,R,R,R,R]
+        \stopchemical
+
+        \stoptext
