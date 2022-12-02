@@ -22,8 +22,6 @@ extensions = [
     'sphinx.ext.mathjax',
 ]
 
-extensions.append('sphinx_execute_code')
-
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
     'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
