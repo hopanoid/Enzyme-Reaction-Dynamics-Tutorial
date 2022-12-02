@@ -1,5 +1,8 @@
 # Configuration file for the Sphinx documentation builder.
 
+import sys
+import os
+import sphinx-execute-code
 # -- Project information
 
 project = 'Oxime-Biocatalysis'
@@ -17,7 +20,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
-    'sphinx.ext.html_math_renderer',
+    'sphinx.ext.mathjax',
 ]
 
 extensions.append('sphinx_execute_code')
