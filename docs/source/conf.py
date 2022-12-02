@@ -2,7 +2,6 @@
 
 import sys
 import os
-import sphinx-execute-code
 # -- Project information
 
 project = 'Oxime-Biocatalysis'
