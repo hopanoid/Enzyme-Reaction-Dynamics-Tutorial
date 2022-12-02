@@ -20,7 +20,7 @@ Oxime Catalysis Tutorial
 ..   (magenta: α-helices, yellow: β-sheets).
 
 
-:Amber: aiming for 2021 (maybe will work for later)
+:Author: Amit Singh, University of Graz
 :Tutorial: |release|
 :Date: |today|
 
