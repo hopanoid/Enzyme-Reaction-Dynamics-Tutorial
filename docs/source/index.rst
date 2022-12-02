@@ -16,8 +16,9 @@ Oxime Catalysis Tutorial
    :alt: Falvin in Action (XenA)
    :align: right
 
-..   Adenylate Kinase (XenA). Secondary structure elements are colored
-..   (magenta: α-helices, yellow: β-sheets).
+   Xenobiotic reductase A (XenA) complexed with Flavin and Oxime.
+   Colored (Green, Yellow and Red, respectively)
+   
 
 
 :Author: Amit Singh, University of Graz
