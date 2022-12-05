@@ -49,32 +49,32 @@ There are several methods to assess the protonation state of the residues in a p
 .. hlist::
         :columns: 2
 
-* Online Servers
+        * Online Servers
         
-        * `H++ server <http://biophysics.cs.vt.edu>`_ 
+                * `H++ server <http://biophysics.cs.vt.edu>`_ 
 
-                * The H++ program uses AmberTools modules to preprocess a PDB file, 
-                  and it is able to generate basic topology and coordinate files in AMBER format.
+                        * The H++ program uses AmberTools modules to preprocess a PDB file, 
+                        and it is able to generate basic topology and coordinate files in AMBER format.
 
-        * `PROPKA <https://www.ddl.unimi.it/vegaol/propka.htm>`_
+                * `PROPKA <https://www.ddl.unimi.it/vegaol/propka.htm>`_
         
-        * `PDB2PQR <https://server.poissonboltzmann.org/pdb2pqr>`_
+                * `PDB2PQR <https://server.poissonboltzmann.org/pdb2pqr>`_
 
-        * `MCCE <https://sites.google.com/site/mccewiki/>`_
+                * `MCCE <https://sites.google.com/site/mccewiki/>`_
 
-* GUI Tools
+        * GUI Tools
 
-        * Maestro_ 
+                * Maestro_ 
           
-                * `Protein-Preparation-Wizard <https://www.schrodinger.com/science-articles/protein-preparation-wizard>`_
+                        * `Protein-Preparation-Wizard <https://www.schrodinger.com/science-articles/protein-preparation-wizard>`_
         
-        * Chimera_ 
+                * Chimera_ 
           
-                * `AddH <https://www.cgl.ucsf.edu/chimera/docs/ContributedSoftware/addh/addh.html>`_ 
+                        * `AddH <https://www.cgl.ucsf.edu/chimera/docs/ContributedSoftware/addh/addh.html>`_ 
 
-        * Pymol_   
+                * Pymol_   
                 
-                * `H Add <https://pymolwiki.org/index.php/H_Add>`_
+                        * `H Add <https://pymolwiki.org/index.php/H_Add>`_
         
 .. note::
 
@@ -95,7 +95,7 @@ There are several methods to assess the protonation state of the residues in a p
 How to select protonation state of a residue?
 =============================================
 
-.. code-block:: bash
+.. code-block:: console
         :caption: Manipulating protonation state of a residue using LEap (Ambertools)
         :emphasize-lines:4
         
@@ -105,4 +105,5 @@ How to select protonation state of a residue?
         set {s.177 s.180} name "HID"
         savepdb s wt_protein.pdb
         quit
+
 
