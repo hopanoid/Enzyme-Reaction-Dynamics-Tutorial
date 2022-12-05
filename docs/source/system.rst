@@ -53,9 +53,6 @@ There are several methods to assess the protonation state of the residues in a p
         
                 * `H++ server <http://biophysics.cs.vt.edu>`_ 
 
-                        * The H++ program uses AmberTools modules to preprocess a PDB file, 
-                          and it is able to generate basic topology and coordinate files in AMBER format.
-
                 * `PROPKA <https://www.ddl.unimi.it/vegaol/propka.htm>`_
         
                 * `PDB2PQR <https://server.poissonboltzmann.org/pdb2pqr>`_
@@ -103,9 +100,9 @@ Here it is!
         
         module load amber/20
         tleap -f leaprc.protein.ff14SB
-        s = loadpdb protein.pdb
-        set {s.177 s.180} name "HID"
-        savepdb s wt_protein.pdb
+        prot = loadpdb protein.pdb
+        set {prot.177 prot.180} name "HID"
+        savepdb prot wt_protein.pdb
         quit
 
 
