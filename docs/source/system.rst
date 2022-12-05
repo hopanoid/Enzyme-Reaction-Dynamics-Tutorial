@@ -59,11 +59,13 @@ There are several methods to assess the protonation state of the residues in a p
 
                 * `MCCE <https://sites.google.com/site/mccewiki/>`_
 
-        * GUI Tools
+        * Onsite Tools
 
                 * Maestro_ --> `Protein-Preparation-Wizard <https://www.schrodinger.com/science-articles/protein-preparation-wizard>`_
         
                 * Chimera_ --> `AddH <https://www.cgl.ucsf.edu/chimera/docs/ContributedSoftware/addh/addh.html>`_ 
+
+                * Gromacs_ --> `pdb2gmx <https://manual.gromacs.org/documentation/current/onlinehelp/gmx-pdb2gmx.html>`_
 
                 * Pymol_   --> `H Add <https://pymolwiki.org/index.php/H_Add>`_
         
