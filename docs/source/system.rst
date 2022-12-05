@@ -153,7 +153,7 @@ species at a different pH values.
 
         * - .. figure:: /figs/OHP-1.png
                 
-                Step 1 --> OHP showing the protonation site
+                Step 1 --> Arrow showing the protonation site in OHP
 
           - .. figure:: /figs/marvin-pka-step-1.png
 
@@ -164,6 +164,7 @@ species at a different pH values.
                 Step 3 --> Summarised results
 
           - .. figure:: /figs/OHP-2.png
+                :align: center
                 :scale: 50
                 
                 Step 4 --> Final Prediction
