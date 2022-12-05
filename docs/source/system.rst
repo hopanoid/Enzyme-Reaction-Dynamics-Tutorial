@@ -98,7 +98,6 @@ How to select protonation state of a residue?
 Here it is!
 
 .. code-block::
-
         :caption: Manipulating protonation state of a residue using LEaP (Ambertools)
         :emphasize-lines:4
         
