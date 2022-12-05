@@ -69,7 +69,15 @@ There are several methods to assess the protonation state of the residues in a p
 
                 * Pymol_   --> `H Add <https://pymolwiki.org/index.php/H_Add>`_
         
-.. note::
+.. admonition:: We Recommend!
+
+        H++ Server
+
+        The new release (version 4.0) of H++, uses AmberTools modules to 
+        preprocess a PDB file and it is able to generate basic topology 
+        and coordinate files in AMBER format.
+
+.. warning::
 
         Histidines are tricky residues, they have three possible protonation states: HID, HIE and HIP. 
         HIP is the protonated residue. HID and HIE correspond to the two natural tautomers of the neutral 
