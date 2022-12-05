@@ -165,7 +165,6 @@ species at a different pH values.
 
           - .. figure:: /figs/marvin-pka-step-4.png
                 :align: center
-                :scale: 50
                 
                 Step 4 --> Final Prediction
 
