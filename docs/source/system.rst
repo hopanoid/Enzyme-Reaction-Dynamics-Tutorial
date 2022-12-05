@@ -152,7 +152,7 @@ species at a different pH values.
         :align: center
         :alt: Xenobiotic reductase A (XenA) complexed with Flavin and Oxime Colored (Green, Yellow and Red, respectively)
 
-.. list-table::
+.. list-table:: Marvin
 
 * - .. figure:: /figs/OHP-1.png
 
