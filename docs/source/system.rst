@@ -46,6 +46,9 @@ Assessing the protonation states of the enzyme with careful attention for active
 
 There are several methods to assess the protonation state of the residues in a protein. Not limited to following:
 
+.. hlist::
+        :columns: 2
+
 * Online Servers
         
         * `H++ server <http://biophysics.cs.vt.edu>`_ 
@@ -95,6 +98,7 @@ How to select protonation state of a residue?
 .. code-block:: bash
         :caption: Manipulating protonation state of a residue using LEap (Ambertools)
         :emphasize-lines:4
+        
         module load amber/20
         tleap -f leaprc.protein.ff14SB
         s = loadpdb protein.pdb
