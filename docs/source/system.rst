@@ -147,28 +147,24 @@ need to use another resource. I like Marvin Sketch because it is free to use (yo
 use it for comercial purposes), it gives calculated pKa values and it has a nice visualisation of the chemical 
 species at a different pH values.
 
-.. figure:: /figs/OHP-1.png 
-        :width: 200
-        :align: center
-        :alt: Xenobiotic reductase A (XenA) complexed with Flavin and Oxime Colored (Green, Yellow and Red, respectively)
-
 .. list-table:: Title
         :widths: 25 25
         :header-rows: 1
 
         * - .. figure:: /figs/OHP-1.png
                 
-                Step 1 --> Draw your ligand
+                Step 1 --> OHP showing the protonation site
 
           - .. figure:: /figs/marvin-pka-step-1.png
 
                 Step 2 --> Select protonation under calculations tab
 
-        * - .. figure:: /figs/marvin-pka-step-2.png
+        * - .. figure:: /figs/marvin-pka-step-3.png
 
                 Step 3 --> Summarised results
 
           - .. figure:: /figs/OHP-2.png
-
-                Final Prediction
+                :scale: 50
+                
+                Step 4 --> Final Prediction
 
