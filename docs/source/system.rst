@@ -73,9 +73,9 @@ There are several methods to assess the protonation state of the residues in a p
 
         H++ Server
 
-        The new release (version 4.0) of H++, uses AmberTools modules to 
-        preprocess a PDB file and it is able to generate basic topology 
-        and coordinate files in AMBER format.
+        The new release (version 4.0) of H++, uses AmberTools 20 to 
+        preprocess a PDB file and it is able to generate AMBER
+        compatible PDB structure.
 
 .. warning::
 
