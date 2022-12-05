@@ -106,7 +106,7 @@ So we are going to use the first AmberTools tool: pdb4amber which prepares your 
 
 
 How to select protonation state of a specific residue?
-=============================================
+======================================================
 
 We are using Ambertools to choose the desired protonation form of H178.
 You can select the appropriate form of HIS by renaming HIS to HIE (proton on NE2), 
