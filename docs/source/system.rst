@@ -156,11 +156,13 @@ species at a different pH values.
         :widths: 25 25
         :header-rows: 1
 
-        * - .. figure:: /figs/OHP-1.png
+        * - .. figure:: /figs/marvin-pka-step-1.png
+                
+                Step1
 
-          - .. figure:: /figs/OHP-1.png
+          - .. figure:: /figs/marvin-pka-step-2.png
 
-        * - .. figure:: /figs/OHP-1.png
+        * - .. figure:: /figs/marvin-pka-step-3.png
 
-          - .. figure:: /figs/OHP-1.png
+          - .. figure:: /figs/OHP-2.png
 
