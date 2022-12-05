@@ -11,6 +11,9 @@
 
 .. Amber commands: use intersphinx: :ref:`amber command`
 
+.. Gromacs
+.. _Gromacs: https://www.gromacs.org/
+
 .. Gaussian
 .. _Gaussian: https://gaussian.com/
 
