@@ -42,9 +42,19 @@ First, we will split the PDB in 3 different groups: protein, ligands and water m
    grep "HOH" 5xxx.pdb > waters.pdb
 
 Assessing the protonation states of the enzyme with careful attention for active site residues
-----------------------------------------------------------------------------------------------
+==============================================================================================
 
 There are several methods to assess the protonation state of the residues in a protein. For example, the [H++ server](http://biophysics.cs.vt.edu) and [PROPKA](http://propka.org) open access softwares can be used. In our case we have used Maestro_ which can also be employed for academic use.
 
+.. note::
 
+        Histidines are tricky residues, they have three possible protonation states: HID, HIE and HIP. 
+        HIP is the protonated residue. HID and HIE correspond to the two natural tautomers of the neutral 
+        histidine, where the proton can be found in delta or epsilon positions. In solution, the most 
+        common conformer is HIE but always visualise your structure before assuming any histidine protonation state.
+
+        .. image:: /figs/XenA-oxH-prod.png
+                :width: 200
+                :align: right
+                :alt: Xenobiotic reductase A (XenA) complexed with Flavin and Oxime Colored (Green, Yellow and Red, respectively)
 
