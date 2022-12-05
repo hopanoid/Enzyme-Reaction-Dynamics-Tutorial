@@ -125,7 +125,7 @@ HID (proton on ND1), or HIP (both protons).
 
 .. code-block::
         :caption: Manipulating protonation state of a residue using VMD
-        :emphasize-lines: 4
+        :emphasize-lines: 3
 
         mol new protein.pdb
         set prot [atomselect top "resid 177"]
@@ -134,3 +134,20 @@ HID (proton on ND1), or HIP (both protons).
         $prot writepdb wt_protein.pdb
         quit
 
+=====================
+Parameterizing Ligand
+=====================
+
+So far we have not paid attention to the ligand. We will now move to check the protonation state of the ligand. 
+We have to check the pKa of the ligand. There are several options to do so, the most reliable one if available 
+is PubChem, where you can find experimental pKa values.
+
+In this example, there are no pKa values (neither experimental nor calculated) reported for this molecule, so we 
+need to use another resource. I like Marvin Sketch because it is free to use (you need to register and cannot 
+use it for comercial purposes), it gives calculated pKa values and it has a nice visualisation of the chemical 
+species at a different pH values.
+
+.. figure:: /figs/OHP-1.png 
+        :width: 200
+        :align: right
+        :alt: Xenobiotic reductase A (XenA) complexed with Flavin and Oxime Colored (Green, Yellow and Red, respectively)
