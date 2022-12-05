@@ -44,26 +44,35 @@ First, we will split the PDB in 3 different groups: protein, ligands and water m
 Assessing the protonation states of the enzyme with careful attention for active site residues
 ==============================================================================================
 
-There are several methods to assess the protonation state of the residues in a protein.
+There are several methods to assess the protonation state of the residues in a protein. Not limited to following:
+-----------------------------------------------------------------------------------------------------------------
 
 * Online Servers
         
-        * `**H++ server** <http://biophysics.cs.vt.edu>`_ 
+        * `H++ server <http://biophysics.cs.vt.edu>`_ 
 
                 * The H++ program uses AmberTools modules to preprocess a PDB file, 
                   and it is able to generate basic topology and coordinate files in AMBER format.
 
-        * `**PROPKA** <http://propka.org>`_
+        * `PROPKA <http://propka.org>`_
         
-        * `**PDB2PQR** <https://server.poissonboltzmann.org/pdb2pqr>`_
+        * `PDB2PQR <https://server.poissonboltzmann.org/pdb2pqr>`_
 
-        * `**MCCE** <https://sites.google.com/site/mccewiki/>`_
+        * `MCCE <https://sites.google.com/site/mccewiki/>`_
 
 * GUI Tools
 
-        * Pymol_   `H Add <https://pymolwiki.org/index.php/H_Add>`_
-        * Maestro_ `Protein-Preparation-Wizard <https://www.schrodinger.com/science-articles/protein-preparation-wizard>`_
-        * Chimera_ `AddH <https://www.cgl.ucsf.edu/chimera/docs/ContributedSoftware/addh/addh.html>`_ 
+        * Pymol_   
+                
+                * `H Add <https://pymolwiki.org/index.php/H_Add>`_
+        
+        * Maestro_ 
+          
+                * `Protein-Preparation-Wizard <https://www.schrodinger.com/science-articles/protein-preparation-wizard>`_
+        
+        * Chimera_ 
+          
+                * `AddH <https://www.cgl.ucsf.edu/chimera/docs/ContributedSoftware/addh/addh.html>`_ 
 
 .. note::
 
