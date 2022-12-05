@@ -45,7 +45,6 @@ Assessing the protonation states of the enzyme with careful attention for active
 ==============================================================================================
 
 There are several methods to assess the protonation state of the residues in a protein. Not limited to following:
------------------------------------------------------------------------------------------------------------------
 
 * Online Servers
         
@@ -54,7 +53,7 @@ There are several methods to assess the protonation state of the residues in a p
                 * The H++ program uses AmberTools modules to preprocess a PDB file, 
                   and it is able to generate basic topology and coordinate files in AMBER format.
 
-        * `PROPKA <http://propka.org>`_
+        * `PROPKA <https://www.ddl.unimi.it/vegaol/propka.htm>`_
         
         * `PDB2PQR <https://server.poissonboltzmann.org/pdb2pqr>`_
 
@@ -62,10 +61,6 @@ There are several methods to assess the protonation state of the residues in a p
 
 * GUI Tools
 
-        * Pymol_   
-                
-                * `H Add <https://pymolwiki.org/index.php/H_Add>`_
-        
         * Maestro_ 
           
                 * `Protein-Preparation-Wizard <https://www.schrodinger.com/science-articles/protein-preparation-wizard>`_
@@ -74,6 +69,10 @@ There are several methods to assess the protonation state of the residues in a p
           
                 * `AddH <https://www.cgl.ucsf.edu/chimera/docs/ContributedSoftware/addh/addh.html>`_ 
 
+        * Pymol_   
+                
+                * `H Add <https://pymolwiki.org/index.php/H_Add>`_
+        
 .. note::
 
         Histidines are tricky residues, they have three possible protonation states: HID, HIE and HIP. 
@@ -81,9 +80,24 @@ There are several methods to assess the protonation state of the residues in a p
         histidine, where the proton can be found in delta or epsilon positions. In solution, the most 
         common conformer is HIE but always visualise your structure before assuming any histidine protonation state.
 
+        Here is an example showing the typical active site of Old Yellow Enzymes (OYE). XenA is a member of this class
+        and after protonation, we found that protonation state of H178 predicted as HID, which is not correct, considering 
+        the presence of substrate, the H178 forms a hydrogen bond with the carbonyl oxygen.
+
         .. image:: /figs/XenA-oxH-prod.png
                 :width: 200
                 :align: center
                 :alt: Xenobiotic reductase A (XenA) complexed with Flavin and Oxime Colored (Green, Yellow and Red, respectively)
 
-This is it!
+How to select protonation state of a residue?
+=============================================
+
+.. code-block:: bash
+        
+        module load amber/amber20
+        tleap -f leaprc.protein.ff14SB
+        s = loadpdb protein.pdb
+        set {s.177 s.180} name "HID"
+        savepdb s wt_protein.pdb
+        quit
+
