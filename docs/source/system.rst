@@ -99,7 +99,7 @@ Here it is!
 
 .. code-block::
         :caption: Manipulating protonation state of a residue using LEaP (Ambertools)
-        :emphasize-lines:4
+        :emphasize-lines: 4
         
         module load amber/20
         tleap -f leaprc.protein.ff14SB
