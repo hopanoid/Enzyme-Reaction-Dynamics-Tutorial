@@ -23,12 +23,13 @@ Parametrisation
         guess bond order using supplied 3D coordinates and will assign ff parameter based on their 
         guess. Be careful at this point! Sometime a dobule bond might treated as single or vice-versa.
 
+===============================
 Preparing your enzyme for amber
 ===============================
 
 
 Splitting the PDB in protein, ligand and water molecules
---------------------------------------------------------
+========================================================
 
 
 First, we will split the PDB in 3 different groups: protein, ligands and water molecules as we need to treat them separately:
