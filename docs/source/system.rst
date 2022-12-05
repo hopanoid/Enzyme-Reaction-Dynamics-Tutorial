@@ -3,9 +3,9 @@
 .. include:: /includes/defs.rst
 .. include:: /includes/links.rst
 
-##################
-System Preparation
-##################
+#############################
+Part - I (System Preparation)
+#############################
 
 .. _parametrisation:
 
@@ -93,10 +93,24 @@ There are several methods to assess the protonation state of the residues in a p
                 :align: center
                 :alt: Xenobiotic reductase A (XenA) complexed with Flavin and Oxime Colored (Green, Yellow and Red, respectively)
 
-How to select protonation state of a residue?
+
+Last but not least, we need to clean the PDB file before passing it to AmberTools 
+(removing residues with double ocupation, checking for disulfide bonds, …). 
+So we are going to use the first AmberTools tool: pdb4amber which prepares your PDB file.
+
+.. code-block:: console
+        :caption: Formating the protonated PDB file for further use
+
+        pdb4amber -i protein.pdb -o protein4amber.pdb
+
+
+
+How to select protonation state of a specific residue?
 =============================================
 
-Here it is!
+We are using Ambertools to choose the desired protonation form of H178.
+You can select the appropriate form of HIS by renaming HIS to HIE (proton on NE2), 
+HID (proton on ND1), or HIP (both protons).
 
 .. code-block::
         :caption: Manipulating protonation state of a residue using LEaP (Ambertools)
@@ -109,4 +123,14 @@ Here it is!
         savepdb prot wt_protein.pdb
         quit
 
+.. code-block::
+        :caption: Manipulating protonation state of a residue using VMD
+        :emphasize-lines: 4
+
+        mol new protein.pdb
+        set prot [atomselect top "resid 177"]
+        $prot set resname HIS
+        set prot [atomselect top all]
+        $prot writepdb wt_protein.pdb
+        quit
 
