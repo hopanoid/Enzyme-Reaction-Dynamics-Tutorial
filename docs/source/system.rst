@@ -42,7 +42,7 @@ First, we will split the PDB in 3 different groups: protein, ligands and water m
 Assessing the protonation states of the enzyme with careful attention for active site residues
 ==============================================================================================
 
-There are several methods to assess the protonation state of the residues in a protein. For example, the [H++ server](http://biophysics.cs.vt.edu) and [PROPKA](http://propka.org) open access softwares can be used. In our case we have used Maestero_ which can also be employed for academic use.
+There are several methods to assess the protonation state of the residues in a protein. For example, the [H++ server](http://biophysics.cs.vt.edu) and [PROPKA](http://propka.org) open access softwares can be used. In our case we have used Maestro_ which can also be employed for academic use.
 
 
 
