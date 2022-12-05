@@ -163,7 +163,7 @@ species at a different pH values.
 
                 Step 3 --> Summarised results
 
-          - .. figure:: /figs/OHP-2.png
+          - .. figure:: /figs/marvin-pka-step-4.png
                 :align: center
                 :scale: 50
                 
