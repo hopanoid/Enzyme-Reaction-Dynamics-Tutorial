@@ -53,8 +53,9 @@ There are several methods to assess the protonation state of the residues in a p
         histidine, where the proton can be found in delta or epsilon positions. In solution, the most 
         common conformer is HIE but always visualise your structure before assuming any histidine protonation state.
 
-        image:: /figs/XenA-oxH-prod.png
+        .. image:: /figs/XenA-oxH-prod.png
                 :width: 200
                 :align: center
                 :alt: Xenobiotic reductase A (XenA) complexed with Flavin and Oxime Colored (Green, Yellow and Red, respectively)
 
+This is it!
