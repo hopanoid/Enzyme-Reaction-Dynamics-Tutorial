@@ -54,7 +54,7 @@ There are several methods to assess the protonation state of the residues in a p
                 * `H++ server <http://biophysics.cs.vt.edu>`_ 
 
                         * The H++ program uses AmberTools modules to preprocess a PDB file, 
-                        and it is able to generate basic topology and coordinate files in AMBER format.
+                          and it is able to generate basic topology and coordinate files in AMBER format.
 
                 * `PROPKA <https://www.ddl.unimi.it/vegaol/propka.htm>`_
         
@@ -96,7 +96,6 @@ How to select protonation state of a residue?
 =============================================
 
 .. code-block:: console
-        :caption: Manipulating protonation state of a residue using LEap (Ambertools)
         :emphasize-lines:4
         
         module load amber/20
