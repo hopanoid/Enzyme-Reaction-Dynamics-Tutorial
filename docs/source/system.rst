@@ -93,8 +93,9 @@ How to select protonation state of a residue?
 =============================================
 
 .. code-block:: bash
-        
-        module load amber/amber20
+        :caption: Manipulating protonation state of a residue using LEap (Ambertools)
+        :emphasize-lines:4
+        module load amber/20
         tleap -f leaprc.protein.ff14SB
         s = loadpdb protein.pdb
         set {s.177 s.180} name "HID"
