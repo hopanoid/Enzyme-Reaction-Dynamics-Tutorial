@@ -22,7 +22,7 @@ species at a different pH values.
         pKa of the hydroxyl group is 7.11, which means both neutral and negatively charged species of 
         OHP can exist equally in the solution at physiological pH (7.4). However, enzymes do modulate the
         pKa of the ligands, for example, the reduced flavin (FMNH) in the active site of OYE prefer a 
-        positive substrate rather than a negatively charged substrate.[#f1]_ This prefernce could shift 
+        positive substrate rather than a negatively charged substrate. [#f1]_ This prefernce could shift 
         the equilibrium towards neutral OHP. Hence, we considered modelling a neutral OHP based on the 
         prefernce of active-site of our enzyme.
 
