@@ -2,6 +2,10 @@
 Parameterizing Ligand
 *********************
 
+==================
+Know your ligands!
+==================
+
 So far we have not paid attention to the ligand. We will now move to check the protonation state of the ligand.
 We have to check the pKa of the ligand. There are several options to do so, the most reliable one if available
 is PubChem, where you can find experimental pKa values.
@@ -11,24 +15,21 @@ need to use another resource. I like Marvin Sketch because it is free to use (yo
 use it for comercial purposes), it gives calculated pKa values and it has a nice visualisation of the chemical
 species at a different pH values.
 
-.. list-table:: Title
-        :widths: 25 25
-        :header-rows: 1
+.. admonition:: Don't rush and pay attention towards polar groups in your ligand!
 
-        * - .. figure:: /figs/OHP-1.png
-                
-                Step 1 --> Arrow showing the protonation site in OHP
+        Pay attention to the polar hydrogens in your ligands, physiochemical pH tend to modulate
+        ionization of your ligands based on the pKa of these polar groups. Like in our case, calculated 
+        pKa of the hydroxyl group is 7.11, which means both neutral and negatively charged species of 
+        OHP can exist equally in the solution at physiological pH (7.4). However, enzymes do modulate the
+        pKa of the ligands, for example, the reduced flavin (FMNH) in the active site of OYE prefer a 
+        positive substrate rather than a negatively charged substrate. This prefernce could shift the 
+        equilibrium towards neutral OHP. Hence, we considered modelling a neutral OHP based on the 
+        prefernce of active-site of our enzyme.
 
-          - .. figure:: /figs/marvin-pka-step-1.png
-
-                Step 2 --> Select protonation under calculations tab
-
-        * - .. figure:: /figs/marvin-pka-step-3.png
-
-                Step 3 --> Summarised results
-
-          - .. figure:: /figs/marvin-pka-step-4.png
+        .. figure:: /figs/marvin-pka-step-4.png
                 :align: center
                 
-                Step 4 --> Final Prediction
+                The predicted pKa of OHP in solution
+ 
+
 
