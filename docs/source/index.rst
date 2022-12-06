@@ -69,5 +69,6 @@ Contents
 .. toctree::
    1-protein
    2-ligand
+   3-system_setup
    alternatives
    api
