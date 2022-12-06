@@ -107,6 +107,8 @@ parmchk2 generates a parameter file that can be loaded into Leap in order to add
 
         NONBON
 
+You should check these parameters carefully before running a simulation. If antechamber can't empirically calculate a value or has no analogy it will either add a default value that it thinks is reasonable or alternatively insert a place holder (with zeros everywhere) and the comment "**ATTN: needs revision**". In this case you will have to manually parameterise this yourself. See the links at the beginning of the section.
+
 .. note::
         
         FURTHER INFORMATION:
