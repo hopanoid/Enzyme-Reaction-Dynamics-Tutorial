@@ -38,7 +38,23 @@ it has a nice visualisation of the chemical species at a different pH values.
                 The predicted pKa of OHP in solution
  
 
+Generating point charges and assigning atomtypes with antechamber
+=================================================================
 
+Antechamber allows the rapid generation of topology files for use with the AMBER simulation programs.
+It is a higher-level wrapper around other AmberTools programs (sqm, divcon, atomtype, am1bcc, bondtype, espgen, respgen and prepgen) 
+and is able to:
+
+* Automatically identify bond and atom types
+* Judge atomic equivalence
+* Generate residue topology files
+* Find missing force field parameters and supply reasonable suggestions
+
+We will use antechamber to assign atom types to the GWS ligand and calculate a set of point charges. We will have to specify GAFF2 force field (-at gaff2, more information on the parameters here: $AMBERHOME/dat/leap/parm/gaff2.dat), the AM1-BCC2 charge method (-c bcc), the net charge of the molecule (-nc 0) and the name of the new residue generated (We are going to keep GWS: -rn GWS). We are going to output a mol2-type file (-fo mol2) containing the atomtypes and the point charges.
+
+.. code-block:: console 
+
+        antechamber -i OHP.pdb -fi pdb -o OHP.mol2 -fo mol2 -c bcc -nc 0 -rn OHP -at gaff2
 
 .. rubric:: Footnotes
 
