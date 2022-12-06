@@ -1,3 +1,8 @@
+.. -*- encoding: utf-8 -*-
+
+.. include:: /includes/defs.rst
+.. include:: /includes/links.rst
+
 *********************
 Parameterizing Ligand
 *********************
@@ -6,14 +11,14 @@ Parameterizing Ligand
 Know your ligands!
 ==================
 
-So far we have not paid attention to the ligand. We will now move to check the protonation state of the ligand.
-We have to check the pKa of the ligand. There are several options to do so, the most reliable one if available
-is PubChem, where you can find experimental pKa values.
+We will now move to check the protonation state of the ligand. We have to check the pKa of the ligand. 
+There are several options to do so, the most reliable one if available is PubChem, where you can find 
+experimental pKa values.
 
-In this example, there are no pKa values (neither experimental nor calculated) reported for this molecule, so we
-need to use another resource. I like Marvin Sketch because it is free to use (you need to register and cannot
-use it for comercial purposes), it gives calculated pKa values and it has a nice visualisation of the chemical
-species at a different pH values.
+For our ligand (OHP), there are no pKa values (neither experimental nor calculated) reported. So we
+need to calculate it. We have used quantum chemistry software Jaguar_, a paid tool, alternatively you can
+use MarvinSketch_, which is free for academic research (need registeration to get a academic licence key), 
+it has a nice visualisation of the chemical species at a different pH values.
 
 .. admonition:: Don't rush and pay attention towards polar groups in your ligand!
 

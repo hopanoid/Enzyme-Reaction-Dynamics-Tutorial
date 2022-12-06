@@ -17,6 +17,12 @@
 .. Gaussian
 .. _Gaussian: https://gaussian.com/
 
+.. Jaguar
+.. _Jaguar: https://www.schrodinger.com/products/jaguar
+
+.. MarvinSketch
+.. _MarvinSketch: https://chemaxon.com/marvin
+
 .. Protein Databank   
 .. _4AKE: http://www.rcsb.org/pdb/explore.do?structureId=4ake
 .. _`ATOM record of a PDB file`:
