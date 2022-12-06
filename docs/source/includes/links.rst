@@ -28,6 +28,9 @@
 .. _`ATOM record of a PDB file`:
    https://www.wwpdb.org/documentation/file-format-content/format33/sect9.html#ATOM
 
+.. PubChem
+.. _PubChem: https://pubchem.ncbi.nlm.nih.gov/
+
 .. Other Programs
 
 .. VMD

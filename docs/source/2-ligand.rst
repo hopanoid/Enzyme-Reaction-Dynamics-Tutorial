@@ -11,20 +11,19 @@ Parameterizing Ligand
 Know your ligands!
 ==================
 
-We will now move to check the protonation state of the ligand. We have to check the pKa of the ligand. 
-There are several options to do so, the most reliable one if available is PubChem, where you can find 
-experimental pKa values.
+Pay attention to the polar hydrogens in your ligands, physiochemical pH tend to modulate the
+ionization of your ligands based on the pKa of these polar groups.There are several options to do so, 
+the most reliable is PubChem_, where you can find experimental pKa values if available for your ligand.
 
-Exactly for our ligand (OHP) there are no pKa values (neither experimental nor calculated) reported. So we
+We don't found any identical chemical structure for our ligand (OHP) on PubChem_. So we
 need to calculate it. We have used quantum chemistry software Jaguar_, a paid tool, alternatively you can
-use MarvinSketch_, which is free for academic research (need registeration to get a academic licence key), 
-it has a nice visualisation of the chemical species at a different pH values.
+use MarvinSketch_, which is free for academic research (need a registration to get an academic licence key), 
+it has a nice visualisation of the protonation states at a different pH values.
 
-.. admonition:: Don't rush and pay attention towards polar groups in your ligand!
+.. admonition:: Don't rush! Active site do modulates pKa of the ligand.
 
-        Pay attention to the polar hydrogens in your ligands, physiochemical pH tend to modulate
-        ionization of your ligands based on the pKa of these polar groups. Like in our case, calculated 
-        pKa of the hydroxyl group is 7.11 (quite close to an experimentally reported pka of a similar molecule) [#f1]_ , 
+        Like in our case, calculated pKa of the hydroxyl group is 7.11 (quite close to an experimentally 
+        reported pka of a similar molecule) [#f1]_ , 
         which means both neutral and negatively charged species of OHP can exist equally in the solution at 
         physiological pH (7.4). However, enzymes do modulate the
         pKa of the ligands, for example, the reduced flavin (FMNH) in the active site of OYE prefer a 
@@ -50,7 +49,7 @@ and is able to:
 * Generate residue topology files
 * Find missing force field parameters and supply reasonable suggestions
 
-We will use antechamber to assign atom types to the GWS ligand and calculate a set of point charges. We will have to specify GAFF2 force field (-at gaff2, more information on the parameters here: $AMBERHOME/dat/leap/parm/gaff2.dat), the AM1-BCC2 charge method (-c bcc), the net charge of the molecule (-nc 0) and the name of the new residue generated (We are going to keep GWS: -rn GWS). We are going to output a mol2-type file (-fo mol2) containing the atomtypes and the point charges.
+We will use antechamber to assign atom types to the OHP ligand and calculate a set of point charges. We will have to specify GAFF2 force field (``-at gaff2``, more information on the parameters here: ``$AMBERHOME/dat/leap/parm/gaff2.dat``), the AM1-BCC2 charge method (``-c bcc``), the net charge of the molecule (``-nc 0``) and the name of the new residue generated (We are going to keep OHP: ``-rn OHP``). We are going to output a mol2-type file (``-fo mol2``) containing the atomtypes and the point charges.
 
 .. code-block:: console 
 
