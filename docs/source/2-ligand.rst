@@ -34,6 +34,6 @@ species at a different pH values.
 
 
 
-.. rubic:: Footnotes
+.. rubric:: Footnotes
 
 .. [#f1] https://doi.org/10.1038/ncomms16084
