@@ -72,6 +72,12 @@ Here is the content of the :file:`tutorial/metadata/system/2-tleap.in`
         quit
 
 
+Here is the final system, we just build
 
+.. figure:: figs/system.png
+        
+        The final fully "matured" system
+
+        
 
 
