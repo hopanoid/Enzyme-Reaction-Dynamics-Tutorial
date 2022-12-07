@@ -1,0 +1,37 @@
+source leaprc.protein.ff19SB
+source leaprc.gaff2
+source leaprc.water.spce
+
+# Load protein structure
+protein = loadpdb /mnt/ssd8/watsite/oximes/xenA/amber/watsite/oxH/metadata/input_structures/m2_protein4amber.pdb
+check protein
+
+# Load flavins parameters and structure 
+loadamberparams /mnt/ssd8/watsite/oximes/xenA/amber/watsite/oxH/metadata/ff/FMH/gaff2/FMH.frcmod
+loadoff /mnt/ssd8/watsite/oximes/xenA/amber/watsite/oxH/metadata/ff/FMH/gaff2/FMH.lib 
+fmn = loadpdb /mnt/ssd8/watsite/oximes/xenA/amber/watsite/oxH/metadata/input_structures/FMH.pdb
+check fmn
+
+# Load Ligand parameters and structure
+loadoff /mnt/ssd8/watsite/oximes/xenA/amber/watsite/oxH/metadata/ff/OHP/gaff2/OHP.lib
+loadamberparams /mnt/ssd8/watsite/oximes/xenA/amber/watsite/oxH/metadata/ff/OHP/gaff2/OHP.frcmod
+OHP = loadpdb /mnt/ssd8/watsite/oximes/xenA/amber/watsite/oxH/metadata/input_structures/OHP.pdb
+check OHP
+
+
+# Saving protein pdb and parameter file
+system = combine {protein fmn OHP}
+savepdb system ./m2/m2_h_OHP_dry.pdb
+saveamberparm system ./m2/m2_h_OHP_dry.prmtop ./m2/m2_h_OHP_dry.rst7
+
+# Solvate
+solvateOct system SPCBOX 10 iso
+
+# Neutralise
+addions2 system Cl- 0
+addions2 system Na+ 0
+
+# Save AMBER input files
+savePDB system ./m2/m2_h_OHP.pdb
+saveamberparm system ./m2/m2_h_OHP.parm7 ./m2/m2_h_OHP.rst7
+quit

@@ -1,0 +1,9 @@
+source oldff/leaprc.ff99SB
+source leaprc.gaff2
+FMH = loadmol2 FMH-gaff2.mol2 
+check FMH
+loadamberparams FMH.frcmod
+check FMH
+saveoff FMH FMH.lib
+saveamberparm FMH FMH.prmtop FMH.rst7
+quit
