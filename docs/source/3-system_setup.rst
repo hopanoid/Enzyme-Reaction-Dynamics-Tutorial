@@ -15,7 +15,13 @@ Bring together!
 Build system with tLEap
 =======================
 
-We are going to use default force fields (amberff14SB, tip3p and GAFF2) in this tutorial, so we can use the leaprc scripts already included in AMBER to load them into tleap:
+Use the tLEap input file included in this tutorial for building a "matured" MD input system.
+
+We are going to use:
+
+* leaprc.protein.ff19SB for the protein
+* leaprc.gaff2 for the ligand molecule
+* leaprc.water.spce for the water molecules
 
 .. code-block:: console
         :caption: Building with tLEap
@@ -23,10 +29,6 @@ We are going to use default force fields (amberff14SB, tip3p and GAFF2) in this 
         tleap -f 2-tleap.in
 
 Here is the content of the :file:`tutorial/metadata/system/2-tleap.in` 
-
-* leaprc.protein.ff19SB for the protein
-* leaprc.gaff2 for the ligand molecule
-* leaprc.water.spce for the water molecules
 
 .. code-block:: bash
         :caption: Load, combine, solvate, neutralise and finally build a ready to simulate system
