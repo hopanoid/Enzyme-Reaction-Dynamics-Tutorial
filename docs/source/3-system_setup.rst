@@ -31,6 +31,7 @@ We are going to use:
 Here is the content of the :file:`tutorial/metadata/system/2-tleap.in` 
 
 .. code-block:: bash
+        :emphasize-lines: 26, 27
         :caption: Load, combine, solvate, neutralise and finally build a ready to simulate system
         
         source leaprc.protein.ff19SB
