@@ -34,7 +34,7 @@ We are going to use:
 Here is the content of the :file:`tutorial/metadata/system/2-tleap.in` 
 
 .. code-block:: csh
-        :emphasize-lines: 19, 25, 30, 35, 40
+        :emphasize-lines: 20, 26, 31, 36, 41
         :caption: Minimize, equilibrate and run!
         
         #!/bin/csh
