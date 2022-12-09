@@ -15,15 +15,17 @@ Energy Minimization
 Removing bad atomic contacts and minimizing vaccum!
 ===================================================
 
-We have just modelled a "matured" system, means we have placed all required molecules in a box. Energy minimisation is a 
-crucial step before proceeding further. Essentially, we are going to use the potential energy terms decribed by the force-field
-we are using, that will use the 3D coordinate as input and will try to optimise the positions of atoms, so that any clashes or
+We have just modelled a "matured" system, means we have placed all required molecules in a box. This step-wise placement could lead 
+to overlapping atomic positions or very close atomic contacts or very far atomic postions, this could results in atomic replusion or
+can forbidden possible atomic interactions too. To minimize these positional artifacts energy minimisation is a 
+crucial step before proceeding further. Essentially, we are going to use the potential energy terms derived from the force-field, 
+that will use the 3D coordinate as input and will try to optimise the positions of atoms, so that any clashes or
 vaccum therein will be minimsed.
 
 Breifly, the system will undergo sequentially through steps:
 
 #. Classical Energy Minimization
-        * Using force-field supplied parameters 
+        * Will try to optimize the psotion of atoms using the supplied molecular mechanics parameters e.g. bond-length, angle, van-der-waal etc
 #. Thermalisation
         * Kinetic energy or say the dynamics of the atoms increased step-wise 
 #. Equilibration Run
