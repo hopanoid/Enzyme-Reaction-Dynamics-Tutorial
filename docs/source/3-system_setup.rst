@@ -76,7 +76,8 @@ Here is the final system, we just build
 
 .. figure:: figs/system_v2.png
         
-        The final fully "matured" system
+        The final fully "matured" system. Its a octahedral box, where water molecules shown as transparent surface, protein in 
+        gray cartoon, ions in light blue, flavin and OHP in yellow and cyan, respectively.
 
         
 
