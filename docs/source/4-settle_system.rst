@@ -12,8 +12,8 @@ Energy Minimization
 ===================
 
 
-Removing bad contacts
-=====================
+Removing bad atomic contacts and minimizing vaccum!
+===================================================
 
 We have just modelled a "matured" system, means we have placed all required molecules in a box. Energy minimisation is a 
 crucial step before proceeding further. Essentially, we are going to use the potential energy terms decribed by the force-field
@@ -22,11 +22,16 @@ vaccum therein will be minimsed.
 
 Breifly, the system will undergo sequentially through steps:
 
-#. Classical Energy Minimization --> Using force-field supplied parameters 
-#. Thermalisation --> Kinetic energy or say the dynamics of the atoms increased step-wise 
-#. Equilibration Run --> Allowing the system to breathe for 100 ps
-#. SQM-MM Energy Minimization --> A part of the system treated with Semi-Empirical Method, rest of the system still under the classical ff
-#. QM-MM Energy Minimization  --> A part of interest uses QM and rest is still under classical ff
+#. Classical Energy Minimization
+        * Using force-field supplied parameters 
+#. Thermalisation
+        * Kinetic energy or say the dynamics of the atoms increased step-wise 
+#. Equilibration Run
+        * Allowing the system to breathe for 100 ps
+#. SQM-MM Energy Minimization
+        * A part of the system treated with Semi-Empirical Method, rest of the system still under the classical ff
+#. QM-MM Energy Minimization
+        * A part of interest uses QM and rest is still under classical ff
 
 Here is the content of the :file:`tutorial/metadata/system/2-tleap.in` 
 
