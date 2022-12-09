@@ -20,16 +20,13 @@ crucial step before proceeding further. Essentially, we are going to use the pot
 we are using, that will use the 3D coordinate as input and will try to optimise the positions of atoms, so that any clashes or
 vaccum therein will be minimsed.
 
-We are going to use:
+Breifly, the system will undergo sequentially through steps:
 
-* leaprc.protein.ff19SB for the protein
-* leaprc.gaff2 for the ligand molecule
-* leaprc.water.spce for the water molecules
-
-.. code-block:: console
-        :caption: Building with tLEap
-        
-        tleap -f 2-tleap.in
+#. Classical Energy Minimization --> Using force-field supplied parameters 
+#. Thermalisation --> Kinetic energy or say the dynamics of the atoms increased step-wise 
+#. Equilibration Run --> Allowing the system to breathe for 100 ps
+#. SQM-MM Energy Minimization --> A part of the system treated with Semi-Empirical Method, rest of the system still under the classical ff
+#. QM-MM Energy Minimization  --> A part of interest uses QM and rest is still under classical ff
 
 Here is the content of the :file:`tutorial/metadata/system/2-tleap.in` 
 
