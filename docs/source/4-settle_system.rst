@@ -27,13 +27,16 @@ Breifly, the system will undergo sequentially through steps:
 #. Classical Energy Minimization
         * Will try to optimize the psotion of atoms using the supplied molecular mechanics parameters e.g. bond-length, angle, van-der-waal etc
 #. Thermalisation
-        * Kinetic energy or say the dynamics of the atoms increased step-wise 
+        * Kinetic energy or say the dynamics of the atoms increased step-wise
 #. Equilibration Run
-        * Allowing the system to breathe for 100 ps
+        * Allowing the system to breathe for 100 ps, more precisely no restraint!
 #. SQM-MM Energy Minimization
         * A part of the system treated with Semi-Empirical Method, rest of the system still under the classical ff
 #. QM-MM Energy Minimization
         * A part of interest uses QM and rest is still under classical ff
+
+We have used a script to automtise the above step. If you are following these steps for the first time, do not run this script blindly. Be aware that it depends on the system to system, how much and which equilibration you need. Especially for a completely user-build system, unlike a crystal structure you need extra equiliration time. 
+
 
 Here is the content of the :file:`tutorial/metadata/system/2-tleap.in` 
 
@@ -61,7 +64,7 @@ Here is the content of the :file:`tutorial/metadata/system/2-tleap.in`
 
 
         # Step 1 --> Classical Minimization
-        # In the case that there is a problem during minimization using a pmemd.cuda, please try to use pmemd only for
+        # If there is a problem during minimization using pmemd.cuda, please try to use pmemd only for
         # the minimization step.
         if ( ! -e ${mini_prefix}.rst7 ) then
         ${amber} -O -i ${mdin_prefix}/sander_min.in -p ${init}.parm7 -c ${init}.rst7 -o ${mini_prefix}.mdout -r ${mini_prefix}.rst7 -inf ${mini_prefix}.mdinfo -ref ${init}.rst7
