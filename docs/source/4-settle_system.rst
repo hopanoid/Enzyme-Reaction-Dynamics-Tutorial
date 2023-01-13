@@ -26,6 +26,23 @@ Breifly, the system will undergo sequentially through steps:
 
 #. Classical Energy Minimization
         * Will try to optimize the psotion of atoms using the supplied molecular mechanics parameters e.g. bond-length, angle, van-der-waal etc
+
+.. code-block:: csh
+        :emphasize-lines: 7,8
+        :caption: Minimize
+
+        Minimisation of system
+        &cntrl
+        imin=1,        ! Perform an energy minimization.
+        maxcyc=4000,   ! The maximum number of cycles of minimization.
+        ncyc=2000,     ! The method will be switched from steepest descent to conjugate gradient after NCYC cycles.
+        ntr=1,         ! Enabling restraints
+        restraint_wt = 10,          ! 10 kcal/mol/A**2 restraint force constant
+        restraintmask = '!@H=&!:WAT,Na+' ! Restraints on the solute heavy atom
+         /
+
+
+        
 #. Thermalisation
         * Kinetic energy or say the dynamics of the atoms increased step-wise
 #. Equilibration Run
