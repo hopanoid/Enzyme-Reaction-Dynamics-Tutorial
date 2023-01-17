@@ -109,7 +109,7 @@ Breifly, the system will undergo sequentially through steps:
         * A part of the system treated with Semi-Empirical Method, rest of the system still under the classical ff
 
 .. code-block:: 
-        :emphasize-lines: 15,16
+        :emphasize-lines: 13,14,15,19
         :caption: SQM-MM Minimization
 
         Initial min of our structure QMMM
@@ -137,7 +137,7 @@ Breifly, the system will undergo sequentially through steps:
         * A part of interest uses QM and rest is still under classical ff
         
 .. code-block:: 
-        :emphasize-lines: 15, 16,25,26,27,28
+        :emphasize-lines: 13,14,15,24,25,26,27
         :caption: QM-MM Energy Minimization
 
         Initial min of our structure QMMM
