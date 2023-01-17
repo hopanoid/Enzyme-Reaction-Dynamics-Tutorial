@@ -24,7 +24,7 @@ vaccum therein will be minimsed.
 
 Breifly, the system will undergo sequentially through steps:
 
-#. Classical Energy Minimization
+Step1. Classical Energy Minimization
         * Will try to optimize the psotion of atoms using the supplied molecular mechanics parameters e.g. bond-length, angle, van-der-waal etc
 
 .. code-block:: 
@@ -43,7 +43,7 @@ Breifly, the system will undergo sequentially through steps:
         
         
                 
-#. Thermalisation
+Step2. Thermalisation
         * Kinetic energy or say the dynamics of the atoms increased step-wise
         
 .. code-block:: 
@@ -75,7 +75,7 @@ Breifly, the system will undergo sequentially through steps:
         &wt type='END' /
         
         
-#. Equilibration Run
+Step3. Equilibration Run
         * Allowing the system to breathe for 100 ps, more precisely no restraint!
 
 .. code-block:: 
@@ -105,7 +105,7 @@ Breifly, the system will undergo sequentially through steps:
         
         
         
-#. SQM-MM Energy Minimization
+Step4. SQM-MM Energy Minimization
         * A part of the system treated with Semi-Empirical Method, rest of the system still under the classical ff
 
 .. code-block:: 
@@ -133,7 +133,7 @@ Breifly, the system will undergo sequentially through steps:
         /
         
         
-#. QM-MM Energy Minimization
+Step5. QM-MM Energy Minimization
         * A part of interest uses QM and rest is still under classical ff
         
 .. code-block:: 
