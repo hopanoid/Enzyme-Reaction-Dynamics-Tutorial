@@ -27,7 +27,7 @@ Breifly, the system will undergo sequentially through steps:
 #. Classical Energy Minimization
         * Will try to optimize the psotion of atoms using the supplied molecular mechanics parameters e.g. bond-length, angle, van-der-waal etc
 
-.. code-block:: csh
+.. code-block:: 
         :emphasize-lines: 7,8
         :caption: Minimize
 
@@ -46,7 +46,7 @@ Breifly, the system will undergo sequentially through steps:
 #. Thermalisation
         * Kinetic energy or say the dynamics of the atoms increased step-wise
 
-.. code-block:: csh
+.. code-block:: 
         :emphasize-lines: 21,22
         :caption: Gradual Heating
 
@@ -78,7 +78,7 @@ Breifly, the system will undergo sequentially through steps:
 #. Equilibration Run
         * Allowing the system to breathe for 100 ps, more precisely no restraint!
 
-.. code-block:: csh
+.. code-block:: 
         :emphasize-lines: 18,19
         :caption: A short equilibration
 
@@ -108,7 +108,7 @@ Breifly, the system will undergo sequentially through steps:
 #. SQM-MM Energy Minimization
         * A part of the system treated with Semi-Empirical Method, rest of the system still under the classical ff
 
-.. code-block:: csh
+.. code-block:: 
         :emphasize-lines: 15,16
         :caption: SQM-MM Minimization
 
@@ -136,7 +136,7 @@ Breifly, the system will undergo sequentially through steps:
 #. QM-MM Energy Minimization
         * A part of interest uses QM and rest is still under classical ff
 
-.. code-block:: csh
+.. code-block:: 
         :emphasize-lines: 15, 16,25,26,27,28
         :caption: QM-MM Energy Minimization
 
