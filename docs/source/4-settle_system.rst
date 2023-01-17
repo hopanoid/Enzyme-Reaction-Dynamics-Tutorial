@@ -45,12 +45,131 @@ Breifly, the system will undergo sequentially through steps:
         
 #. Thermalisation
         * Kinetic energy or say the dynamics of the atoms increased step-wise
+
+.. code-block:: csh
+        :emphasize-lines: 21,22
+        :caption: Gradual Heating
+
+        Heating ramp from 0K to 298K
+        &cntrl
+        imin=0,                   ! Run molecular dynamics.
+        ntx=1,                    ! Initial file contains coordinates, but no velocities.
+        irest=0,                  ! Do not restart the simulation, (only read coordinates from the coordinates file)
+        nstlim=15000,             ! Number of MD-steps to be performed.
+        dt=0.002,                 ! Time step (ps)
+        ntf=2, ntc=2,             ! Constrain lengths of bonds having hydrogen atoms (SHAKE)
+        tempi=0.0, temp0=298.0,   ! Initial and final temperature
+        ntpr=500, ntwx=500,       ! Output options
+        cut=8.0,                  ! non-bond cut off
+        ntb=1,                    ! Periodic conditiond at constant volume
+        ntp=0,                    ! No pressure scaling
+        ntt=3, gamma_ln=2.0,      ! Temperature scaling using Langevin dynamics with the collision frequency in gamma_ln (ps−1)
+        ig=-1,                    ! seed for the pseudo-random number generator will be based on the current date and time.
+        ntr=1,                    ! Turn on positional restraints
+        restraint_wt = 10,        ! 10 kcal/mol/A**2 restraint force constant
+        restraintmask = '!@H=&!:WAT,Na+' ! Restraints on the backbone heavy atom
+        nmropt=1,                 ! NMR options to give the temperature ramp.
+        /
+        &wt type='TEMP0', istep1=0, istep2=10000, value1=0.0, value2=298.0 /
+        &wt type='TEMP0', istep1=10001, istep2=15000, value1=298.0, value2=298.0 /
+        &wt type='END' /
+
+        
 #. Equilibration Run
         * Allowing the system to breathe for 100 ps, more precisely no restraint!
+
+.. code-block:: csh
+        :emphasize-lines: 18,19
+        :caption: A short equilibration
+
+        Density equilibration
+        &cntrl
+        imin= 0,                       ! Run molecular dynamics.
+        nscm= 1,                     ! Remove translational motion after specified steps
+        nstlim=50000,                  ! Number of MD-steps to be performed.
+        dt=0.002,                      ! Time step (ps)
+        irest=1,                       ! Restart the simulation and read coordinates
+        ntx=5,                         ! Initial file contains coordinates and veloci
+        ntpr=500, ntwx=500, ntwr=500,  ! Output options
+        cut=8.0,                       ! non-bond cut off
+        temp0=298,                     ! Temperature
+        ntt=3, gamma_ln=3.0,           ! Temperature scaling using Langevin dynamics
+        ntb=2,                         ! Periodic conditiond at constant pressure
+        ntc=2, ntf=2,                  ! Constrain lengths of bonds having hydrogen a
+        ntp=1, taup=2.0,               ! Pressure scaling
+        iwrap=1, ioutfm=1,             ! Output trajectory options
+        ntr=1,                         ! Enabling restraints
+        restraint_wt = 10,          ! 10 kcal/mol/A**2 restraint force constant
+        restraintmask = '!@H=&!:WAT' ! Restraints on the solute heavy atom
+        /
+
+
+
 #. SQM-MM Energy Minimization
         * A part of the system treated with Semi-Empirical Method, rest of the system still under the classical ff
+
+.. code-block:: csh
+        :emphasize-lines: 15,16
+        :caption: SQM-MM Minimization
+
+        Initial min of our structure QMMM
+        &cntrl
+        imin=1,                       ! Perform an energy minimization.
+        maxcyc=1000,                  ! The maximum number of cycles of minimization.
+        ncyc=500,                     ! The method will be switched from steepest descent to conjugate gradient after NCYC cycles.
+        ntb=1,                        ! Periodic conditiond at constant volume
+        cut=8.0,                      ! 8 angstrom classical non-bond cut off
+        ntpr=100, ntwx=100,           ! Output options
+        ntc=2, ntf=2,                 ! Constrain lengths of bonds having hydrogen atoms (SHAKE)
+        ifqnt=1                       ! Enable Quantum Module
+        /
+        &qmmm
+        qmmask       = ':723|@10985-11005,11009-11010,11014-11015,11018-11023,416-429,2630-2640,2677-2687,2701-2715',  ! Include the full side-chain of Y27,H178,H181,Y183,iso-oxazoline ring, and oxime',
+        qm_theory    = 'PM6-DH+',
+        qmcharge     =  -1,
+        qmmm_int     =   1,
+        qm_ewald     =   0,
+        writepdb     =   1,
+        /
+
+
 #. QM-MM Energy Minimization
         * A part of interest uses QM and rest is still under classical ff
+
+.. code-block:: csh
+        :emphasize-lines: 15, 16,25,26,27,28
+        :caption: QM-MM Energy Minimization
+
+        Initial min of our structure QMMM
+        &cntrl
+        imin=1,                        ! Perform an energy minimization.
+        maxcyc=500,                    ! The maximum number of cycles of minimization.
+        ncyc=250,                      ! The method will be switched from steepest descent to conjugate gradient after NCYC cycles.
+        ntb=1,                         ! Periodic conditiond at constant volume
+        ntpr=50, ntwx=50,              ! Output options
+        cut=8.0,                       ! 8 angstrom classical non-bond cut off
+        ntc=2, ntf=2,                  ! Constrain lengths of bonds having hydrogen atoms (SHAKE)
+        ifqnt=1                        ! Enable QM-MM
+        /
+        &qmmm
+        qmmask       = ':723|@10985-11005,11009-11010,11014-11015,11018-11023,416-429,2630-2640,2677-2687,2701-2715', ! Include the full side-chain of Y27,H178,H181,Y183,iso-oxazoline ring, and oxime',
+        qm_theory    = 'EXTERN'
+        qmcharge     =  -1,
+        qmmm_int     =   1,
+        qm_ewald     =   0,
+        printcharges =   1,
+        writepdb     =   1,
+        verbosity    =   1,
+        qmshake      =   0,
+        /
+        &gau
+        method       = 'B3LYP',
+        basis        = '6-31G*',
+        num_threads  =  94,
+        mem          = '64GB',
+        use_template =  0,
+        dipole = 1,
+        /
 
 We have used a script to automtise the above step. If you are following these steps for the first time, do not run this script blindly. Be aware that it depends on the system to system, how much and which equilibration you need. Especially for a completely user-build system, unlike a crystal structure you need extra equiliration time. 
 
