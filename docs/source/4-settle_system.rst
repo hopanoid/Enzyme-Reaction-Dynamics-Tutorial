@@ -125,11 +125,11 @@ Breifly, the system will undergo sequentially through steps:
         /
         &qmmm
         qmmask       = ':723|@10985-11005,11009-11010,11014-11015,11018-11023,416-429,2630-2640,2677-2687,2701-2715',  ! Include the full side-chain of Y27,H178,H181,Y183,iso-oxazoline ring, and oxime',
-        qm_theory    = 'PM6-DH+',
-        qmcharge     =  -1,
-        qmmm_int     =   1,
-        qm_ewald     =   0,
-        writepdb     =   1,
+        qm_theory    = 'PM6-DH+',     ! Name of SQM method to use, please look in amber manual for available options
+        qmcharge     =  -1,           ! Total charge on the atoms defined in the SQM regions
+        qmmm_int     =   1,           ! For Electronic embedding
+        qm_ewald     =   0,           ! Switch off Ewald summation and PME for SQM-MM interactions 
+        writepdb     =   1,           ! Write a pdb file showing the atoms selected in the SQM region, a good choice to verify selected atoms
         /
         
         
@@ -153,22 +153,22 @@ Breifly, the system will undergo sequentially through steps:
         /
         &qmmm
         qmmask       = ':723|@10985-11005,11009-11010,11014-11015,11018-11023,416-429,2630-2640,2677-2687,2701-2715', ! Include the full side-chain of Y27,H178,H181,Y183,iso-oxazoline ring, and oxime',
-        qm_theory    = 'EXTERN'
-        qmcharge     =  -1,
-        qmmm_int     =   1,
-        qm_ewald     =   0,
-        printcharges =   1,
-        writepdb     =   1,
-        verbosity    =   1,
-        qmshake      =   0,
+        qm_theory    = 'EXTERN'        ! Opt for external QM software 
+        qmcharge     =  -1,            ! Total charge on the atoms defined in the QM regions
+        qmmm_int     =   1,            ! For Electronic embedding
+        qm_ewald     =   0,            ! Switch off Ewald summation and PME for QM-MM interactions
+        printcharges =   1,            ! Option to print the atomic charges of QM atoms in mdout file
+        writepdb     =   1,            ! Write a pdb file showing the atoms selected in the SQM region, a good choice to verify selected atoms
+        verbosity    =   1,            ! Level of information to be printed in mdout for selected QM atoms
+        qmshake      =   0,            ! Turn off shake on QM selected QM atoms
         /
-        &gau
-        method       = 'B3LYP',
-        basis        = '6-31G*',
-        num_threads  =  94,
-        mem          = '64GB',
-        use_template =  0,
-        dipole = 1,
+        &gau                           ! Syntax for using Gaussian as external QM software 
+        method       = 'B3LYP',        ! Choice of QM theory
+        basis        = '6-31G*',       ! Basis set
+        num_threads  =  94,            ! Choice of CPU threads to use with Gaussian
+        mem          = '64GB',         ! Memory allocation to Gaussian QM calculations 
+        use_template =  0,             ! No template specified for Gaussian input
+        dipole = 1,                    ! Report dipole moment at each step
         /
         
 We have used a script to automtise the above step. If you are following these steps for the first time, do not run this script blindly. Be aware that it depends on the system to system, how much and which equilibration you need. Especially for a completely user-build system, unlike a crystal structure you need extra equiliration time. 
