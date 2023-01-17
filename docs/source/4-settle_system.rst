@@ -24,7 +24,7 @@ vaccum therein will be minimsed.
 
 Breifly, the system will undergo sequentially through steps:
 
-Step1. Classical Energy Minimization
+1. Classical Energy Minimization
         * Will try to optimize the psotion of atoms using the supplied molecular mechanics parameters e.g. bond-length, angle, van-der-waal etc
 
 .. code-block:: 
@@ -43,7 +43,7 @@ Step1. Classical Energy Minimization
         
         
                 
-Step2. Thermalisation
+2. Thermalisation
         * Kinetic energy or say the dynamics of the atoms increased step-wise
         
 .. code-block:: 
@@ -75,7 +75,7 @@ Step2. Thermalisation
         &wt type='END' /
         
         
-Step3. Equilibration Run
+3. Equilibration Run
         * Allowing the system to breathe for 100 ps, more precisely no restraint!
 
 .. code-block:: 
@@ -105,7 +105,7 @@ Step3. Equilibration Run
         
         
         
-Step4. SQM-MM Energy Minimization
+4. SQM-MM Energy Minimization
         * A part of the system treated with Semi-Empirical Method, rest of the system still under the classical ff
 
 .. code-block:: 
@@ -133,7 +133,7 @@ Step4. SQM-MM Energy Minimization
         /
         
         
-Step5. QM-MM Energy Minimization
+5. QM-MM Energy Minimization
         * A part of interest uses QM and rest is still under classical ff
         
 .. code-block:: 
