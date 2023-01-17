@@ -40,12 +40,12 @@ Breifly, the system will undergo sequentially through steps:
         restraint_wt = 10,          ! 10 kcal/mol/A**2 restraint force constant
         restraintmask = '!@H=&!:WAT,Na+' ! Restraints on the solute heavy atom
          /
-
-
         
+        
+                
 #. Thermalisation
         * Kinetic energy or say the dynamics of the atoms increased step-wise
-
+        
 .. code-block:: 
         :emphasize-lines: 21,22
         :caption: Gradual Heating
@@ -73,7 +73,7 @@ Breifly, the system will undergo sequentially through steps:
         &wt type='TEMP0', istep1=0, istep2=10000, value1=0.0, value2=298.0 /
         &wt type='TEMP0', istep1=10001, istep2=15000, value1=298.0, value2=298.0 /
         &wt type='END' /
-
+        
         
 #. Equilibration Run
         * Allowing the system to breathe for 100 ps, more precisely no restraint!
@@ -102,9 +102,9 @@ Breifly, the system will undergo sequentially through steps:
         restraint_wt = 10,          ! 10 kcal/mol/A**2 restraint force constant
         restraintmask = '!@H=&!:WAT' ! Restraints on the solute heavy atom
         /
-
-
-
+        
+        
+        
 #. SQM-MM Energy Minimization
         * A part of the system treated with Semi-Empirical Method, rest of the system still under the classical ff
 
@@ -131,11 +131,11 @@ Breifly, the system will undergo sequentially through steps:
         qm_ewald     =   0,
         writepdb     =   1,
         /
-
-
+        
+        
 #. QM-MM Energy Minimization
         * A part of interest uses QM and rest is still under classical ff
-
+        
 .. code-block:: 
         :emphasize-lines: 15, 16,25,26,27,28
         :caption: QM-MM Energy Minimization
@@ -170,7 +170,7 @@ Breifly, the system will undergo sequentially through steps:
         use_template =  0,
         dipole = 1,
         /
-
+        
 We have used a script to automtise the above step. If you are following these steps for the first time, do not run this script blindly. Be aware that it depends on the system to system, how much and which equilibration you need. Especially for a completely user-build system, unlike a crystal structure you need extra equiliration time. 
 
 
