@@ -165,7 +165,7 @@ Breifly, the system will undergo sequentially through steps:
         &gau                           ! Syntax for using Gaussian as external QM software 
         method       = 'B3LYP',        ! Choice of QM theory
         basis        = '6-31G*',       ! Basis set
-        num_threads  =  94,            ! Choice of CPU threads to use with Gaussian
+        num_threads  =  94,            ! Choice for number of CPU threads to use with Gaussian
         mem          = '64GB',         ! Memory allocation to Gaussian QM calculations 
         use_template =  0,             ! No template specified for Gaussian input
         dipole = 1,                    ! Report dipole moment at each step
