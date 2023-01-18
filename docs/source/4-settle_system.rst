@@ -74,7 +74,7 @@ We are aiming to preserve the heavy atom positions, for this we are using a smal
         &wt type='TEMP0', istep1=10001, istep2=15000, value1=298.0, value2=298.0 /
         &wt type='END' /
         
-Its a 30 ps NVT equilibration where the temperature has been gradually increased from 0 to 298K from begining to 20 ps and for the rest of 10 ps, temperature will remain constant at 298K. Let's see if this is true or not!
+Its a 30 ps NVT equilibration where the temperature has been linearly increased from 0 to 298K from begining to 20 ps and for the rest of 10 ps, temperature will remain constant at 298K. Let's see if this is true or not!
 
 .. figure::  figs/step2-gradual-heat.png
 
@@ -108,7 +108,7 @@ Its a 30 ps NVT equilibration where the temperature has been gradually increased
         restraintmask = '!@H=&!:WAT' ! Restraints on the solute heavy atom
         /
         
-        
+This is a usual NPT run for 100 ps. Just to allow the solvent and hydrogen atoms to explore their neighbourhood.
         
 4. SQM-MM Energy Minimization
         * A part of the system treated with Semi-Empirical Method, rest of the system still under the classical ff
