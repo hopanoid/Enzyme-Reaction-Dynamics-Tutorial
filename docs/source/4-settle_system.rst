@@ -7,9 +7,9 @@
 Settle the System
 *****************
 
-===================
-Energy Minimization
-===================
+=======================================
+Minimize, Heat, Equilibrate, & Minimize
+=======================================
 
 
 Removing bad atomic contacts and minimizing vaccum!
@@ -29,7 +29,7 @@ Breifly, the system will undergo sequentially through steps:
 
 .. code-block:: 
         :emphasize-lines: 7,8
-        :caption: Minimize
+        :caption: Step 1 --> Classical Minimization
 
         Minimisation of system
         &cntrl
@@ -41,14 +41,14 @@ Breifly, the system will undergo sequentially through steps:
         restraintmask = '!@H=&!:WAT,Na+' ! Restraints on the solute heavy atom
          /
         
-        
+We are aiming to preserve the heavy atom positions, for this we are using a small restraint (10 kcal/mol/A^2) on the protein's heavy atom. You can commentout the highlighted lines (just add ! in the begining) if you wanna minimise all atoms.       
                 
 2. Thermalisation
         * Kinetic energy or say the dynamics of the atoms increased step-wise
         
 .. code-block:: 
         :emphasize-lines: 21,22
-        :caption: Gradual Heating
+        :caption: Step 2 --> Thermalisation or Gradual Heating
 
         Heating ramp from 0K to 298K
         &cntrl
@@ -74,6 +74,11 @@ Breifly, the system will undergo sequentially through steps:
         &wt type='TEMP0', istep1=10001, istep2=15000, value1=298.0, value2=298.0 /
         &wt type='END' /
         
+Its a 30 ps NVT equilibration where the temperature has been gradually increased from 0 to 298K from begining to 20 ps and for the rest of 10 ps, temperature will remain constant at 298K. Let's see if this is true or not!
+
+.. figure::  figs/step2-gradual-heat.png
+
+        Figure showing the changes in the temperature vs Time (ps), during thermalisation. Upto 20 ps its an linear increase thereafter remained at 298K.
         
 3. Equilibration Run
         * Allowing the system to breathe for 100 ps, more precisely no restraint!
