@@ -79,15 +79,15 @@ There are several methods to assess the protonation state of the residues in a p
 
 .. warning::
 
-        Histidines are tricky residues, they have three possible protonation states: HID, HIE and HIP. 
-        HIP is the protonated residue. HID and HIE correspond to the two natural tautomers of the neutral 
-        histidine, where the proton can be found in delta or epsilon positions. In solution, the most 
-        common conformer is HIE but always visualise your structure before assuming any histidine protonation state.
-
         .. image:: /figs/his-state.jpeg
                 :width: 200
                 :align: center
                 :alt: Protonation states of histidines
+
+        Histidines are tricky residues, they have three possible protonation states: HID, HIE and HIP. 
+        HIP is the protonated residue. HID and HIE correspond to the two natural tautomers of the neutral 
+        histidine, where the proton can be found in delta or epsilon positions. In solution, the most 
+        common conformer is HIE but always visualise your structure before assuming any histidine protonation state.
 
         Here is an example showing the typical active site of Old Yellow Enzymes (OYE). XenA is a member of this class
         and after protonation, we found that protonation state of H178 predicted as HID, which is not correct, considering 
