@@ -84,6 +84,11 @@ There are several methods to assess the protonation state of the residues in a p
         histidine, where the proton can be found in delta or epsilon positions. In solution, the most 
         common conformer is HIE but always visualise your structure before assuming any histidine protonation state.
 
+        .. image:: /figs/his-state.jpeg
+                :width: 200
+                :align: center
+                :alt: Protonation states of histidines
+
         Here is an example showing the typical active site of Old Yellow Enzymes (OYE). XenA is a member of this class
         and after protonation, we found that protonation state of H178 predicted as HID, which is not correct, considering 
         the presence of substrate, the H178 forms a hydrogen bond with the carbonyl oxygen.
