@@ -163,13 +163,12 @@ This is a usual NPT run for 100 ps. Just to allow the solvent and hydrogen atoms
         verbosity    =   1,            ! Level of information to be printed in mdout for selected QM atoms
         qmshake      =   0,            ! Turn off shake on QM selected QM atoms
         /
-        &gau                           ! Syntax for using Gaussian as external QM software 
+        &tc                            ! Syntax for using TeraChem as external QM software 
         method       = 'B3LYP',        ! Choice of QM theory
         basis        = '6-31G*',       ! Basis set
-        num_threads  =  94,            ! Choice for number of CPU threads to use with Gaussian
-        mem          = '64GB',         ! Memory allocation to Gaussian QM calculations 
-        use_template =  0,             ! No template specified for Gaussian input
-        dipole = 1,                    ! Report dipole moment at each step
+        ngpus        =  2,             ! Choice for number of GPUs to use for TeraChem
+        gpuids       = 0,1,            ! Specify the GPU id's 
+        use_template =  0,             ! No template specified for TeraChem input
         /
         
 We have used a script to automtise the above step. If you are following these steps for the first time, do not run this script blindly. Be aware that it depends on the system to system, how much and which equilibration you need. Especially for a completely user-build system, unlike a crystal structure you need extra equiliration time. 
@@ -226,7 +225,7 @@ Here is the content of the :file:`tutorial/metadata/system/2-tleap.in`
         sander -O -i ${mdin_prefix}/qmmm_min.in -p ${init}.parm7 -c ${sqm_prefix}.rst7 -o ${qmmm_prefix}.mdout -r ${qmmm_prefix}.rst7 -inf ${qmmm_prefix}.mdinfo -ref ${sqm_prefix}.rst7 -x ${qmmm_prefix}.nc
         endif
 
-Here is the final system, we just build
+Here is the final system, we just build and minimised
 
 
         

@@ -91,13 +91,13 @@ There are several methods to assess the protonation state of the residues in a p
         histidine, where the proton can be found in delta or epsilon positions. In solution, the most 
         common conformer is HIE but always visualise your structure before assuming any histidine protonation state.
 
-        Here is an example showing the typical active site of Old Yellow Enzymes (OYE). The enzyme displayed here is XenA (an ene-reductase belongs to Old Yellow Enzyme 3 (OYE3))
-        and after protonation, we found that protonation state of H178 predicted as HID, which is not correct, considering the presence of substrate, instead the NE atom of the H178 should have been protonated to form the hydrogen bond with the carbonyl oxygen of the substrate. Similarly, the ND atom of the H181 should be protonated instead of NE. Here, is the active site with correct protonation of H178 and H181.
+        Here is an example showing the typical active site of Old Yellow Enzymes (OYE). The enzyme displayed here is XenA (an ene-reductase belongs to Old Yellow Enzyme 3)
+        and after protonation, we found that protonation state of H178 predicted as HID, which is not correct, considering the presence of substrate, instead the NE atom of the H178 should have been protonated to form the hydrogen bond with the carbonyl oxygen (O3) of the substrate. Similarly, the ND atom of the H181 should be protonated instead of NE. Here, is the active site with correct protonation of H178 and H181.
 
         .. image:: /figs/XenA-active-site.png
                 :width: 200
                 :align: center
-                :alt: Xenobiotic reductase A (XenA) complexed with Flavin and Oxime Colored (Green, Yellow and Red, respectively)
+                :alt: Xenobiotic reductase A (XenA) complexed with Flavin and Oxime (OHP) Colored (Yellow and Green, respectively)
 
 
 Last but not least, we need to clean the PDB file before passing it to AmberTools 
@@ -116,7 +116,7 @@ How to select protonation state of a specific residue?
 
 We are using Ambertools to choose the desired protonation form of H178.
 You can select the appropriate form of HIS by renaming HIS to HIE (proton on NE2), 
-HID (proton on ND1), or HIP (both protons). Don't worry by the residue numbers here,
+HID (proton on ND1), or HIP (both protons). Don't worry about the residue numbers here,
 amber's residue number starts from 0, instead of PDB's 1.
 
 .. code-block::
