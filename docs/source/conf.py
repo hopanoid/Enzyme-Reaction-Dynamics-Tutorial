@@ -5,7 +5,7 @@ import os
 # -- Project information
 
 project = 'Oxime-Biocatalysis'
-copyright = '2022, Amit'
+copyright = '2023, Amit'
 author = 'Amit'
 
 release = '0.1'

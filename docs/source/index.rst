@@ -7,9 +7,9 @@
 .. αβγδΔ
 
 
-========================
-Oxime Catalysis Tutorial
-========================
+=================================================
+Deciphering Oxime Biocatalysis (A QM/MM Tutorial)
+=================================================
 
 .. image:: /figs/XenA-oxH-prod.png
         :width: 200
@@ -18,7 +18,7 @@ Oxime Catalysis Tutorial
    
 
 
-:Author: Amit Singh, University of Graz
+:Author: Amit Singh Sahrawat, University of Graz (amit.amit@uni-graz.at)
 :Tutorial: |release|
 :Date: |today|
 
@@ -36,10 +36,13 @@ Oxime Catalysis Tutorial
 Objective
 =========
 
-To perform QM/MM simulation of XenA in complex with cofactor flavin (FMNH) and substrate
-Oxime (OHP), where flavin first reduces OHP to an intermediate Amine, which is further 
-converted into corresponding Imine by dehydration reaction. We aim to model the respective 
-reaction coordinates (Reactant, Transition States and Products) for each reaction.
+To decipher the newly discovered mechanistic intricacies of the conversion of oximes 
+to amines via imines by reductive dehydration. Using QM/MM simulations, we aim to model 
+the molecular structures corresponding to the respective reaction coordinates 
+(Reactant, Transition States and Products) for each reaction pathway. Finally, the energy 
+barrier would be computed using QM/MM Steered Molecular Dynamics (SMD) simulations. For more
+details about this biotransformation scheme, please read our publication doi:xxxxxx(Yet to be 
+issued).
 
 
 Tutorial files
@@ -57,11 +60,10 @@ Workflow overview
 =================
 
 For this tutorial we'll use Amber_ (2021, 2022 should
-work) to set up the system, combined with Gaussian_ to run the QM/MM simulations, and perform
-analysis. An initial structure is provided, which can be found in the
-:file:`tutorial/metadata/input_structures` directory, as well as the IN files that
-are necessary for input to Amber. The overall workflow consists of
-the following steps:
+work) to set up the system, combined with Terachem_ to run the QM/MM simulations, and NBO_ to 
+perform orbital analysis. An initial structure is provided, which can be found in the
+:file:`tutorial/metadata/input_structures` directory, as well as the input files that
+are necessary for running Amber. The overall workflow consists of the following steps:
 
 Contents
 --------

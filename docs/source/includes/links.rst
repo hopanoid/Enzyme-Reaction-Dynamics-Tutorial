@@ -17,6 +17,12 @@
 .. Gaussian
 .. _Gaussian: https://gaussian.com/
 
+.. TeraChem
+.. _TeraChem: http://www.petachem.com/products.html
+
+.. NBO
+.. _NBO: https://nbo7.chem.wisc.edu/products_css.htm
+
 .. Jaguar
 .. _Jaguar: https://www.schrodinger.com/products/jaguar
 
@@ -24,7 +30,7 @@
 .. _MarvinSketch: https://chemaxon.com/marvin
 
 .. Protein Databank   
-.. _4AKE: http://www.rcsb.org/pdb/explore.do?structureId=4ake
+.. _8AU8: http://www.rcsb.org/pdb/explore.do?structureId=4ake
 .. _`ATOM record of a PDB file`:
    https://www.wwpdb.org/documentation/file-format-content/format33/sect9.html#ATOM
 
