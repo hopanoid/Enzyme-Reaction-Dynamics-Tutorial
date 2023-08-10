@@ -92,7 +92,7 @@ There are several methods to assess the protonation state of the residues in a p
         common conformer is HIE but always visualise your structure before assuming any histidine protonation state.
 
         Here is an example showing the typical active site of Old Yellow Enzymes (OYE). The enzyme displayed here is XenA (an ene-reductase belongs to Old Yellow Enzyme 3)
-        and after protonation, we found that protonation state of H178 predicted as HID, which is not correct, considering the presence of substrate, instead the NE atom of the H178 should have been protonated to form the hydrogen bond with the carbonyl oxygen (O3) of the substrate. Similarly, the ND atom of the H181 should be protonated instead of NE. Here, is the active site with correct protonation of H178 and H181.
+        and after protonation, we found that protonation state of H178 predicted as HID, which is not correct, considering the presence of substrate, instead the NE atom of the H178 should have been protonated to form the hydrogen bond with the carbonyl oxygen of the substrate. Similarly, the ND atom of the H181 should be protonated instead of NE. Here, is the active site with correct protonation of H178 and H181.
 
         .. image:: /figs/XenA-active-site.png
                 :width: 200

@@ -1,0 +1,19 @@
+Energy minimisation using SQMMM
+&cntrl
+imin=1,                       ! Perform an energy minimization.
+maxcyc=1000,                  ! The maximum number of cycles of minimization.
+ncyc=500,                     ! The method will be switched from steepest descent to conjugate gradient after NCYC cycles.
+ntb=1,                        ! Periodic conditiond at constant volume
+cut=8.0,                      ! 8 angstrom classical non-bond cut off
+ntpr=100, ntwx=100,           ! Output options
+ntc=2, ntf=2,                 ! Constrain lengths of bonds having hydrogen atoms (SHAKE)
+ifqnt=1                       ! Enable Quantum Module
+/
+&qmmm
+qmmask       = ':723|@10985-11005,11009-11010,11014-11015,11018-11023,416-429,2630-2640,2677-2687,2701-2715',  ! Include the full side-chain of Y27,H178,H181,Y183,iso-oxazoline ring, and oxime',
+qm_theory    = 'PM6-DH+',     ! Name of SQM method to use, please look in amber manual for available options
+qmcharge     =  -1,           ! Total charge on the atoms defined in the SQM regions
+qmmm_int     =   1,           ! For Electronic embedding
+qm_ewald     =   0,           ! Switch off Ewald summation and PME for SQM-MM interactions
+writepdb     =   1,           ! Write a pdb file showing the atoms selected in the SQM region, a good choice to verify selected atoms
+/

@@ -113,7 +113,7 @@ This is a usual NPT run for 100 ps. Just to allow the solvent and hydrogen atoms
         :emphasize-lines: 13,14,15,19
         :caption: SQM-MM Minimization
 
-        Initial min of our structure QMMM
+        Energy minimisation using SQMMM
         &cntrl
         imin=1,                       ! Perform an energy minimization.
         maxcyc=1000,                  ! The maximum number of cycles of minimization.
@@ -141,7 +141,7 @@ This is a usual NPT run for 100 ps. Just to allow the solvent and hydrogen atoms
         :emphasize-lines: 13,14,15,24,25,26,27
         :caption: QM-MM Energy Minimization
 
-        Initial min of our structure QMMM
+        Energy minimisation using QMMM
         &cntrl
         imin=1,                        ! Perform an energy minimization.
         maxcyc=500,                    ! The maximum number of cycles of minimization.
@@ -174,7 +174,7 @@ This is a usual NPT run for 100 ps. Just to allow the solvent and hydrogen atoms
 We have used a script to automtise the above step. If you are following these steps for the first time, do not run this script blindly. Be aware that it depends on the system to system, how much and which equilibration you need. Especially for a completely user-build system, unlike a crystal structure you need extra equiliration time. 
 
 
-Here is the content of the :file:`tutorial/metadata/system/2-tleap.in` 
+Here is the content of the :file:`tutorial/pre-processing/1-amber-pre-run.sh` 
 
 .. code-block:: csh
         :emphasize-lines: 20, 26, 31, 36, 41
