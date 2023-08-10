@@ -110,7 +110,7 @@ This is a usual NPT run for 100 ps. Just to allow the solvent and hydrogen atoms
         * A part of the system treated with Semi-Empirical Method, rest of the system still under the classical ff
 
 .. code-block:: 
-        :emphasize-lines: 13,14,15,19
+        :emphasize-lines: 13,14,15,18
         :caption: SQM-MM Minimization
 
         Energy minimisation using SQMMM
@@ -125,7 +125,7 @@ This is a usual NPT run for 100 ps. Just to allow the solvent and hydrogen atoms
         ifqnt=1                       ! Enable Quantum Module
         /
         &qmmm
-        qmmask       = ':723|@10985-11005,11009-11010,11014-11015,11018-11023,416-429,2630-2640,2677-2687,2701-2715',  ! Include the full side-chain of Y27,H178,H181,Y183,iso-oxazoline ring, and oxime',
+        qmmask       = ':723|@10985-11005,11009-11010,11014-11015,11018-11023,416-429,2630-2640,2677-2687,2701-2715',  ! Include the full side-chain of Y27,H178,H181,Y183, Lumiflavin and oxime',
         qm_theory    = 'PM6-DH+',     ! Name of SQM method to use, please look in amber manual for available options
         qmcharge     =  -1,           ! Total charge on the atoms defined in the SQM regions
         qmmm_int     =   1,           ! For Electronic embedding
@@ -133,10 +133,14 @@ This is a usual NPT run for 100 ps. Just to allow the solvent and hydrogen atoms
         writepdb     =   1,           ! Write a pdb file showing the atoms selected in the SQM region, a good choice to verify selected atoms
         /
         
+The flag "qmmask" up here, is defining the region to be treated using SQM. It is highly recommended to turn on the "writepdb" flag. The "writepdb" flag would write a pdb file named "qmmm_region.pdb" for the defined SQM/QM region, which should be opened in a molecule viewer and should be checked for the correctness.
+
         
 5. QM-MM Energy Minimization
         * A part of interest uses QM and rest is still under classical ff
-        
+        * We have to use an external QM package for the QM calculations becasue Amber don't have its own DFT packages
+        * We have used TeraChem, a QM package fully operational on GPU. We have used demo version of TeraChem, which supports upto two GPUs and a maximum 15 mins of runtime for a given calculation. The given constraint on demo version of TeraChem was sufficient to run our QMMM MD simulations
+        * Amber supports a wide range of QM package for QMMM simulations like Gaussian,Gamess,Orca etc. For more info please visit the Amber manual.
 .. code-block:: 
         :emphasize-lines: 13,14,15,24,25,26,27
         :caption: QM-MM Energy Minimization
@@ -153,7 +157,7 @@ This is a usual NPT run for 100 ps. Just to allow the solvent and hydrogen atoms
         ifqnt=1                        ! Enable QM-MM
         /
         &qmmm
-        qmmask       = ':723|@10985-11005,11009-11010,11014-11015,11018-11023,416-429,2630-2640,2677-2687,2701-2715', ! Include the full side-chain of Y27,H178,H181,Y183,iso-oxazoline ring, and oxime',
+        qmmask       = ':723|@10985-11005,11009-11010,11014-11015,11018-11023,416-429,2630-2640,2677-2687,2701-2715', ! Include the full side-chain of Y27,H178,H181,Y183,Lumiflavin and oxime',
         qm_theory    = 'EXTERN'        ! Opt for external QM software 
         qmcharge     =  -1,            ! Total charge on the atoms defined in the QM regions
         qmmm_int     =   1,            ! For Electronic embedding
@@ -171,10 +175,7 @@ This is a usual NPT run for 100 ps. Just to allow the solvent and hydrogen atoms
         use_template =  0,             ! No template specified for TeraChem input
         /
         
-We have used a script to automtise the above step. If you are following these steps for the first time, do not run this script blindly. Be aware that it depends on the system to system, how much and which equilibration you need. Especially for a completely user-build system, unlike a crystal structure you need extra equiliration time. 
-
-
-Here is the content of the :file:`tutorial/pre-processing/1-amber-pre-run.sh` 
+We have used a script to automtise the above steps. If you are following these steps for the first time, do not run this script blindly. Be aware that it depends on the system to system, how much and which equilibration you need. Especially for a completely user-build system, unlike a crystal structure you need extra equiliration time. Here is the content of the full automated script :file:`tutorial/pre-processing/1-amber-pre-run.sh` 
 
 .. code-block:: csh
         :emphasize-lines: 20, 26, 31, 36, 41
