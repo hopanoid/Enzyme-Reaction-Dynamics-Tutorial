@@ -138,9 +138,9 @@ The flag "qmmask" up here, is defining the region to be treated using SQM. It is
         
 5. QM-MM Energy Minimization
         * A part of interest uses QM and rest is still under classical ff
-        * We have to use an external QM package for the QM calculations becasue Amber don't have its own DFT packages
-        * We have used TeraChem, a QM package fully operational on GPU. We have used demo version of TeraChem, which supports upto two GPUs and a maximum 15 mins of runtime for a given calculation. The given constraint on demo version of TeraChem was sufficient to run our QMMM MD simulations
-        * Amber supports a wide range of QM package for QMMM simulations like Gaussian,Gamess,Orca etc. For more info please visit the Amber manual
+        * We have used an external QM package for the QM calculations, although AmberTools22/23 has an intergated DFT package named QUICK_
+        * We have used TeraChem_, a QM package fully operational on GPU. We have used demo version of it, which supports upto two GPUs and a maximum 15 mins of runtime for a given calculation. The given constraint on demo version of TeraChem was sufficient to run our QMMM MD simulations
+        * Amber supports a wide range of QM package for QMMM simulations like Gaussian_,Gamess_,Orca_ etc. For more info please visit the Amber_ manual
 
 .. code-block:: 
         :emphasize-lines: 13,14,15,24,25,26,27

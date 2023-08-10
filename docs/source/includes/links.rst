@@ -23,6 +23,15 @@
 .. NBO
 .. _NBO: https://nbo7.chem.wisc.edu/products_css.htm
 
+.. Gamess
+.. _Gamess: https://www.msg.chem.iastate.edu/gamess/
+
+.. Orca
+.. _Orca: https://www.orcasoftware.de/tutorials_orca/#
+
+.. QUICK
+.. _QUICK: https://quick-docs.readthedocs.io/en/22.3.0/about.html
+
 .. Jaguar
 .. _Jaguar: https://www.schrodinger.com/products/jaguar
 
