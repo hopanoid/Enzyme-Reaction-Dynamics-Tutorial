@@ -205,16 +205,16 @@ We have used a script to automtise the above steps. If you are following these s
         # If there is a problem during minimization using pmemd.cuda, please try to use pmemd only for
         # the minimization step.
         if ( ! -e ${mini_prefix}.rst7 ) then
-        ${amber} -O -i ${mdin_prefix}/sander_min.in -p ${init}.parm7 -c ${init}.rst7 -o ${mini_prefix}.mdout -r ${mini_prefix}.rst7 -inf ${mini_prefix}.mdinfo -ref ${init}.rst7
+        ${amber} -O -i ${mdin_prefix}/mm_min.in -p ${init}.parm7 -c ${init}.rst7 -o ${mini_prefix}.mdout -r ${mini_prefix}.rst7 -inf ${mini_prefix}.mdinfo -ref ${init}.rst7
         endif
         # Step 2 --> Thermalisation
         if ( ! -e ${heat_prefix}.rst7 ) then
-        ${amber} -O -i ${mdin_prefix}/sander_heat.in -p ${init}.parm7 -c ${mini_prefix}.rst7 -o ${heat_prefix}.mdout -r ${heat_prefix}.rst7 -inf ${heat_prefix}.mdinfo -ref ${mini_prefix}.rst7 -x ${heat_prefix}.nc
+        ${amber} -O -i ${mdin_prefix}/mm_heat.in -p ${init}.parm7 -c ${mini_prefix}.rst7 -o ${heat_prefix}.mdout -r ${heat_prefix}.rst7 -inf ${heat_prefix}.mdinfo -ref ${mini_prefix}.rst7 -x ${heat_prefix}.nc
         endif
 
         # Step 3 --> A Short 100ps Equilibration Run
         if ( ! -e ${equi_prefix}.rst7 ) then
-        ${amber} -O -i ${mdin_prefix}/sander_equil.in -p ${init}.parm7 -c ${heat_prefix}.rst7 -o ${equi_prefix}.mdout -r ${equi_prefix}.rst7 -inf ${equi_prefix}.mdinfo -ref ${heat_prefix}.rst7 -x ${equi_prefix}.nc
+        ${amber} -O -i ${mdin_prefix}/mm_equil.in -p ${init}.parm7 -c ${heat_prefix}.rst7 -o ${equi_prefix}.mdout -r ${equi_prefix}.rst7 -inf ${equi_prefix}.mdinfo -ref ${heat_prefix}.rst7 -x ${equi_prefix}.nc
         endif
 
         # Step 4 --> Energy Minimization using Semi-Empirical Appraoch (SQM-MM)
