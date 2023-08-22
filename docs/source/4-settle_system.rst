@@ -21,7 +21,7 @@ vaccum therein will be minimsed.
 Breifly, the system will undergo sequentially through steps:
 
 1. Classical Energy Minimization
-        * Will try to optimize the psotion of atoms using the supplied molecular mechanics parameters e.g. bond-length, angle, van-der-waal etc
+        * Will try to optimize the position of atoms using the supplied molecular mechanics parameters e.g. bond-length, angle, van-der-waal etc
 
 .. code-block:: 
         :emphasize-lines: 7,8
