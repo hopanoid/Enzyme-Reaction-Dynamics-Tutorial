@@ -3,9 +3,9 @@
 .. include:: /includes/defs.rst
 .. include:: /includes/links.rst
 
-****************
-Select QM System 
-****************
+******************
+Select A QM System 
+******************
 
 ===============================================
 How to choose appropriate QM atoms for QM layer  
