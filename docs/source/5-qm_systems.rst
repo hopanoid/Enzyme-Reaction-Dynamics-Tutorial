@@ -54,7 +54,7 @@ This line specify the QM method/basis set, the maximum number of cycles for SCF 
         printcharges =   1,            ! Option to print the atomic charges of QM atoms in mdout file
         writepdb     =   1,            ! Write a pdb file showing the atoms selected in the SQM region, a good choice to verify selected atoms
         verbosity    =   1,            ! Level of information to be printed in mdout for selected QM atoms
-        qmshake      =   0,            ! Turn off shake on QM selected QM atoms
+        qmshake      =   0,            ! Turn off shake on QM atoms
         /
         &gau                           ! Syntax for using Gaussian as external QM software
         method       = 'B3LYP',        ! Choice of QM theory
@@ -80,10 +80,10 @@ This line specify the QM method/basis set, the maximum number of cycles for SCF 
                 poptype vdd
         end
         
-This highlighted lines specify the basis set, QM method, the mixed precision (most effiecint way), and at the end set the flag for computing the vdd charges. You can do a lot more here, if you know TeraChem_ and wanna compute any other properties, use this template file. The run time flags like number of GPUs, memory etc should be specified in the below amber ".in" file. Here, is the content of the :file:`tutorial/pre-processing/mdin/qmmm-sys-vdd-chrg.in`
+These highlighted lines specify the basis set, QM method, the mixed precision (most effiecint way), and at the end set the flag for computing the vdd charges. You can do a lot more here, if you know TeraChem_ and wanna compute any other properties, use this template file. The run time flags like number of GPUs, memory etc should be specified in the below amber ".in" file. Here, is the content of the :file:`tutorial/pre-processing/mdin/qmmm-sys-vdd-chrg.in`
 
 .. code-block::
-        :emphasize-lines: 17,27,28,29,30,31,32,33,34
+        :emphasize-lines: 17,27,28,29,30,31,32,33,34,35
         :caption: Amber mdin file to run TeraChem_ as an external QM package to compute the CM5 charges
 
         298K constant temp QMMMMD
@@ -110,7 +110,7 @@ This highlighted lines specify the basis set, QM method, the mixed precision (mo
         printcharges =   1,            ! Option to print the atomic charges of QM atoms in mdout file
         writepdb     =   1,            ! Write a pdb file showing the atoms selected in the SQM region, a good choice to verify selected atoms
         verbosity    =   1,            ! Level of information to be printed in mdout for selected QM atoms
-        qmshake      =   0,            ! Turn off shake on QM selected QM atoms
+        qmshake      =   0,            ! Turn off shake on QM atoms
         /
         &tc                            ! Syntax for using TeraChem as external QM software
         method       = 'B3LYP',        ! Choice of QM theory
