@@ -23,12 +23,11 @@ Computationally, there are mainly two ways to compute the atomic charges, one is
         :caption: Gaussian template file to compute CM5 charges
 
         #P B3LYP/6-31G* SCF=(Conver=8) pop=hirshfeld
-        /
         
-This line specify the QM method/basis set, the maximum cycle for SCF convergence, and at the end set the flag for computing the hirshfeld charges via "pop=hirshfeld". You can do a lot more here, if you know Gaussian_ and wanna compute any other properties, use this template file. However, you can't provide the xyz coordinate here, or the Z-matrix information or the point charges. Amber will not process lines startingwith "%" since these are handled by sander. In short, the advanced Gaussian_ capabilities related to the Link 0 commands, inter-molecular interactions energy calculations etc are not allowed. The run time flags like number of processor, memory etc should be specified in the below amber ".in" file. Here, is the content of the :file:`tutorial/pre-processing/qmmm-sys-hir-chrg.in`
+This line specify the QM method/basis set, the maximum number of cycles for SCF convergence, and at the end set the flag for computing the hirshfeld charges via "pop=hirshfeld". You can do a lot more here, if you know Gaussian_ and wanna compute any other properties, use this template file. However, you can't provide the xyz coordinate here, or the Z-matrix information or the point charges. Amber will not process lines startingwith "%" since these are handled by sander. In short, the advanced Gaussian_ capabilities related to the Link 0 commands, inter-molecular interactions energy calculations etc. are not allowed. The run time flags like number of processors, memory etc should be specified in the below amber ".in" file. Here, is the content of the :file:`tutorial/pre-processing/qmmm-sys-hir-chrg.in`
 
 .. code-block::
-        :emphasize-lines: 2
+        :emphasize-lines: 16,26,27,28,29,30,31
         :caption: Amber mdin file to run Gaussian_ as an external QM package to compute the CM5 charges
 
         298K constant temp QMMMMD
