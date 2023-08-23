@@ -24,7 +24,7 @@ Computationally, there are mainly two ways to compute the atomic charges, one is
 
         #P B3LYP/6-31G* SCF=(Conver=8) pop=hirshfeld
         
-This line specify the QM method/basis set, the maximum number of cycles for SCF convergence, and at the end set the flag for computing the hirshfeld charges via "pop=hirshfeld". You can do a lot more here, if you know Gaussian_ and wanna compute any other properties, use this template file. However, you can't provide the xyz coordinate here, or the Z-matrix information or the point charges. Amber will not process lines startingwith "%" since these are handled by sander. In short, the advanced Gaussian_ capabilities related to the Link 0 commands, inter-molecular interactions energy calculations etc. are not allowed. The run time flags like number of processors, memory etc should be specified in the below amber ".in" file. Here, is the content of the :file:`tutorial/pre-processing/qmmm-sys-hir-chrg.in`
+This line specify the QM method/basis set, the maximum number of cycles for SCF convergence, and at the end set the flag for computing the hirshfeld charges via "pop=hirshfeld". You can do a lot more here, if you know Gaussian_ and wanna compute any other properties, use this template file. However, you can't provide the xyz coordinate here, or the Z-matrix information or the point charges. Amber will not process lines startingwith "%" since these are handled by sander. In short, the advanced Gaussian_ capabilities related to the Link 0 commands, inter-molecular interactions energy calculations etc. are not allowed. The run time flags like number of processors, memory etc should be specified in the below amber ".in" file. Here, is the content of the :file:`tutorial/pre-processing/mdin/qmmm-sys-hir-chrg.in`
 
 .. code-block::
         :emphasize-lines: 17,27,28,29,30,31,32
@@ -63,6 +63,64 @@ This line specify the QM method/basis set, the maximum number of cycles for SCF 
         mem          = '64GB',         ! Amount of RAM to use
         use_template =  1,             ! Read Gaussian template file "gau_job.tpl"
         dipole = 1,                    ! Print the dipole moment
+        /
+
+2. For computing VDD Atomic Charges using TeraChem_
+        * First prepare a template TeraChem_ input file mentioning the flags for VDD charges. Name this file specifically as "tc_job.tpl", don't rename it to any other way. Here is the content of the :file:`tutorial/pre-processing/tc_job.tpl`
+
+.. code-block:: 
+        :emphasize-lines: 3,4,5,6
+        :caption: Terachem template file to compute VDD charges
+
+        # Run using SANDER file-based interface for TeraChem
+        #
+                basis 6-31g*
+                method b3lyp
+                precision mixed
+                poptype vdd
+        end
+        
+This highlighted lines specify the basis set, QM method, the mixed precision (most effiecint way), and at the end set the flag for computing the vdd charges. You can do a lot more here, if you know TeraChem_ and wanna compute any other properties, use this template file. The run time flags like number of GPUs, memory etc should be specified in the below amber ".in" file. Here, is the content of the :file:`tutorial/pre-processing/mdin/qmmm-sys-vdd-chrg.in`
+
+.. code-block::
+        :emphasize-lines: 17,27,28,29,30,31,32,33,34
+        :caption: Amber mdin file to run TeraChem_ as an external QM package to compute the CM5 charges
+
+        298K constant temp QMMMMD
+        &cntrl
+        imin= 0,                       ! Run molecular dynamics.
+        nstlim=200,                    ! Number of MD-steps to be performed.
+        dt=0.001,                      ! Time step (ps)
+        ntb=2,                         ! Periodic conditiond at constant pressure
+        cut=8.0,                       ! non-bond cut off
+        ntc=2, ntf=2,                  ! Constrain lengths of bonds having hydrogen atoms (SHAKE) except flavin hydride HN5
+        irest=0, ig=-1,                ! Generate a random seed for velocity
+        tempi=298.0, temp0=298.0,      ! Temperature
+        ntt=3, gamma_ln=3.0,           ! Temperature scaling using Langevin dynamics with the collision frequency in gamma_ln (ps−1)
+        ntp=1, taup=2.0,               ! Pressure scaling
+        ntpr=1, ntwx=1, ntwr=1,        ! Output options
+        ifqnt=1,                       ! Switch on QM/MM coupled potential
+        /
+        &qmmm
+        qmmask       = ':723|@10985-11005,11009-11010,11014-11015,11018-11023', ! Substrate and LumiFlavin atoms selected in the QM region
+        qm_theory    = 'EXTERN',       ! Opt for external QM software
+        qmcharge     =  -1,            ! Total charge on the atoms defined in the QM regions
+        qmmm_int     =   1,            ! For Electronic embedding
+        qm_ewald     =   0,            ! Switch off Ewald summation and PME for QM-MM interactions
+        printcharges =   1,            ! Option to print the atomic charges of QM atoms in mdout file
+        writepdb     =   1,            ! Write a pdb file showing the atoms selected in the SQM region, a good choice to verify selected atoms
+        verbosity    =   1,            ! Level of information to be printed in mdout for selected QM atoms
+        qmshake      =   0,            ! Turn off shake on QM selected QM atoms
+        /
+        &tc                            ! Syntax for using TeraChem as external QM software
+        method       = 'B3LYP',        ! Choice of QM theory
+        basis        = '6-31G*',       ! Basis set
+        guesss       = 'scr/c0',       ! SCF guess to read/write
+        scrdir       = 'scr',          ! Scratch directory
+        keep_scr     = 'yes',          ! Don't delete the content of scratch directory
+        ngpus        =  2,             ! Number of GPUs
+        gpuids       =  0,1,           ! Specify the GPU ids
+        use_template = 1,              ! Read the TeraChem template file "tc_job.tpl"
         /
 
 
