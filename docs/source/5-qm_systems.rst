@@ -84,7 +84,7 @@ These highlighted lines specify the basis set, QM method, the mixed precision (m
 
 .. code-block::
         :emphasize-lines: 17,27,28,29,30,31,32,33,34,35
-        :caption: Amber mdin file to run TeraChem_ as an external QM package to compute the CM5 charges
+        :caption: Amber mdin file to run TeraChem_ as an external QM package to compute the VDD charges
 
         298K constant temp QMMMMD
         &cntrl
@@ -122,6 +122,105 @@ These highlighted lines specify the basis set, QM method, the mixed precision (m
         gpuids       =  0,1,           ! Specify the GPU ids
         use_template = 1,              ! Read the TeraChem template file "tc_job.tpl"
         /
+
+Now, its time to demonstrate how to compute and collect these charges while running QM/MM MD simulations with *sander*. We are going to trick the *sander* output using bash scripting and will navigate the Gaussian_ and TeraChem_ output to a separate directory. We will use QM/MM minimised structure as an input for this step and will run 5 independent 200 ps QM/MM MD runs for each of the QM system under investigation. As you can read in the above *amber* mdin file, we are using a timestep of 1 fs, so in total we should have 1000 frames to analyse for each of the QM systems. Here is the content of the :file:`tutorial/pre-processing/2-amber-qm-vs-hirs-chrgs.sh`
+
+.. code-block::
+        :emphasize-lines: 21,35
+        :caption: QM/MM MD run using Gaussian_ as an external QM package to compute the CM5 charges
+
+        #!/bin/bash
+
+        dir="qm_log"
+ 
+        if [ ! -d "$dir" ]; then
+                mkdir -p "$dir"
+                echo "Directory for storing QM log '$dir' created."
+        else
+                echo "Directory '$dir' already exists."
+        fi
+
+        for sys in {1..6}
+        do
+        for i in {1..5}
+        do
+                # Prefix for the input and output files
+                ref=step5.0_qmmm_min
+                step=step6.${sys}.${i}
+
+                # Sander production run
+                sander -O -i mdin/qmmm-sys-${sys}-hirs-chrg.in -p xenA_h_OHP.parm7 -c ${ref}.rst7 -o ${step}.mdout -r ${step}.rst7 -inf ${step}.mdinfo -ref ${ref}.rst7 -x ${step}.nc &
+
+                sleep 5s
+
+                # Storing the qm-mm region for each defined system 
+                mv qmmm_region.pdb qmmm_region_${sys}.pdb
+
+                # Capturing Gaussian log files at each step
+                count=0
+                
+                # Whenever gaussian completes its job, move the old log file to the qm_log directory
+                while ! grep "Final Performance Info" ${step}.mdinfo > /dev/null; do
+                if [[ -e old.gau_job.log ]]; then
+
+                mv old.gau_job.log qm_log/${step}_gau_${count}.log
+
+                ((count=count+1))
+                fi
+                done
+
+        done
+        done
+
+Whereas, the output of TeraChem_ is a bit different. It write a dat file as an output that consist of general stuff like SCF, energy, homo-lumo gap etc., whereas the extra parameters like the charges are stored in the scratch directory. So, we have to store both the dat file as well as the charge_vdd.xls at each step. Here is the content of the :file:`tutorial/pre-processing/2-amber-qm-vs-vdd-chrgs.sh`    
+
+.. code-block::
+        :emphasize-lines: 21,35
+        :caption: QM/MM MD run using Gaussian_ as an external QM package to compute the CM5 charges
+
+        #!/bin/bash
+
+        dir="qm_log"
+ 
+        if [ ! -d "$dir" ]; then
+                mkdir -p "$dir"
+                echo "Directory for storing QM log '$dir' created."
+        else
+                echo "Directory '$dir' already exists."
+        fi
+
+        for sys in {1..6}
+        do
+        for i in {1..5}
+        do
+                # Prefix for the input and output files
+                ref=step5.0_qmmm_min
+                step=step6.${sys}.${i}
+
+                # Sander production run
+                sander -O -i mdin/qmmm-sys-${sys}-vdd-chrg.in -p xenA_h_OHP.parm7 -c ${ref}.rst7 -o ${step}.mdout -r ${step}.rst7 -inf ${step}.mdinfo -ref ${ref}.rst7 -x ${step}.nc &
+
+                sleep 5s
+
+                # Storing the qm-mm region for each defined system 
+                mv qmmm_region.pdb qmmm_region_${sys}.pdb
+
+                # Capturing Gaussian log files at each step
+                count=0
+                
+                # Whenever gaussian completes its job, move the old log file to the qm_log directory
+                while ! grep "Final Performance Info" ${step}.mdinfo > /dev/null; do
+                if [[ -e old.tc_job.dat ]]; then
+
+                mv old.tc_job.dat gau_log/${step}_tc_${count}.dat
+                mv scr/charge_vdd.xls scr/${step}_charge_vdd_${count}.xls
+
+                ((count=count+1))
+                fi
+                done
+
+        done
+        done
 
 
 .. rubric:: Footnotes
