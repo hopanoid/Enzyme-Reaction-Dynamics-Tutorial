@@ -156,7 +156,7 @@ Now, its time to demonstrate how to compute and collect these charges while runn
                 # Storing the qm-mm region for each defined system 
                 mv qmmm_region.pdb qmmm_region_${sys}.pdb
 
-                # Capturing Gaussian log files at each step
+                # Capturing QM log files at each step
                 count=0
                 
                 # Whenever gaussian completes its job, move the old log file to the qm_log directory
@@ -172,11 +172,13 @@ Now, its time to demonstrate how to compute and collect these charges while runn
         done
         done
 
+This script will save and rename the *gau_job.log* file at each step for each of the QM system. You can parse CM5 atomic charges from the Gaussian log file using any text file reader or using the progamming languagge of your choice. 
+
 Whereas, the output of TeraChem_ is a bit different. It write a dat file as an output that consist of general stuff like SCF, energy, homo-lumo gap etc., whereas the extra parameters like the charges are stored in the scratch directory. So, we have to store both the dat file as well as the charge_vdd.xls at each step. Here is the content of the :file:`tutorial/pre-processing/2-amber-qm-vs-vdd-chrgs.sh`    
 
 .. code-block::
-        :emphasize-lines: 21,35
-        :caption: QM/MM MD run using Gaussian_ as an external QM package to compute the CM5 charges
+        :emphasize-lines: 21,35,36
+        :caption: QM/MM MD run using TeraChem_ as an external QM package to compute the VDD charges
 
         #!/bin/bash
 
@@ -205,14 +207,14 @@ Whereas, the output of TeraChem_ is a bit different. It write a dat file as an o
                 # Storing the qm-mm region for each defined system 
                 mv qmmm_region.pdb qmmm_region_${sys}.pdb
 
-                # Capturing Gaussian log files at each step
+                # Capturing QM log files at each step
                 count=0
                 
-                # Whenever gaussian completes its job, move the old log file to the qm_log directory
+                # Whenever TeraChem completes its job, move the old log file to the qm_log directory
                 while ! grep "Final Performance Info" ${step}.mdinfo > /dev/null; do
                 if [[ -e old.tc_job.dat ]]; then
 
-                mv old.tc_job.dat gau_log/${step}_tc_${count}.dat
+                mv old.tc_job.dat qm_log/${step}_tc_${count}.dat
                 mv scr/charge_vdd.xls scr/${step}_charge_vdd_${count}.xls
 
                 ((count=count+1))
@@ -222,7 +224,8 @@ Whereas, the output of TeraChem_ is a bit different. It write a dat file as an o
         done
         done
 
-
+This script will save and rename the *charge_vdd.xls* file at each step for each of the QM system. The *.xls* is a text file consists of three columns namely atom number, atom name and the computed VDD charges for the respective atom.   
+ 
 .. rubric:: Footnotes
 
 .. [#f1] https://doi.org/10.1021/acs.jpcb.6b07814 https://doi.org/10.1021/acs.jcim.2c01522

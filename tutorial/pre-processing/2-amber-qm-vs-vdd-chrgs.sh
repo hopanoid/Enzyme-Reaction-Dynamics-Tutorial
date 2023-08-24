@@ -25,14 +25,14 @@ do
         # Storing the qm-mm region for each defined system 
         mv qmmm_region.pdb qmmm_region_${sys}.pdb
 
-        # Capturing Gaussian log files at each step
+        # Capturing QM log files at each step
         count=0
         
-        # Whenever gaussian completes its job, move the old log file to the qm_log directory
+        # Whenever TeraChem completes its job, move the old log file to the qm_log directory
         while ! grep "Final Performance Info" ${step}.mdinfo > /dev/null; do
         if [[ -e old.tc_job.dat ]]; then
 
-        mv old.tc_job.dat gau_log/${step}_tc_${count}.dat
+        mv old.tc_job.dat qm_log/${step}_tc_${count}.dat
         mv scr/charge_vdd.xls scr/${step}_charge_vdd_${count}.xls
 
         ((count=count+1))
