@@ -3,13 +3,13 @@
 .. include:: /includes/defs.rst
 .. include:: /includes/links.rst
 
-******************
-Select A QM System 
-******************
+*********
+QM Region 
+*********
 
-===============================================
-How to choose appropriate QM atoms for QM layer  
-===============================================
+===================================
+Selection of Residues for QM Region  
+===================================
 
 What should be the composition of QM regions and which residues should be included. This is an important question to ask while modelling an enzymatic reaction using QM/MM simulations. A couple of articles available on this [#f1]_ but there are no straightforward answers. However, chemical intution or proximity could be a guiding approach, later on the perimter of QM region could be expanded if your computational resources permits. Following this, we also begin with the OYE active site residues and overall modelled six different QM regions, details of which are availabe in our supplementary pdf file of our article. We have evaluated the convergence of total atomic charges on the substrate along the increasing number of atoms in QM region, finally we have choosed the QM region comprising of Y27, H178, H181, Y183, LumiFlavin, substarte and the nearest water molecule.   
 
@@ -225,7 +225,11 @@ Whereas, the output of TeraChem_ is a bit different. It write a dat file as an o
         done
 
 This script will save and rename the *charge_vdd.xls* file at each step for each of the QM system. The *.xls* is a text file consists of three columns namely atom number, atom name and the computed VDD charges for the respective atom.   
- 
+
+Finally, we have analysed the total atomic charges of the substrate *vs* the six different QM regions. Please follow the supplementary figure S25(a), where you can see that the substrate's partial charge don't significantly from QM4 to QM6. Hence, we have selected the QM4 region as our choice for subsequent QM/MM simulations as follows.
+
+
+
 .. rubric:: Footnotes
 
 .. [#f1] https://doi.org/10.1021/acs.jpcb.6b07814 https://doi.org/10.1021/acs.jcim.2c01522
