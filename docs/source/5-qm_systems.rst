@@ -172,6 +172,15 @@ Now, its time to demonstrate how to compute and collect these charges while runn
         done
         done
 
+.. important::
+
+        Please pay attention to the variables used in this script. In our case we had 6 different QM regions, hence
+        the $sys variable in this script should have a range 1-6. We aimed to run 5 short 200 fs QM/MM runs to monitor
+        the atomic charges, hence the $i variable should have a range 1-5. The $sys and $i variable have been further
+        passed to *sander* input and output flags, and for naming the QM log files. In our case, the QM regions may 
+        differ, the number of simulations may vary. So, read the above script carefully, there is a risk that you may
+        overwrite existing files if you don't know this bash script very well.
+
 This script will save and rename the *gau_job.log* file at each step for each of the QM system. You can parse CM5 atomic charges from the Gaussian log file using any text file reader or using the progamming languagge of your choice. 
 
 Whereas, the output of TeraChem_ is a bit different. It write a dat file as an output that consist of general stuff like SCF, energy, homo-lumo gap etc., whereas the extra parameters like the charges are stored in the scratch directory. Here, we are storing both the dat file as well as the charge_vdd.xls at each step. Here is the content of the :file:`tutorial/pre-processing/2-amber-qm-vs-vdd-chrgs.sh`    
@@ -230,11 +239,10 @@ This script will save and rename the *charge_vdd.xls* file at each step for each
 
         Monitoring HOMO-LUMO Gap
 
-        It has been reported for QM/MM simulations of proteins ans other solvated molecules,
+        It has been reported for QM/MM simulations of proteins and other solvated molecules,
         that the HOMO-LUMO gap turned down to zero! [#f6]_ This case should be avoided, hence we
         suggest to monitor the HOMO-LUMO gap for your chosen QM region. The corresponding 
-        figure depicting the HOMO-LUMO gap for our QM regions is figure S25(b) in our 
-        supplementary.  
+        figure depicting the HOMO-LUMO gap for our QM regions is supplementary figure S25(b).  
 
 Finally, we have analysed the total atomic charges of the substrate *vs* the six different QM regions. Please follow the supplementary figure S25(a), where you can see that the substrate's partial charge don't vary significantly from QM4 to QM6. Hence, we have selected the QM4 region as our choice for subsequent QM/MM simulations as follows.
 
