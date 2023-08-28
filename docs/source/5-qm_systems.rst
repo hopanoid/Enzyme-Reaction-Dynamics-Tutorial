@@ -231,7 +231,7 @@ This script will save and rename the *charge_vdd.xls* file at each step for each
         Monitoring HOMO-LUMO Gap
 
         It has been reported for QM/MM simulations of proteins ans other solvated molecules,
-        that the HOMO-LUMO gap turned down to zero! This case should be avoided, hence we
+        that the HOMO-LUMO gap turned down to zero! [#f6]_ This case should be avoided, hence we
         suggest to monitor the HOMO-LUMO gap for your chosen QM region. The corresponding 
         figure depicting the HOMO-LUMO gap for our QM regions is figure S25(b) in our 
         supplementary.  
@@ -247,3 +247,4 @@ Finally, we have analysed the total atomic charges of the substrate *vs* the six
 .. [#f3] https://doi.org/10.1021/ct200866d
 .. [#f4] https://www.degruyter.com/document/doi/10.1515/crll.1908.134.198/html
 .. [#f5] https://doi.org/10.1002/jcc.10351 https://doi.org/10.1021/acs.joc.8b02740
+.. [#f6] https://doi.org/10.1088/0953-8984/25/15/152101
