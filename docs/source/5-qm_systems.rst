@@ -125,6 +125,21 @@ These highlighted lines specify the basis set, QM method, the mixed precision (m
 
 Now, its time to demonstrate how to compute and collect these charges while running QM/MM MD simulations with *sander*. We are going to trick the *sander* output using bash scripting and will navigate the Gaussian_ and TeraChem_ output to a separate directory. We will use QM/MM minimised structure as an input for this step and will run 5 independent 200 ps QM/MM MD runs for each of the QM system under investigation. As you can read in the above *amber* mdin file, we are using a timestep of 1 fs, so in total we should have 1000 frames to analyse for each of the QM systems. Here is the content of the :file:`tutorial/pre-processing/2-amber-qm-vs-hirs-chrgs.sh`
 
+.. admonition:: Trick the Amber using its old ways!.
+
+        Using Amber's QM/MM functionality, you can take advantage of using a QM package seprately,
+        like if you want to compute a specific property related to QM region along with running a
+        QM/MM MD simulation, specific atomic charges, dipole moment etc. And later on, the output
+        from the QM package could be saved separately to analyse the respective property of
+        choice. Amber will prepare the input file for chosen QM package on its own and will run the
+        QM package using path specified in your machine. Each QM package will then run indepdently,
+        while *sander* is in wait for their output. Once the QM package finished their job, *sander*
+        reads the output and proceed for the next step. The new input file for the QM package will
+        be prepared and the old input and output files then renamed with a prefix *old*. We are going
+        to move these *old* files and will store them in a separate folder for later processing. There
+        are also various other ways to automatise this, you can also modify the Amber QM/MM source code
+        during installation , and then specific purpose Amber can be compiled using these modified scripts.  
+
 .. code-block::
         :emphasize-lines: 21,35
         :caption: QM/MM MD run using Gaussian_ as an external QM package to compute the CM5 charges
@@ -177,7 +192,7 @@ Now, its time to demonstrate how to compute and collect these charges while runn
         Please pay attention to the variables used in this script. In our case we had 6 different QM regions, hence
         the $sys variable in this script should have a range 1-6. We aimed to run 5 short 200 fs QM/MM runs to monitor
         the atomic charges, hence the $i variable should have a range 1-5. The $sys and $i variable have been further
-        passed to *sander* input and output flags, and for naming the QM log files. In our case, the QM regions may 
+        passed to *sander* input and output flags, and for naming the QM log files. In your case, the QM regions may 
         differ, the number of simulations may vary. So, read the above script carefully, there is a risk that you may
         overwrite existing files if you don't know this bash script very well.
 

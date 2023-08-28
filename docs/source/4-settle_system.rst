@@ -176,7 +176,14 @@ The flag "qmmask" up here, is defining the region to be treated using SQM. It is
         use_template =  0,             ! No template specified for TeraChem input
         /
         
-We have used a script to automtise the above steps. If you are following these steps for the first time, do not run this script blindly. Be aware that it depends on the system to system, how much and which equilibration you need. Especially for a completely user-build system, unlike a crystal structure you need extra equiliration time. Here is the content of the full automated script :file:`tutorial/pre-processing/1-amber-pre-run.sh` 
+.. important::
+
+        We have used a script to automtise the above steps. If you are following these steps for the first time, 
+        do not run this script blindly. Be aware that it depends on the system to system, how much and which 
+        equilibration you need. Especially for a completely user-build system, unlike a crystal structure 
+        you need extra equiliration time. 
+        
+Here is the content of the full automated script :file:`tutorial/pre-processing/1-amber-pre-run.sh` 
 
 .. code-block:: csh
         :emphasize-lines: 20, 26, 31, 36, 41
@@ -227,7 +234,7 @@ We have used a script to automtise the above steps. If you are following these s
         sander -O -i ${mdin_prefix}/qmmm_min.in -p ${init}.parm7 -c ${sqm_prefix}.rst7 -o ${qmmm_prefix}.mdout -r ${qmmm_prefix}.rst7 -inf ${qmmm_prefix}.mdinfo -ref ${sqm_prefix}.rst7 -x ${qmmm_prefix}.nc
         endif
 
-Here is the final system, we just build and minimised
+Through above script we have equilibrated the solvent positions around enzyme, followed by minismisation steps using QM/MM. Now, we are going to use the QM/MM minimised structure obtained from the *step5* for our futher investigation. 
 
 
         
