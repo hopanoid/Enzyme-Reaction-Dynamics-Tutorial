@@ -52,10 +52,7 @@ html_theme = 'sphinx_rtd_theme'
 epub_show_urls = 'footnote'
 
 ### Angstrom symbol
-rst_prolog = u"""\
-
-.. only:: html
-
-  :math:`\renewcommand\AA{\text{Å}}`
-
-"""
+latex_elements = {
+#this allows \AA to be used in equations
+'preamble': '\\global\\renewcommand{\\AA}{\\text{\\r{A}}}',
+}
