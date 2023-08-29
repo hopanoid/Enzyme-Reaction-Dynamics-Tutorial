@@ -116,6 +116,4 @@ Similar to previous one, this script will save and rename the *charge_vdd.xls* f
 The trajectory files generated from these three 5 ps simulations, have been analysed to extract the key geometrical parameters 
 of underlying binding pose of substrate. The summary of those parameters are presented in table S1. 
 
-.. rubric:: Footnotes
 
-.. [#f1] https://doi.org/10.1021/acs.jpcb.6b07814 https://doi.org/10.1021/acs.jcim.2c01522
