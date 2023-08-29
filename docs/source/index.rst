@@ -74,5 +74,7 @@ Contents
    3-system_setup
    4-settle_system
    5-qm_systems.rst
+   6-qmmm_production.rst
+   7-smd_simulations.rst
    alternatives
    api

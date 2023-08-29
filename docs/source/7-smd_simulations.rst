@@ -3,12 +3,16 @@
 .. include:: /includes/defs.rst
 .. include:: /includes/links.rst
 
-*********
-QM Region 
-*********
+####################################
+Part - IV (Free Energy Calculations)
+####################################
+
+*********************
+QM/MM SMD Simulations
+*********************
 
 ===================================
-Selection of Residues for QM Region  
+Selection of A Collective Variables  
 ===================================
 
 What should be the composition of QM regions and which residues should be included. This is an important question to ask while modelling an enzymatic reaction using QM/MM simulations. A couple of articles available on this [#f1]_ but there are no straightforward answers. However, chemical intution or proximity could be a guiding approach, later on the perimter of QM region could be expanded if your computational resources permits. Following this, we also begin with the OYE active site residues and overall modelled six different QM regions, details of which are availabe in our supplementary pdf file of our article. We have evaluated the convergence of total atomic charges on the substrate along the increasing number of atoms in QM region, finally we have choosed the QM region comprising of Y27, H178, H181, Y183, LumiFlavin, substarte and the nearest water molecule.   

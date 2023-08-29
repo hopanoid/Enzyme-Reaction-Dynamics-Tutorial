@@ -1,0 +1,36 @@
+298K constant temp QMMMMD
+&cntrl
+imin= 0,                       ! Run molecular dynamics.
+nstlim=5000,                   ! Number of MD-steps to be performed.
+dt=0.001,                      ! Time step (ps)
+ntb=2,                         ! Periodic conditiond at constant pressure
+cut=8.0,                       ! non-bond cut off
+ntc=2, ntf=2,                  ! Constrain lengths of bonds having hydrogen atoms (SHAKE) except flavin hydride HN5
+irest=0, ig=-1,                ! Generate a random seed for velocity
+tempi=298.0, temp0=298.0,      ! Temperature
+ntt=3, gamma_ln=3.0,           ! Temperature scaling using Langevin dynamics with the collision frequency in gamma_ln (ps−1)
+ntp=1, taup=2.0,               ! Pressure scaling
+ntpr=1, ntwx=1, ntwr=1,        ! Output options
+ifqnt=1,                       ! Switch on QM/MM coupled potential
+/
+&qmmm
+qmmask       = ':723,22185|@10987-11007,11011-11012,11016-11017,11020-11025,416-430,2631-2641,2678-2688,2702-2716', ! Atoms in the QM4 region
+qm_theory    = 'EXTERN',       ! Opt for external QM software
+qmcharge     =  -1,            ! Total charge on the atoms defined in the QM regions
+qmmm_int     =   1,            ! For Electronic embedding
+qm_ewald     =   0,            ! Switch off Ewald summation and PME for QM-MM interactions
+printcharges =   1,            ! Option to print the atomic charges of QM atoms in mdout file
+writepdb     =   1,            ! Write a pdb file showing the atoms selected in the SQM region, a good choice to verify selected atoms
+verbosity    =   1,            ! Level of information to be printed in mdout for selected QM atoms
+qmshake      =   0,            ! Turn off shake on QM atoms
+/
+&tc                            ! Syntax for using TeraChem as external QM software
+method       = 'B3LYP',        ! Choice of QM theory
+basis        = '6-31G*',       ! Basis set
+guesss       = 'scr/c0',       ! SCF guess to read/write
+scrdir       = 'scr',          ! Scratch directory
+keep_scr     = 'yes',          ! Don't delete the content of scratch directory
+ngpus        =  2,             ! Number of GPUs
+gpuids       =  0,1,           ! Specify the GPU ids
+use_template = 1,              ! Read the TeraChem template file "tc_job.tpl"
+/
