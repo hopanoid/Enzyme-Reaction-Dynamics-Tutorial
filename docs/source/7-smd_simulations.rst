@@ -15,8 +15,7 @@ QM/MM SMD Simulations
 Selection of A Collective Variables  
 ===================================
 
-Steered molecular dynamics (SMD) simulations are a tool to generate the possible structural configrations along a chosen reaction coordinate/collective variable (CV). In our case, we have a hydride transfer followed by a proton transfer. The details of our choosen CV is available in supplementary figures S27. We have chosen the linear combination of distances along the
-hydride/proton transfer, here is the CV file for the hyride transfer CV to be used for running QM/MM SMD simulations :file:`tutorial/simulations/mdin/cv-hy-1.in`  
+Steered molecular dynamics (SMD) simulations are employed to explore potential structural variations along a pre-defined reaction coordinate or collective variable (CV). This technique is particularly useful for speeding up processes that might otherwise take a considerable amount of time to happen naturally. Subsequently, these generated configurations can serve two main purposes: they can shed light on the structural alterations relevant to the underlying reaction, and they can be employed to calculate free energy changes along the given CV. In the context of our work, we are examining a sequential reaction involving an initial hydride transfer followed by a proton transfer. Guided by our QM/MM scan, we've determined that the hydride transfer occurs first, necessitating that we focus on steering the system along the CV corresponding to hydride transfer before turning our attention to the proton transfer CV. Details concerning our chosen CVs are provided in supplementary figure S27. Here is the CV file for the hyride transfer CV to be used for running QM/MM SMD simulations :file:`tutorial/simulations/mdin/cv-hy-1.in`  
 
 .. code-block:: 
         :emphasize-lines: 4,5,6,7
@@ -84,7 +83,7 @@ Here is the amber *mdin* file for running QM/MM SMD simulation along the hydride
         /
 
 
-Now, its time to demonstrate how to compute and collect these charges while running QM/MM MD simulations with *sander*. We are going to trick the *sander* output using bash scripting and will navigate the Gaussian_ and TeraChem_ output to a separate directory. We will use QM/MM minimised structure as an input for this step and will run 5 independent 200 ps QM/MM MD runs for each of the QM system under investigation. As you can read in the above *amber* mdin file, we are using a timestep of 1 fs, so in total we should have 1000 frames to analyse for each of the QM systems. Here is the content of the :file:`tutorial/pre-processing/2-amber-qm-vs-hirs-chrgs.sh`
+Now, given the stochastic nature of molecular dynamics simulations, it is generally advised to run multiple SMD trajectories from different initial configurations to better sample the reaction coordinate. We have chosen mutliple starting configrations from our last three QM/MM production runs, where the hydride CV has a value of 2.0\AA Here is the content of the :file:`tutorial/pre-processing/2-amber-qm-vs-hirs-chrgs.sh`
 
 .. admonition:: Trick the Amber using its old ways!.
 

@@ -6,7 +6,7 @@ import os
 
 project = 'Oxime-Biocatalysis'
 copyright = '2023, Amit'
-author = 'Amit'
+author = 'Amit Singh Sahrawat'
 
 release = '0.1'
 version = '0.1.0'
@@ -50,3 +50,12 @@ html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+### Angstrom symbol
+rst_prolog = u"""\
+
+.. only:: html
+
+  :math:`\renewcommand\AA{\text{Å}}`
+
+"""
