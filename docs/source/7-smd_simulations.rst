@@ -3,6 +3,11 @@
 .. include:: /includes/defs.rst
 .. include:: /includes/links.rst
 
+.. only:: html
+
+   :math:'\\require{mediawiki-texvc}'
+
+
 ####################################
 Part - IV (Free Energy Calculations)
 ####################################
@@ -83,7 +88,7 @@ Here is the amber *mdin* file for running QM/MM SMD simulation along the hydride
         /
 
 
-Now, given the stochastic nature of molecular dynamics simulations, it is generally advised to run multiple SMD trajectories from different initial configurations to better sample the reaction coordinate. We have chosen mutliple starting configrations from our last three QM/MM production runs, where the hydride CV has a value of 2.0\AA. The value of 2.0\AA is based on the fact that the coordinate scan along the hyride transfer CV has shown minimum at this distance, hence we have chosen this as our  Using these randomly generated configrations as an input, we have an 75 independent QM/MM SMD simulations for hydride tranfer CV, followed by same number of simulations for proton transfer CV. Here is the content of the :file:`tutorial/pre-processing/2-amber-qm-vs-hirs-chrgs.sh`
+Now, given the stochastic nature of molecular dynamics simulations, it is generally advised to run multiple SMD trajectories from different initial configurations to better sample the reaction coordinate. We have chosen mutliple starting configrations from our last three QM/MM production runs, where the hydride CV has a value of 2.0 :math:'\AA' . The value of 2.0\AA is based on the fact that the coordinate scan along the hyride transfer CV has shown minimum at this distance, hence we have chosen this as our  Using these randomly generated configrations as an input, we have an 75 independent QM/MM SMD simulations for hydride tranfer CV, followed by same number of simulations for proton transfer CV. Here is the content of the :file:`tutorial/pre-processing/2-amber-qm-vs-hirs-chrgs.sh`
 
 .. admonition:: Trick the Amber using its old ways!.
 
