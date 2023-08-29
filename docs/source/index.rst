@@ -65,9 +65,6 @@ perform orbital analysis. An initial structure is provided, which can be found i
 :file:`tutorial/metadata/input_structures` directory, as well as the input files that
 are necessary for running Amber. The overall workflow consists of the following steps:
 
-Contents
---------
-
 .. toctree::
    1-protein
    2-ligand

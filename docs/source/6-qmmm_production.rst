@@ -7,8 +7,8 @@
 QM/MM Production Run
 ********************
 
-Now we are ready to run our QM/MM prodcution run. We will use the output from one of the short 200 fs run, we had simulated using
-QM4. Our aim was to run three *5 ps* independent QM/MM production runs. Here is the amber *mdin* :file:`tutorial/simulations/mdin/qmmm-tc-prod.in` 
+Now we are ready to run our QM/MM production run. We will use the output from one of the short 200 fs run we had simulated using
+QM4. Our aim is to run three *5 ps* independent QM/MM production runs. Here is the amber *mdin* :file:`tutorial/simulations/mdin/qmmm-tc-prod.in` 
 
 .. code-block::
         :emphasize-lines: 17,27,28,29,30,31,32
@@ -52,21 +52,15 @@ QM4. Our aim was to run three *5 ps* independent QM/MM production runs. Here is 
         /
 
 
-.. admonition:: Trick the Amber using its old ways!.
+.. admonition:: A more flexible view of binding pose!.
 
-        Using Amber's QM/MM functionality, you can take advantage of using a QM package seprately,
-        like if you want to compute a specific property related to QM region along with running a
-        QM/MM MD simulation, specific atomic charges, dipole moment etc. And later on, the output
-        from the QM package could be saved separately to analyse the respective property of
-        choice. Amber will prepare the input file for chosen QM package on its own and will run the
-        QM package using path specified in your machine. Each QM package will then run indepdently,
-        while *sander* is in wait for their output. Once the QM package finished their job, *sander*
-        reads the output and proceed for the next step. The new input file for the QM package will
-        be prepared and the old input and output files then renamed with a prefix *old*. We are going
-        to move these *old* files and will store them in a separate folder for later processing. There
-        are also various other ways to automatise this, you can also modify the Amber QM/MM source code
-        during installation , and then specific purpose Amber can be compiled using these modified scripts.  
-
+        The binding pose of a ligand is often described by geomterical parameters like
+        distances, angle/dihedrals etc. without giving any statistical significance 
+        to the given values. Here, by running three independent simulations we are 
+        aiming to compute the statistical significance for each of the geometrical
+        parameters pertaining to the binding pose of our substrate. The computed standard
+        deviations along with the average value ensure a more broader picture of active
+        site. Results from these calculations are summarised in the table S1 and S2.
 
 Here is the bash script that will automatically run these three independent simulations :file:`tutorial/simulations/3-amber-tc-prod.sh`    
 
@@ -114,6 +108,6 @@ Here is the bash script that will automatically run these three independent simu
 
 Similar to previous one, this script will save and rename the *charge_vdd.xls* file at each step for each of the QM system. 
 The trajectory files generated from these three 5 ps simulations, have been analysed to extract the key geometrical parameters 
-of underlying binding pose of substrate. The summary of those parameters are presented in table S1. 
+of underlying binding pose of substrate.
 
 
