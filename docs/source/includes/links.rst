@@ -26,6 +26,9 @@
 .. Gamess
 .. _Gamess: https://www.msg.chem.iastate.edu/gamess/
 
+.. Qsite
+.. _Qsite: https://www.schrodinger.com/products/qsite
+
 .. Orca
 .. _Orca: https://www.orcasoftware.de/tutorials_orca/#
 
