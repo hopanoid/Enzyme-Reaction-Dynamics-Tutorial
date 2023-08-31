@@ -22,7 +22,7 @@ Selection of A Collective Variables (CV)
 
 Steered molecular dynamics (SMD) simulations are employed to explore potential structural variations along a pre-defined reaction coordinate or collective variable (CV). This technique is particularly useful for speeding up processes that might otherwise take a considerable amount of time to happen naturally. Subsequently, these generated configurations can serve two main purposes: they can shed light on the structural alterations relevant to the underlying reaction, and they can be employed to calculate free energy changes along the given CV. 
 
-.. admonition:: How to choose starting value for a CV for SMD simulations?
+.. admonition:: How to choose a starting value for CV in SMD simulations?
 
         SMD simulations will steer your chosen CV from the defined initial position to the final postition.
         In our case, we know that the hyride will be transferred to N1 atom of the substrate from the N5 atom
@@ -61,7 +61,7 @@ In the context of our work, we are examining a sequential reaction involving an 
            nharm = 1, harm = 1000.0
         /
         
-The first highlighted line defines the atom numbers of the three atoms involved in hydride transfer. 11078 is substrates N1 atom, 11007 is the hyride ion, 10996 is the flavin's N5 atom. The hyride ion is being transferred from the N5 atom of the flavin to N1 atom of the substrate. The second highlighted line consist of the weightage factor for the respective distance, whereas the third highlighted line describe the starting and the end values of the handle position, respectively. The last highlighted line contains the value of spring constant.  
+The first highlighted line defines the atom numbers of the three atoms involved in hydride transfer. 11078 is substrates N1 atom, 11007 is the hyride ion (H5), 10996 is the flavin's N5 atom. The hyride ion is being transferred from the N5 atom of the flavin to N1 atom of the substrate. The second highlighted line consist of the weightage factor for the respective distance, whereas the third highlighted line describe the starting and the end values of the handle position, respectively. The last highlighted line contains the value of spring constant. As we found out from the QM/MM scan that the starting value for the N1-H5 distance should be 2.0 A, taking this into consideration, our CV has a starting value of 1.0 Angstrom and will goes upto -1.0 Angstrom. Overall, we are steering H5 towards N1 atoms and at the same time away from the N5 atom of the flavin. The total displacement of H5 atom would be 1 Angstrom. Each SMD simulation will be of 1 ps (timestep = 1 fs), this means the velocity of steering the H5 atom is 1 Angstrom/ps. This is an acceptable velocity considering the time scale of hydride/proton transfer in proteins, which is in ps. So, we are aiming not to steer the hydride ion unrealistically and not too fast as well!
 
 
 Here is the amber *mdin* file for running QM/MM SMD simulation along the hydride transfer CV. :file:`tutorial/simulations/mdin/qmmm-smd-hy-1.in`
@@ -114,14 +114,16 @@ Here is the amber *mdin* file for running QM/MM SMD simulation along the hydride
         /
 
 
-Now, given the stochastic nature of molecular dynamics simulations, it is generally advised to run multiple SMD trajectories from different initial configurations to better sample the reaction coordinate. We have chosen mutliple starting configrations from our last three QM/MM production runs, where the hydride CV has a value of 2.0 Angstrom . The value of 2.0 Angstrom is based on the fact that the coordinate scan along the hyride transfer CV has shown minimum at this distance, hence we have chosen this as our starting point for steering. Using these randomly generated configrations as an input, we have an 75 independent QM/MM SMD simulations for hydride tranfer CV, followed by same number of simulations for proton transfer CV. Here is the content of the :file:`tutorial/simulations/4-amber-tc-smd-hy-1.sh`
+.. admonition:: We Recommend! 
+        
+        Chosing multiple starting configrations for SMD simulations!.
 
-.. admonition:: Chosing a starting value of a CV for SMD simulations!.
+        Now, given the stochastic nature of molecular dynamics simulations, it is generally advised to run multiple SMD trajectories from different initial configurations to better sample the reaction coordinate. We have chosen mutliple starting configrations from our last three QM/MM production runs, where the hydride CV has a value of 1.0 Angstrom . As mentioned before, the value of 1.0 Angstrom is based on the fact that the coordinate scan along the hyride transfer CV has shown minimum at this distance, hence we have chosen this as our starting point for steering. Using VMD_ we have saved 10 random configrations (with CV=1.0) from the QM/MM production runs, and randomly using them as an input, we have an 75 independent QM/MM SMD simulations for hydride tranfer CV, followed by same number of simulations for proton transfer CV. 
 
-        hfgkdj  
-
+We have employed a bash script that will run the desired number of SMD simulations, while randomly choosing a starting configrations for each SMD run. Here is the content of the automated script :file:`tutorial/simulations/4-amber-tc-smd-hy-1.sh`
+ 
 .. code-block::
-        :emphasize-lines: 15
+        :emphasize-lines: 15,40
         :caption: QM/MM SMD simulations using TeraChem_ as an external QM package
 
         #!/bin/bash
@@ -135,10 +137,10 @@ Now, given the stochastic nature of molecular dynamics simulations, it is genera
                 echo "Directory '$dir' already exists."
         fi
 
-        for i in {1..75}
+        for i in {1..74}
         do
-                # Chose a random reference frame at each step
-                j=$(shuf -i 1-25 -n1)
+                # Chose a random reference frame
+                j=$(shuf -i 1-10 -n1)
 
                 # Prefix for the input and output files
                 ref=step7.0.prod.hy.cv.2.0.${j}
@@ -162,18 +164,13 @@ Now, given the stochastic nature of molecular dynamics simulations, it is genera
                 fi
                 done
 
+                # Renaming SMD work record file for each step separately
+                mv smd-hy-1.txt smd-hy-1-${i}.txt
+
         done
 
-This script will save and rename the *charge_vdd.xls* file at each step for each of the QM system. The *.xls* is a text file consists of three columns namely atom number, atom name and the computed VDD charges for the respective atom.   
+The first highlighted line defines that for each SMD run, a randomly selected input will be used from the 10 different starting configrations. This script will save and rename the *charge_vdd.xls* and *tc_job.dat* files at each step for each of the QM system. Later on, these files can be used to analyse the SCF, QM Energy, HOMO-LUMO Gap or the VDD charges etc.  
 
-.. admonition:: We Recommend!
+The scond highlighted line will save the *CV-vs-work* output from each SMD run, those are later to be used to compute the free energy profile along the CV. 
 
-        Monitoring HOMO-LUMO Gap
-
-        It has been reported for QM/MM simulations of proteins and other solvated molecules,
-        that the HOMO-LUMO gap turned down to zero! This case should be avoided, hence we
-        suggest to monitor the HOMO-LUMO gap for your chosen QM region. The corresponding 
-        figure depicting the HOMO-LUMO gap for our QM regions is supplementary figure S25(b).  
-
-Finally, we have analysed the total atomic charges of the substrate *vs* the six different QM regions. Please follow the supplementary figure S25(a), where you can see that the substrate's partial charge don't vary significantly from QM4 to QM6. Hence, we have selected the QM4 region as our choice for subsequent QM/MM simulations as follows.
-
+Apart from these 74 SMD simulations, we have run 1 SMD simulation seprately which is coupled with NBO analysis along the CV. Details of which is available in the next section.
