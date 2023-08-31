@@ -20,7 +20,7 @@ input file then passed on to NBO_ binaries and the respective output from the NB
 simulation, we need to mention this in the template file for TeraChem_ , here is the template file for TeraChem_ to generate NBO_ input :file:`tutorial/simulations/nbo/tc_job.tpl` 
 
 .. code-block::
-        :emphasize-lines:7,9 
+        :emphasize-lines: 7,9 
         :caption: Terachem template file to compute VDD charges and writing NBO input file
 
         # Run using SANDER file-based interface for TeraChem
