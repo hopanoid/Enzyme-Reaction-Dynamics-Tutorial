@@ -76,5 +76,6 @@ Contents
    5-qm_region.rst
    6-qmmm_production.rst
    7-smd_simulations.rst
+   8-nbo-smd.rst
    alternatives
    api
