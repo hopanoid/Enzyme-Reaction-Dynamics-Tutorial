@@ -49,6 +49,7 @@ templates_path = ['_templates']
 html_theme = 'sphinx_rtd_theme'
 
 ########## TOC
+html_theme_options = {
 # Toc options
 'collapse_navigation': True,
 'sticky_navigation': True,
