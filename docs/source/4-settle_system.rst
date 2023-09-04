@@ -135,6 +135,21 @@ This is a usual NPT run for 100 ps. Just to allow the solvent and hydrogen atoms
         
 The flag "qmmask" up here, is defining the region to be treated using SQM. It is highly recommended to turn on the "writepdb" flag. The "writepdb" flag would write a pdb file named "qmmm_region.pdb" for the defined SQM/QM region, which should be opened in a molecule viewer and should be checked for the correctness.
 
+.. important::
+        
+        Check your paths!!
+
+        We are going to run a pipline, where Amber, a QM package (TeraChem_ or Gaussian_ ) and later NBO programs are interconnected,
+        you should have these programs installed and their correct paths should be in your .bashrc or .bash_profile. Or you can add 
+        their paths in each of your automated bash scripts utilising them. Otherwise, this pipepline would not work and will display
+        errors like *sander* not found!! or not binaries available for *Gaussian* or *TeraChem* etc. We recommend adding these line
+        in your .bashrc:
+
+                # Source Amber, TeraChem and NBO
+                * source $your amber installation directory$/amber.sh
+                * source $your terachem installation directory$/SetTCVars.sh
+                * export NBOEXE="$your terachem/nbo installation directory$/bin/nbo6.i4.exe"
+        
         
 5. QM-MM Energy Minimization
         * A part of interest uses QM and rest is still under classical ff

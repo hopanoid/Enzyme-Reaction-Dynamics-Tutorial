@@ -143,4 +143,18 @@ There are minor changes in the bash script to run NBO_ alongwith the QM/MM SMD, 
 
         done
 
-The highlighted line direct the shell to rename and relocate the NBO_ input file at each step of the QM/MM SMD run.
+The highlighted line direct the shell to rename and relocate the NBO_ input file at each step of the QM/MM SMD run. Later on, you can use these saved *.47* files
+as an input for NBO program to generate the corresponding orbital information along the CV. These *.47* files are written by TeraChem_, having the wavefunction and coordinate information. Header of the *.47* is like:
+
+.. code-block:: console
+        
+         $GENNBO  NATOMS=113  NBAS=993  UPPER  BODM  FORMAT  $END
+         $NBO ARCHIVE FILE=OHPORB $END
+         $COORD
+         inpfile                                                                        ^@
+         6    6      -2.331320      -5.872233       7.639413
+         1    1      -2.006254      -6.944089       7.906230
+         1    1      -3.416712      -5.953286       7.656803
+
+
+You can customise the second line with the desired flags for processing the NBO input files. For more info on using NBO and its output, please visit https://nbo6.chem.wisc.edu/tutor_css.htm 
