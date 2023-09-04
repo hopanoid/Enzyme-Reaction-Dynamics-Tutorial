@@ -32,7 +32,7 @@ computation time as well.
 
 We have used Qsite_ (the QM/MM module of the Schroedinger package) for modelling the reaction coordinates using the truncated structure as an input.
 A brief details of our chosen parameters for QM/MM geometry optimisation is available in our methodolgy section of supplementary information. There
-are already several tutorial available demonstrating the QM/MM geomtery optimisation of reaction coordinates:
+are already several tutorials available demonstrating the QM/MM geomtery optimisation of reaction coordinates:
 
 .. hlist::
         :columns: 1
@@ -47,3 +47,4 @@ are already several tutorial available demonstrating the QM/MM geomtery optimisa
 
                 * NWChem   --> `<https://nwchemgit.github.io/ONIOM.html>`_
 
+Our QM/MM geometry optimised structures of the active site for each reaction coordinate are available in our GitHub repo in :file:`tutorial/qmmm-geom-opt/` directory.
