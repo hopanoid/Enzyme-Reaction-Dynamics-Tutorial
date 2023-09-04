@@ -35,9 +35,9 @@ A brief details of our chosen parameters for QM/MM geometry optimisation is avai
 are already several tutorial available demonstrating the QM/MM geomtery optimisation of reaction coordinates:
 
 .. hlist::
-        :columns: 2
+        :columns: 1
 
-        * Online Servers
+        * QM/MM Geometry Optimisation Tutorials
 
                 * Qsite    --> `<https://www.schrodinger.com/training/defining-qm-and-mm-regions-qsite221>`_
 
