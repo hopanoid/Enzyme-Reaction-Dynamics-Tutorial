@@ -48,6 +48,15 @@ templates_path = ['_templates']
 
 html_theme = 'sphinx_rtd_theme'
 
+########## TOC
+# Toc options
+'collapse_navigation': True,
+'sticky_navigation': True,
+'navigation_depth': 3,
+'includehidden': True,
+'titles_only': False
+}
+
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
 
