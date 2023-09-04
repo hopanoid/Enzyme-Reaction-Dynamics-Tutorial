@@ -39,11 +39,11 @@ are already several tutorial available demonstrating the QM/MM geomtery optimisa
 
         * Online Servers
 
-                * `Qsite <https://www.schrodinger.com/training/defining-qm-and-mm-regions-qsite221>`_
+                * Qsite    --> `<https://www.schrodinger.com/training/defining-qm-and-mm-regions-qsite221>`_
 
-                * `Gaussian <http://schlegelgroup.wayne.edu/Software/oniomtoolTAO/TAOtutorial.html>`_
+                * Gaussian --> `<http://schlegelgroup.wayne.edu/Software/oniomtoolTAO/TAOtutorial.html>`_
 
-                * `Orca <https://www.orcasoftware.de/tutorials_orca/multi/basics.html>`_
+                * Orca     --> `<https://www.orcasoftware.de/tutorials_orca/multi/basics.html>`_
 
-                * `NWChem <https://nwchemgit.github.io/ONIOM.html>`_
+                * NWChem   --> `<https://nwchemgit.github.io/ONIOM.html>`_
 
