@@ -75,7 +75,8 @@ Contents
    4-settle_system
    5-qm_region.rst
    6-qmmm_production.rst
-   7-smd_simulations.rst
-   8-nbo-smd.rst
+   7-qmmm_geom_opt.rst
+   8-smd_simulations.rst
+   9-nbo-smd.rst
    alternatives
    api

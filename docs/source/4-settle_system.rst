@@ -146,9 +146,11 @@ The flag "qmmask" up here, is defining the region to be treated using SQM. It is
         in your .bashrc:
 
                 # Source Amber, TeraChem and NBO
-                * source $your amber installation directory$/amber.sh
-                * source $your terachem installation directory$/SetTCVars.sh
-                * export NBOEXE="$your terachem/nbo installation directory$/bin/nbo6.i4.exe"
+                source $your amber installation directory$/amber.sh
+                
+                source $your terachem installation directory$/SetTCVars.sh
+                
+                export NBOEXE="$your terachem/nbo installation directory$/bin/nbo6.i4.exe"
         
         
 5. QM-MM Energy Minimization
@@ -191,7 +193,7 @@ The flag "qmmask" up here, is defining the region to be treated using SQM. It is
         use_template =  0,             ! No template specified for TeraChem input
         /
         
-.. important::
+.. note::
 
         We have used a script to automtise the above steps. If you are following these steps for the first time, 
         do not run this script blindly. Be aware that it depends on the system to system, how much and which 

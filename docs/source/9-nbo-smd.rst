@@ -157,4 +157,4 @@ as an input for NBO program to generate the corresponding orbital information al
          1    1      -3.416712      -5.953286       7.656803
 
 
-You can customise the second line with the desired flags for processing the NBO input files. For more info on using NBO and its output, please visit https://nbo6.chem.wisc.edu/tutor_css.htm 
+You can customise the second line with the desired flags for processing the NBO_ input files. For more info on using NBO_ and its output, please visit https://nbo6.chem.wisc.edu/tutor_css.htm 
