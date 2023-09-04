@@ -3,12 +3,6 @@
 .. include:: /includes/defs.rst
 .. include:: /includes/links.rst
 
-#############################
-Part - I (System Preparation)
-#############################
-
-.. _parametrisation:
-
 ***********************
 Protein Parametrisation
 ***********************

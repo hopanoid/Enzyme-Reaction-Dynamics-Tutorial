@@ -3,11 +3,6 @@
 .. include:: /includes/defs.rst
 .. include:: /includes/links.rst
 
-
-####################################
-Part - IV (Free Energy Calculations)
-####################################
-
 *********************
 QM/MM SMD Simulations
 *********************

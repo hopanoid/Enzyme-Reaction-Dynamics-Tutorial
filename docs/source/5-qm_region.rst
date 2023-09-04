@@ -3,10 +3,6 @@
 .. include:: /includes/defs.rst
 .. include:: /includes/links.rst
 
-####################################
-Part - III (How to Choose a QM part)
-####################################
-
 *********
 QM Region 
 *********
