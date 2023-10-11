@@ -107,11 +107,11 @@ Here is the amber *mdin* file for running QM/MM SMD simulation along the hydride
 
 .. admonition:: We Recommend! 
         
-        Chosing multiple starting configrations for SMD simulations!.
+        Chosing multiple starting configuration for SMD simulations!.
 
-        Now, given the stochastic nature of molecular dynamics simulations, it is generally advised to run multiple SMD trajectories from different initial configurations to better sample the reaction coordinate. We have chosen mutliple starting configrations from our last three QM/MM production runs, where the hydride CV has a value of 1.0 Angstrom . As mentioned before, the value of 1.0 Angstrom is based on the fact that the coordinate scan along the hyride transfer CV has shown minimum at this distance, hence we have chosen this as our starting point for steering. Using VMD_ we have saved 10 random configrations (with CV=1.0) from the QM/MM production runs, and randomly using them as an input, we have 95 independent QM/MM SMD simulations for hydride transfer, followed by same number of simulations for proton transfer CV. 
+        Now, given the stochastic nature of molecular dynamics simulations, it is generally advised to run multiple SMD trajectories from different initial configurations to better sample the reaction coordinate. We have chosen mutliple starting configuration from our last three QM/MM production runs, where the hydride CV has a value of 1.0 Angstrom . As mentioned before, the value of 1.0 Angstrom is based on the fact that the coordinate scan along the hyride transfer CV has shown minimum at this distance, hence we have chosen this as our starting point for steering. Using VMD_ we have saved 10 random configuration (with CV=1.0) from the QM/MM production runs, and randomly using them as an input, we have 95 independent QM/MM SMD simulations for hydride transfer, followed by same number of simulations for proton transfer CV. 
 
-We have employed a bash script that will run the desired number of SMD simulations, while randomly choosing a starting configrations for each SMD run. Here is the content of the automated script :file:`tutorial/simulations/4-amber-tc-smd-hy-1.sh`
+We have employed a bash script that will run the desired number of SMD simulations, while randomly choosing a starting configuration for each SMD run. Here is the content of the automated script :file:`tutorial/simulations/4-amber-tc-smd-hy-1.sh`
  
 .. code-block::
         :emphasize-lines: 15,40
@@ -160,7 +160,7 @@ We have employed a bash script that will run the desired number of SMD simulatio
 
         done
 
-The first highlighted line defines that for each SMD run, a randomly selected input will be used from the 10 different starting configrations. This script will save and rename the *charge_vdd.xls* and *tc_job.dat* files at each step for each of the QM system. Later on, these files can be used to analyse the SCF, QM Energy, HOMO-LUMO Gap or the VDD charges etc.  
+The first highlighted line defines that for each SMD run, a randomly selected input will be used from the 10 different starting configuration. This script will save and rename the *charge_vdd.xls* and *tc_job.dat* files at each step for each of the QM system. Later on, these files can be used to analyse the SCF, QM Energy, HOMO-LUMO Gap or the VDD charges etc.  
 
 The scond highlighted line will save the *CV-vs-work* output from each SMD run, those are later to be used to compute the free energy profile along the CV.
 Finally, free energy profile along the CV have been calculated by the fluctuation-dissipation (FD) estimator, details of which is available in the supplementary 
