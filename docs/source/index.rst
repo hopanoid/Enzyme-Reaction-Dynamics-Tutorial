@@ -41,8 +41,7 @@ to amines via imines by reductive dehydration. Using QM/MM simulations, we aim t
 the molecular structures corresponding to the respective reaction coordinates 
 (Reactant, Transition States and Products) for each reaction pathway. Finally, the energy 
 barrier would be computed using QM/MM Steered Molecular Dynamics (SMD) simulations. For more
-details about this biotransformation scheme, please read our publication doi:xxxxxx(Yet to be 
-issued).
+details about this biotransformation scheme, please read our publication doi:10.1021/acscatal.3c04362.
 
 
 Tutorial files
