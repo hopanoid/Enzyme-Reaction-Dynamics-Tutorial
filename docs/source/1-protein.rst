@@ -113,8 +113,8 @@ You can select the appropriate form of HIS by renaming HIS to HIE (proton on NE2
 HID (proton on ND1), or HIP (both protons). By this way amber will add the required missing atoms
 for the specified mutation, but be careful here, for example if you wanna mutate Lysine to Glutamic
 Acid, first delete the sidechain atoms of the Lysine residue from the PDB file, then use the below
-command, amber will then add the coordinates of missing atoms for the Glutamic acid residue. In short 
-trick is to retain the backbone atoms before any substituion!!
+command, amber will then add the coordinates of missing atoms for the Glutamic acid residue. In short, 
+trick is to retain the backbone atoms only before any substituion!!
 
 .. code-block::
         :caption: Manipulating protonation state of a residue using LEaP (Ambertools)

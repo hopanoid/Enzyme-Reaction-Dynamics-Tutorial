@@ -257,9 +257,9 @@ This script will save and rename the *charge_vdd.xls* file at each step for each
         It has been reported for QM/MM simulations of proteins and other solvated molecules,
         that the HOMO-LUMO gap turned down to zero! [#f6]_ This case should be avoided, hence we
         suggest to monitor the HOMO-LUMO gap for your chosen QM region. The corresponding 
-        figure depicting the HOMO-LUMO gap for our QM regions is supplementary figure S25(b).  
+        figure depicting the HOMO-LUMO gap for our QM regions is supplementary figure S26(b).  
 
-Finally, we have analysed the total atomic charges of the substrate *vs* the six different QM regions. Please follow the supplementary figure S25(a), where you can see that the substrate's partial charge don't vary significantly from QM4 to QM6. Hence, we have selected the QM4 region as our choice for subsequent QM/MM simulations as follows.
+Finally, we have analysed the total atomic charges of the substrate *vs* the six different QM regions. Please follow the supplementary figure S26(a), where you can see that the substrate's partial charge don't vary significantly from QM4 to QM6. Hence, we have selected the QM4 region as our choice for subsequent QM/MM simulations as follows.
 
 
 
