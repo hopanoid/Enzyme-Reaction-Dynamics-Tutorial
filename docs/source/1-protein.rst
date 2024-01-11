@@ -110,8 +110,11 @@ How to select protonation state of a specific residue?
 
 We are using Ambertools to choose the desired protonation form of H178.
 You can select the appropriate form of HIS by renaming HIS to HIE (proton on NE2), 
-HID (proton on ND1), or HIP (both protons). Don't worry about the residue numbers here,
-amber's residue number starts from 0, instead of PDB's 1.
+HID (proton on ND1), or HIP (both protons). By this way amber will add the required missing atoms
+for the specified mutation, but be careful here, for example if you wanna mutate Lysine to Glutamic
+Acid, first delete the sidechain atoms of the Lysine residue from the PDB file, then use the below
+command, amber will then add the coordinates of missing atoms for the Glutamic acid residue. In short 
+trick is to retain the backbone atoms before any substituion!!
 
 .. code-block::
         :caption: Manipulating protonation state of a residue using LEaP (Ambertools)
@@ -120,7 +123,7 @@ amber's residue number starts from 0, instead of PDB's 1.
         module load amber/20
         tleap -f leaprc.protein.ff14SB
         prot = loadpdb protein4amber.pdb
-        set {prot.177 prot.180} name "HID"
+        set {prot.178 prot.181} name "HID"
         savepdb prot wt_protein.pdb
         quit
 
