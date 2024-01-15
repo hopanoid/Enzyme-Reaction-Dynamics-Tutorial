@@ -60,7 +60,7 @@ QM4. Our aim is to run three *5 ps* independent QM/MM production runs. Here is t
         aiming to compute the statistical significance for each of the geometrical
         parameters pertaining to the binding pose of our substrate. The computed standard
         deviations along with the average value ensure a more broader picture of active
-        site. Results from these calculations are summarised in the table S1 and S2.
+        site. Results from these calculations are summarised in our supplementary file (table S1 and S2).
 
 Here is the bash script that will automatically run these three independent simulations :file:`tutorial/simulations/3-amber-tc-prod.sh`    
 
