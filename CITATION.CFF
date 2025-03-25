@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If this tutorial helps you, please cite the following article as below."
+authors:
+- family-names: "Sahrawat"
+  given-names: "Amit Singh"
+  orcid: "https://orcid.org/0000-0002-8324-6545"
+title: "Deciphering the unconventional reduction of C═ N bonds by old yellow enzymes using QM/MM"
+version: 1.0.0
+doi: 10.1021/acscatal.3c04362
+date-released: 2024-10-24
+url: "https://github.com/hopanoid/Enzyme-Reaction-Dynamics-Tutorial"
