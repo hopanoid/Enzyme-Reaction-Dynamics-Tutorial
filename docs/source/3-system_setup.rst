@@ -78,7 +78,7 @@ Here is the content of the :repo:`tutorial/metadata/system/2-tleap.in`
      
 
 
-Here is the final system, we just build
+Here is the final system, we just built
 
 .. figure:: /figs/system_v2.png
         

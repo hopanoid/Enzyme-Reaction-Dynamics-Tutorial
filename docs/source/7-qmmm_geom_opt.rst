@@ -26,7 +26,7 @@ computation time as well.
 .. admonition:: How to choose a snapshot from the MD simulations for QM/MM geometry optimisation?
 
         For modelling the structural coordinates of the biocatalysis reactions, we often took random snapshots from the
-        MD simulations, usually more than one for better statistical assessment. We advice a more investigative approach
+        MD simulations, usually more than one for better statistical assessment. We advise a more investigative approach
         rather than choosing a random snapshot. In our case, we monitor some key geometrical parameters pertaining to hydride
         transfer, like the distance between the hydride acceptor (N1) and donor (N5), the angle between the N5, N1 and hydride (H1)
         etc. A table summarising these geometrical parameters is available in our supplementary file (Table S1). The average value

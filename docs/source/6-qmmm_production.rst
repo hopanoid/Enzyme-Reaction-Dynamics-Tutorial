@@ -11,7 +11,7 @@
 QM/MM Production Run with TeraChem
 **********************************
 
-Now we are ready to run our QM/MM production run. We will use the output from one of the short 200 fs run we had simulated using
+We are now ready to run our QM/MM production run. We will use the output from one of the short 200 fs run we had simulated using
 QM4. Our aim is to run three *5 ps* independent QM/MM production runs. Here is the amber *mdin* :repo:`tutorial/simulations/mdin/qmmm-tc-prod.in` 
 
 .. code-block::

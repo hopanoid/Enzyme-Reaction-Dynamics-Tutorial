@@ -15,12 +15,9 @@ System Equilibration and Minimisation
 Removing bad atomic contacts and minimizing vacuum!
 ===================================================
 
-We have just modelled a "matured" system, means we have placed all required molecules in a box. This step-wise placement could lead
-to overlapping atomic positions or very close atomic contacts or very far atomic positions, this could result in atomic repulsion or
-can forbid possible atomic interactions too. To minimize these positional artifacts energy minimisation is a
-crucial step before proceeding further. Essentially, we are going to use the potential energy terms derived from the force-field,
-that will use the 3D coordinate as input and will try to optimise the positions of atoms, so that any clashes or
-vacuum therein will be minimised.
+We have just built a "matured" system — all required molecules placed inside a simulation box. This step-wise assembly can introduce overlapping atomic positions, overly close contacts, or unrealistic separations between atoms, which in turn can cause artificial repulsion or prevent expected interactions.
+
+Energy minimisation is therefore a crucial step before proceeding further. Using the potential energy terms from the force field, AMBER optimises atomic positions to resolve any clashes or vacuum artefacts in the initial configuration.
 
 Briefly, the system will undergo sequentially through steps:
 
@@ -41,7 +38,7 @@ Briefly, the system will undergo sequentially through steps:
         restraintmask = '!@H=&!:WAT,Na+' ! Restraints on the solute heavy atom
          /
         
-We are aiming to preserve the heavy atom positions, for this we are using a small restraint (10 kcal/mol/A^2) on the protein's heavy atom. You can commentout the highlighted lines (just add ! in the begining) if you wanna minimise all atoms.       
+We are aiming to preserve the heavy atom positions, for this we are using a small restraint (10 kcal/mol/A^2) on the protein's heavy atom. You can comment out the highlighted lines (just add ! at the beginning) if you want to minimise all atoms.       
                 
 2. Thermalisation
         * Kinetic energy or say the dynamics of the atoms increased step-wise
@@ -74,7 +71,7 @@ We are aiming to preserve the heavy atom positions, for this we are using a smal
         &wt type='TEMP0', istep1=10001, istep2=15000, value1=298.0, value2=298.0 /
         &wt type='END' /
         
-Its a 30 ps NVT equilibration where the temperature has been linearly increased from 0 to 298K from begining to 20 ps and for the rest of 10 ps, temperature will remain constant at 298K. Let's see if this is true or not!
+This is a 30 ps NVT equilibration where the temperature is linearly increased from 0 to 298 K over the first 20 ps and for the rest of 10 ps, temperature will remain constant at 298K. Let's see if this is true or not!
 
 .. figure:: /figs/step2-gradual-heat.png
 
@@ -255,7 +252,7 @@ Here is the content of the full automated script :repo:`tutorial/pre-processing/
         sander -O -i ${mdin_prefix}/qmmm_min.in -p ${init}.parm7 -c ${sqm_prefix}.rst7 -o ${qmmm_prefix}.mdout -r ${qmmm_prefix}.rst7 -inf ${qmmm_prefix}.mdinfo -ref ${sqm_prefix}.rst7 -x ${qmmm_prefix}.nc
         endif
 
-Through above script we have equilibrated the solvent positions around enzyme, followed by minismisation steps using QM/MM. Now, we are going to use the QM/MM minimised structure obtained from the *step5* for our futher investigation. 
+Through the above script we have equilibrated the solvent positions around the enzyme, followed by minimisation steps using QM/MM. We will use the QM/MM minimised structure from *step5* for all further investigation. 
 
 
         

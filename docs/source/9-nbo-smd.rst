@@ -40,7 +40,7 @@ simulation, we need to mention this in the template file for TeraChem_ , here is
 
 The first highlighted line directs the TeraChem_ to use advanced NBO_ functionality, where we can also specify the NBO_ keywords to be written
 in the NBO_ input file. The *ARCHIVE* keyword will save NBO_ input file *OHPORB.47* at each step, and later on we will store this file at a 
-specific location. There are no changes needed in the amber *mdin* file for running NBO_ alongwith QM/MM SMD, it will remains same as before :repo:`tutorial/simulations/nbo/mdin/qmmm-smd-hy-1.in`
+specific location. There are no changes needed in the amber *mdin* file for running NBO_ along with QM/MM SMD, it will remain the same as before :repo:`tutorial/simulations/nbo/mdin/qmmm-smd-hy-1.in`
 
 .. code-block::
         :emphasize-lines: 17,27,28,29,30,31,32,33,34,35
@@ -94,7 +94,7 @@ There are minor changes in the bash script to run NBO_ alongwith the QM/MM SMD, 
  
 .. code-block::
         :emphasize-lines: 39,40
-        :caption: QM/MM SMD simulations using TeraChem_ as an external QM package alongwith saving NBO_ input files
+        :caption: QM/MM SMD simulations using TeraChem_ as an external QM package along with saving NBO_ input files
 
         #!/bin/bash
 

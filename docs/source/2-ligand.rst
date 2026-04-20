@@ -59,7 +59,7 @@ We will use antechamber to assign atom types to the OHP ligand and calculate a s
 
         antechamber -i OHP.pdb -fi pdb -o OHP.mol2 -fo mol2 -c bcc -nc 0 -rn OHP -at gaff2
 
-Once we are sure that the point charges were generated The MOL2 file contains tridimensional information of the molecule as well as atom type and point charges. You can find more information on the MOL2 format here. The resulting MOL2 file is shown below:
+Once we are sure that the point charges were generated, the MOL2 file contains tridimensional information of the molecule as well as atom type and point charges. You can find more information on the MOL2 format here. The resulting MOL2 file is shown below:
 
 .. code-block:: bash
         

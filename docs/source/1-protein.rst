@@ -30,9 +30,9 @@ Splitting the PDB in protein, ligand and water molecules
 ========================================================
 
 
-First, we will split the PDB in 3 different groups: protein, ligands and water molecules as we need to treat them separately. OHP is the name of our oxime substrate, FMH is the flavin cofactor. Please pay attention to the PDB's Residue Name column (18-20) for the given name of the substrate therein. We have modified the name
-of flavin cofactor and our oxime substrate. If you wanna do so, simply open the PDB file in any text editor and replace the exisiting name with a name of your choice (should be equal to or less than three characters). Be careful, don't shift the columns as this will destroy the inherent position of PDB's field-id. Anyway her
-e are the bash commands to split input PDB files, to the respective protein and substrate files.
+First, we will split the PDB into three groups: protein, ligands, and water molecules, as each requires separate treatment. OHP is the name of our oxime substrate; FMH is the flavin cofactor. Pay attention to the PDB Residue Name column (positions 18–20) for the name assigned to each molecule in the file.
+
+We have modified the residue names of the flavin cofactor and the oxime substrate. If you want to do so, simply open the PDB file in a text editor and replace the existing name with a name of your choice (three characters or fewer). Be careful not to shift the columns, as this will corrupt the PDB field positions. Below are the bash commands to split the input PDB into protein, cofactor, substrate, and water files.
 
 .. code-block:: bash
 
@@ -113,12 +113,12 @@ Setting Histidine Protonation State with AMBER LEaP
 ===================================================
 
 We are using Ambertools to choose the desired protonation form of H178.
-You can select the appropriate form of HIS by renaming HIS to HIE (proton on NE2), 
-HID (proton on ND1), or HIP (both protons). By this way amber will add the required missing atoms
-for the specified mutation, but be careful here, for example if you wanna mutate Lysine to Glutamic
-Acid, first delete the sidechain atoms of the Lysine residue from the PDB file, then use the below
-command, amber will then add the coordinates of missing atoms for the Glutamic acid residue. In short, 
-trick is to retain the backbone atoms only before any substituion!!
+You can select the appropriate form of HIS by renaming HIS to HIE (proton on NE2),
+HID (proton on ND1), or HIP (both protons). This way AMBER will add the required missing atoms
+for the specified protonation state. Be careful: if you want to mutate a residue (e.g., Lysine to
+Glutamic Acid), first delete the sidechain atoms of the Lysine from the PDB file before running the
+command — AMBER will then add the coordinates of the missing atoms for Glutamic Acid. In short,
+the trick is to retain only backbone atoms before any substitution.
 
 .. code-block::
         :caption: Manipulating protonation state of a residue using LEaP (Ambertools)

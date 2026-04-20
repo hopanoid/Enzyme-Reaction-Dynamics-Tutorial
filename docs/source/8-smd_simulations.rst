@@ -32,7 +32,7 @@ Steered molecular dynamics (SMD) simulations are employed to explore potential s
         one should consider this question genuinely, as this could save significant amount of computation time for
         sampling the CV. We have chosen a different approach here, we ran a QM/MM scan along the N1-hydride distance
         using Qsite_ package (Gaussian_ can also be used). From the QM/MM scan, we found that the N1-hydride distance
-        has an initial minimum around 2.0 Angstrom, hence we have chose 2.0 Angstrom our starting distance to steer 
+        has an initial minimum around 2.0 Angstrom, hence we have chosen 2.0 Angstrom as our starting distance to steer 
         hydride atom from N5 atom to N1 atom.  
          
 
