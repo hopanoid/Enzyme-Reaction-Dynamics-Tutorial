@@ -47,4 +47,4 @@ are already several tutorials available demonstrating the QM/MM geometry optimis
 
                 * NWChem   --> `<https://nwchemgit.github.io/ONIOM.html>`_
 
-Our QM/MM geometry optimised structures of the active site for each reaction coordinate are available in our GitHub repo in :file:`tutorial/qmmm-geom-opt/` directory.
+Our QM/MM geometry optimised structures of the active site for each reaction coordinate are available in our GitHub repo in :repodir:`tutorial/qmmm-geom-opt` directory.

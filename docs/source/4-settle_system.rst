@@ -200,7 +200,7 @@ The flag "qmmask" up here, is defining the region to be treated using SQM. It is
         equilibration you need. Especially for a completely user-build system, unlike a crystal structure 
         you need extra equiliration time. 
         
-Here is the content of the full automated script :file:`tutorial/pre-processing/1-amber-pre-run.sh` 
+Here is the content of the full automated script :repo:`tutorial/pre-processing/1-amber-pre-run.sh` 
 
 .. code-block:: csh
         :emphasize-lines: 20, 26, 31, 36, 41

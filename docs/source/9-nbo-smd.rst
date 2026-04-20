@@ -17,7 +17,7 @@ Basically, the electrons are being divided into core and valence group, later on
 Coupling NBO analysis with SMD simulations will help us to visualise the electronic transition among the molecular orbitals along the reaction coordinate. NBO_ is
 a licenced software and you need to have it in your path while running it, a QM package will write an input file for NBO_ on its own (with extension .47), this
 input file then passed on to NBO_ binaries and the respective output from the NBO_ will be captured back by a QM package. To run NBO_ at each step of our QM/MM SMD
-simulation, we need to mention this in the template file for TeraChem_ , here is the template file for TeraChem_ to generate NBO_ input :file:`tutorial/simulations/nbo/tc_job.tpl` 
+simulation, we need to mention this in the template file for TeraChem_ , here is the template file for TeraChem_ to generate NBO_ input :repo:`tutorial/simulations/nbo/tc_job.tpl` 
 
 .. code-block::
         :emphasize-lines: 7,9 
@@ -37,7 +37,7 @@ simulation, we need to mention this in the template file for TeraChem_ , here is
 
 The first highlighted line directs the TeraChem_ to use advanced NBO_ functionality, where we can also specify the NBO_ keywords to be written
 in the NBO_ input file. The *ARCHIVE* keyword will save NBO_ input file *OHPORB.47* at each step, and later on we will store this file at a 
-specific location. There are no changes needed in the amber *mdin* file for running NBO_ alongwith QM/MM SMD, it will remains same as before :file:`tutorial/simulations/nbo/mdin/qmmm-smd-hy-1.in`
+specific location. There are no changes needed in the amber *mdin* file for running NBO_ alongwith QM/MM SMD, it will remains same as before :repo:`tutorial/simulations/nbo/mdin/qmmm-smd-hy-1.in`
 
 .. code-block::
         :emphasize-lines: 17,27,28,29,30,31,32,33,34,35
@@ -87,7 +87,7 @@ specific location. There are no changes needed in the amber *mdin* file for runn
         /
 
 
-There are minor changes in the bash script to run NBO_ alongwith the QM/MM SMD, the required changes are highlighted below. Here is the content of the automated script :file:`tutorial/simulations/nbo/5-amber-tc-nbo-smd-hy-1.sh`
+There are minor changes in the bash script to run NBO_ alongwith the QM/MM SMD, the required changes are highlighted below. Here is the content of the automated script :repo:`tutorial/simulations/nbo/5-amber-tc-nbo-smd-hy-1.sh`
  
 .. code-block::
         :emphasize-lines: 39,40

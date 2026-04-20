@@ -28,7 +28,7 @@ We are going to use:
         
         tleap -f 2-tleap.in
 
-Here is the content of the :file:`tutorial/metadata/system/2-tleap.in` 
+Here is the content of the :repo:`tutorial/metadata/system/2-tleap.in` 
 
 .. code-block:: bash
         :emphasize-lines: 26, 27

@@ -16,7 +16,7 @@ What should be the composition of QM regions and which residues should be includ
 Computationally, there are mainly two ways to compute the atomic charges, one is via population analysis and other one is using partitioning of electron density. [#f2]_ We have considered both, CM5 charges were computed using Hirshfeld Population Analysis [#f3]_ and Voronoi Deformation Density (VDD) charges were computed from the extent to which electron density of a bonded atom differs from that of an unbonded atom [#f4]_ . For chemically meaningful charges, both Hirshfeld and VDD approaches are recommended. [#f5]_ We have used Gaussian_ as an external QM package for the calculation of CM5 charges and TeraChem_ QM package for VDD charges. Here are the modified amber $.in files for generating the Hirshfeld and VDD charges using Gaussian_ and TeraChem_ as an external package.
 
 1. For computing Hirshfeld CM5 Atomic Charges using Gaussian_ 
-        * First prepare a template Gaussian_ input file mentioning the flags for route section only. Name this file specifically as "gau_job.tpl", don't rename it to any other way. Here is the content of the :file:`tutorial/pre-processing/gau_job.tpl` 
+        * First prepare a template Gaussian_ input file mentioning the flags for route section only. Name this file specifically as "gau_job.tpl", don't rename it to any other way. Here is the content of the :repo:`tutorial/pre-processing/gau_job.tpl` 
 
 .. code-block:: 
         :emphasize-lines: 1
@@ -24,7 +24,7 @@ Computationally, there are mainly two ways to compute the atomic charges, one is
 
         #P B3LYP/6-31G* SCF=(Conver=8) pop=hirshfeld
         
-This line specify the QM method/basis set, the maximum number of cycles for SCF convergence, and at the end set the flag for computing the hirshfeld charges via "pop=hirshfeld". You can do a lot more here, if you know Gaussian_ and wanna compute any other properties, use this template file. However, you can't provide the xyz coordinate here, or the Z-matrix information or the point charges. Amber will not process lines startingwith "%" since these are handled by sander. In short, the advanced Gaussian_ capabilities related to the Link 0 commands, inter-molecular interactions energy calculations etc. are not allowed. The run time flags like number of processors, memory etc should be specified in the below amber ".in" file. Here, is the content of the :file:`tutorial/pre-processing/mdin/qmmm-sys-hir-chrg.in`
+This line specify the QM method/basis set, the maximum number of cycles for SCF convergence, and at the end set the flag for computing the hirshfeld charges via "pop=hirshfeld". You can do a lot more here, if you know Gaussian_ and wanna compute any other properties, use this template file. However, you can't provide the xyz coordinate here, or the Z-matrix information or the point charges. Amber will not process lines startingwith "%" since these are handled by sander. In short, the advanced Gaussian_ capabilities related to the Link 0 commands, inter-molecular interactions energy calculations etc. are not allowed. The run time flags like number of processors, memory etc should be specified in the below amber ".in" file. Here, is the content of the :repo:`tutorial/pre-processing/mdin/qmmm-sys-hir-chrg.in`
 
 .. code-block::
         :emphasize-lines: 17,27,28,29,30,31,32
@@ -66,7 +66,7 @@ This line specify the QM method/basis set, the maximum number of cycles for SCF 
         /
 
 2. For computing VDD Atomic Charges using TeraChem_
-        * First prepare a template TeraChem_ input file mentioning the flags for VDD charges. Name this file specifically as "tc_job.tpl", don't rename it to any other way. Here is the content of the :file:`tutorial/pre-processing/tc_job.tpl`
+        * First prepare a template TeraChem_ input file mentioning the flags for VDD charges. Name this file specifically as "tc_job.tpl", don't rename it to any other way. Here is the content of the :repo:`tutorial/pre-processing/tc_job.tpl`
 
 .. code-block:: 
         :emphasize-lines: 3,4,5,6
@@ -80,7 +80,7 @@ This line specify the QM method/basis set, the maximum number of cycles for SCF 
                 poptype vdd
         end
 
-These highlighted lines specify the basis set, QM method, the mixed precision (most efficient way), and at the end set the flag for computing the vdd charges. You can do a lot more here, if you know TeraChem_ and wanna compute any other properties, use this template file. The run time flags like number of GPUs, memory etc should be specified in the below amber ".in" file. Here, is the content of the :file:`tutorial/pre-processing/mdin/qmmm-sys-vdd-chrg.in`
+These highlighted lines specify the basis set, QM method, the mixed precision (most efficient way), and at the end set the flag for computing the vdd charges. You can do a lot more here, if you know TeraChem_ and wanna compute any other properties, use this template file. The run time flags like number of GPUs, memory etc should be specified in the below amber ".in" file. Here, is the content of the :repo:`tutorial/pre-processing/mdin/qmmm-sys-vdd-chrg.in`
 
 .. code-block::
         :emphasize-lines: 17,27,28,29,30,31,32,33,34,35
@@ -123,7 +123,7 @@ These highlighted lines specify the basis set, QM method, the mixed precision (m
         use_template = 1,              ! Read the TeraChem template file "tc_job.tpl"
         /
 
-Now, its time to demonstrate how to compute and collect these charges while running QM/MM MD simulations with *sander*. We are going to trick the *sander* output using bash scripting and will navigate the Gaussian_ and TeraChem_ output to a separate directory. We will use QM/MM minimised structure as an input for this step and will run 5 independent 200 ps QM/MM MD runs for each of the QM system under investigation. As you can read in the above *amber* mdin file, we are using a timestep of 1 fs, so in total we should have 1000 frames to analyse for each of the QM systems. Here is the content of the :file:`tutorial/pre-processing/2-amber-qm-vs-hirs-chrgs.sh`
+Now, its time to demonstrate how to compute and collect these charges while running QM/MM MD simulations with *sander*. We are going to trick the *sander* output using bash scripting and will navigate the Gaussian_ and TeraChem_ output to a separate directory. We will use QM/MM minimised structure as an input for this step and will run 5 independent 200 ps QM/MM MD runs for each of the QM system under investigation. As you can read in the above *amber* mdin file, we are using a timestep of 1 fs, so in total we should have 1000 frames to analyse for each of the QM systems. Here is the content of the :repo:`tutorial/pre-processing/2-amber-qm-vs-hirs-chrgs.sh`
 
 .. admonition:: Trick the Amber using its old ways!.
 
@@ -198,7 +198,7 @@ Now, its time to demonstrate how to compute and collect these charges while runn
 
 This script will save and rename the *gau_job.log* file at each step for each of the QM system. You can parse CM5 atomic charges from the Gaussian log file using any text file reader or using the programming language of your choice.
 
-Whereas, the output of TeraChem_ is a bit different. It write a dat file as an output that consist of general stuff like SCF, energy, homo-lumo gap etc., whereas the extra parameters like the charges are stored in the scratch directory. Here, we are storing both the dat file as well as the charge_vdd.xls at each step. Here is the content of the :file:`tutorial/pre-processing/2-amber-qm-vs-vdd-chrgs.sh`    
+Whereas, the output of TeraChem_ is a bit different. It write a dat file as an output that consist of general stuff like SCF, energy, homo-lumo gap etc., whereas the extra parameters like the charges are stored in the scratch directory. Here, we are storing both the dat file as well as the charge_vdd.xls at each step. Here is the content of the :repo:`tutorial/pre-processing/2-amber-qm-vs-vdd-chrgs.sh`    
 
 .. code-block::
         :emphasize-lines: 21,35,36

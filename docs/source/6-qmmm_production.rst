@@ -8,7 +8,7 @@ QM/MM Production Run
 ********************
 
 Now we are ready to run our QM/MM production run. We will use the output from one of the short 200 fs run we had simulated using
-QM4. Our aim is to run three *5 ps* independent QM/MM production runs. Here is the amber *mdin* :file:`tutorial/simulations/mdin/qmmm-tc-prod.in` 
+QM4. Our aim is to run three *5 ps* independent QM/MM production runs. Here is the amber *mdin* :repo:`tutorial/simulations/mdin/qmmm-tc-prod.in` 
 
 .. code-block::
         :emphasize-lines: 17,27,28,29,30,31,32
@@ -62,7 +62,7 @@ QM4. Our aim is to run three *5 ps* independent QM/MM production runs. Here is t
         deviations along with the average value ensure a more broader picture of active
         site. Results from these calculations are summarised in our supplementary file (table S1 and S2).
 
-Here is the bash script that will automatically run these three independent simulations :file:`tutorial/simulations/3-amber-tc-prod.sh`    
+Here is the bash script that will automatically run these three independent simulations :repo:`tutorial/simulations/3-amber-tc-prod.sh`    
 
 .. code-block::
         :emphasize-lines: 30,31

@@ -37,7 +37,7 @@ Steered molecular dynamics (SMD) simulations are employed to explore potential s
                 
                 The 1D QM/MM scan along the distance b/w hydride receiver N1 atom and the hydride atom (H5) 
 
-In the context of our work, we are examining a sequential reaction involving an initial hydride transfer followed by a proton transfer. Guided by our QM/MM scan, we've determined that the hydride transfer occurs first, necessitating that we focus on steering the system along the CV corresponding to hydride transfer before turning our attention to the proton transfer CV. Details concerning our chosen CVs are provided in supplementary figure S27. Here is the CV file for the hyride transfer CV to be used for running QM/MM SMD simulations :file:`tutorial/simulations/mdin/cv-hy-1.in`  
+In the context of our work, we are examining a sequential reaction involving an initial hydride transfer followed by a proton transfer. Guided by our QM/MM scan, we've determined that the hydride transfer occurs first, necessitating that we focus on steering the system along the CV corresponding to hydride transfer before turning our attention to the proton transfer CV. Details concerning our chosen CVs are provided in supplementary figure S27. Here is the CV file for the hyride transfer CV to be used for running QM/MM SMD simulations :repo:`tutorial/simulations/mdin/cv-hy-1.in`  
 
 .. code-block:: 
         :emphasize-lines: 4,5,6,7
@@ -55,7 +55,7 @@ In the context of our work, we are examining a sequential reaction involving an 
 The first highlighted line defines the atom numbers of the three atoms involved in hydride transfer. 11078 is substrates N1 atom, 11007 is the hyride ion (H5), 10996 is the flavin's N5 atom. The hyride ion is being transferred from the N5 atom of the flavin to N1 atom of the substrate. The second highlighted line consist of the weightage factor for the respective distance, whereas the third highlighted line describe the starting and the end values of the handle position, respectively. The last highlighted line contains the value of spring constant. As we found out from the QM/MM scan that the starting value for the N1-H5 distance should be 2.0 A, taking this into consideration, our CV has a starting value of 1.0 Angstrom and will goes upto -1.0 Angstrom. Overall, we are steering H5 towards N1 atoms and at the same time away from the N5 atom of the flavin. The total displacement of H5 atom would be 1 Angstrom. Each SMD simulation will be of 1 ps (timestep = 1 fs), this means the velocity of steering the H5 atom is 1 Angstrom/ps. This is an acceptable velocity considering the time scale of hydride/proton transfer in proteins, which is in ps. So, we are aiming not to steer the hydride ion unrealistically and not too fast as well!
 
 
-Here is the amber *mdin* file for running QM/MM SMD simulation along the hydride transfer CV. :file:`tutorial/simulations/mdin/qmmm-smd-hy-1.in`
+Here is the amber *mdin* file for running QM/MM SMD simulation along the hydride transfer CV. :repo:`tutorial/simulations/mdin/qmmm-smd-hy-1.in`
 
 .. code-block::
         :emphasize-lines: 17,27,28,29,30,31,32,33,34,35
@@ -111,7 +111,7 @@ Here is the amber *mdin* file for running QM/MM SMD simulation along the hydride
 
         Now, given the stochastic nature of molecular dynamics simulations, it is generally advised to run multiple SMD trajectories from different initial configurations to better sample the reaction coordinate. We have chosen multiple starting configurations from our last three QM/MM production runs, where the hydride CV has a value of 1.0 Angstrom. As mentioned before, the value of 1.0 Angstrom is based on the fact that the coordinate scan along the hydride transfer CV has shown minimum at this distance, hence we have chosen this as our starting point for steering. Using VMD_ we have saved 10 random configurations (with CV=1.0) from the QM/MM production runs, and randomly using them as an input, we have 95 independent QM/MM SMD simulations for hydride transfer, followed by same number of simulations for proton transfer CV.
 
-We have employed a bash script that will run the desired number of SMD simulations, while randomly choosing a starting configuration for each SMD run. Here is the content of the automated script :file:`tutorial/simulations/4-amber-tc-smd-hy-1.sh`
+We have employed a bash script that will run the desired number of SMD simulations, while randomly choosing a starting configuration for each SMD run. Here is the content of the automated script :repo:`tutorial/simulations/4-amber-tc-smd-hy-1.sh`
  
 .. code-block::
         :emphasize-lines: 15,40

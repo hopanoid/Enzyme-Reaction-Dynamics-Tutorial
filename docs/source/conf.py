@@ -15,7 +15,13 @@ version = '0.1.0'
 
 extensions = [
     'sphinx.ext.duration',
+    'sphinx.ext.extlinks',
 ]
+
+extlinks = {
+    'repo':    ('https://github.com/hopanoid/Enzyme-Reaction-Dynamics-Tutorial/blob/main/%s', '%s'),
+    'repodir': ('https://github.com/hopanoid/Enzyme-Reaction-Dynamics-Tutorial/tree/main/%s', '%s'),
+}
 
 templates_path = ['_templates']
 

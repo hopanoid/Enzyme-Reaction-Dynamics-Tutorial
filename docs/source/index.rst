@@ -61,7 +61,7 @@ Workflow overview
 For this tutorial we'll use Amber_ (2021, 2022 should
 work) to set up the system, combined with Terachem_ to run the QM/MM simulations, and NBO_ to 
 perform orbital analysis. An initial structure is provided, which can be found in the
-:file:`tutorial/metadata/input_structures` directory, as well as the input files that
+:repodir:`tutorial/metadata/input_structures` directory, as well as the input files that
 are necessary for running Amber. The overall workflow consists of the following steps:
 
 Contents
