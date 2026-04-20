@@ -11,9 +11,9 @@
 QM/MM Geometry Optimisation with Qsite
 **************************************
 
-==================================================
-Selecting a Representative Snapshot and Truncating
-==================================================
+==================================
+Chose rightly and truncate wisely!
+==================================
 
 From our three 5 ps QM/MM production runs, we can summarise the geometrical parameters of ligand-protein interactions. However, to get a representative
 structure for reactant, transition state and product state we need to optimise the structure further. For this, we choose to take a random frame from our
