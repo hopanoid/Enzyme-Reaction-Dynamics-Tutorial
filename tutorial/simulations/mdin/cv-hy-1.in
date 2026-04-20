@@ -1,0 +1,8 @@
+cv_file
+&colvar
+   cv_type = 'LCOD',
+   cv_ni = 4, cv_i = 11078,11007,10996,11007,
+   cv_nr = 2, cv_r = 1.0,-1.0,
+   npath = 2, path = 1.0,-1.0, path_mode = 'LINES',
+   nharm = 1, harm = 1000.0
+/
