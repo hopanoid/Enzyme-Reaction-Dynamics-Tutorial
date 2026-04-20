@@ -77,5 +77,6 @@ Contents
    7-qmmm_geom_opt
    8-smd_simulations
    9-nbo-smd
+   adapt
    alternatives
    api
