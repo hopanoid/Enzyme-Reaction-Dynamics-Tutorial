@@ -68,7 +68,6 @@ Contents
 --------
 
 .. toctree::
-   hardware
    1-protein
    2-ligand
    3-system_setup
@@ -79,6 +78,7 @@ Contents
    8-smd_simulations
    9-nbo-smd
    adapt
+   hardware
    glossary
    alternatives
    api
