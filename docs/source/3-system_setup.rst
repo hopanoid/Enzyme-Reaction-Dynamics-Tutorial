@@ -3,9 +3,13 @@
 .. include:: /includes/defs.rst
 .. include:: /includes/links.rst
 
-************
-System Setup
-************
+.. meta::
+   :description: Build a solvated, neutralised enzyme-ligand system with tLEaP using AMBER ff19SB, GAFF2 and SPC/E water model. Combine protein, cofactor and substrate into an octahedral box.
+   :keywords: tLEaP, AMBER ff19SB, GAFF2, solvation, system building, enzyme simulation setup, octahedral box
+
+***********************
+System Setup with tLEaP
+***********************
 
 ===============
 Bring together!

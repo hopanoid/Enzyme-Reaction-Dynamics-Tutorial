@@ -11,6 +11,21 @@ author = 'Amit Singh Sahrawat'
 release = '0.1'
 version = '0.1.0'
 
+html_baseurl = 'https://enzyme-reaction-dynamics-tutorial.readthedocs.io/'
+
+html_meta = {
+    'description': (
+        'Step-by-step QM/MM tutorial using AMBER and TeraChem to model '
+        'oxime biocatalysis in XenA flavoenzyme. Covers parametrisation, '
+        'equilibration, SMD simulations and NBO orbital analysis.'
+    ),
+    'keywords': (
+        'QM/MM tutorial, AMBER TeraChem, enzyme catalysis simulation, '
+        'steered molecular dynamics, NBO analysis, flavoenzyme, '
+        'biocatalysis, oxime reduction, QM/MM SMD, GAFF2'
+    ),
+}
+
 # -- General configuration
 
 extensions = [

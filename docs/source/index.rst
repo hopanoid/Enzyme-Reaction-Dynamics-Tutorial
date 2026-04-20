@@ -78,5 +78,6 @@ Contents
    8-smd_simulations
    9-nbo-smd
    adapt
+   glossary
    alternatives
    api

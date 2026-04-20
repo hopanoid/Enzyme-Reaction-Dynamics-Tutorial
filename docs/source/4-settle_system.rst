@@ -3,9 +3,13 @@
 .. include:: /includes/defs.rst
 .. include:: /includes/links.rst
 
-*****************
-Settle the System
-*****************
+.. meta::
+   :description: Equilibrate an AMBER QM/MM system through classical minimisation, thermalisation, NPT equilibration, SQM-MM and QM-MM energy minimisation steps using pmemd and sander.
+   :keywords: AMBER equilibration, energy minimisation, thermalisation, NPT, SQM-MM, QM-MM minimisation, pmemd sander, SHAKE constraints
+
+*************************************
+System Equilibration and Minimisation
+*************************************
 
 ===================================================
 Removing bad atomic contacts and minimizing vacuum!

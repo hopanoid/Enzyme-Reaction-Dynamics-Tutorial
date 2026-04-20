@@ -3,9 +3,13 @@
 .. include:: /includes/defs.rst
 .. include:: /includes/links.rst
 
-***********************
-Protein Parametrisation
-***********************
+.. meta::
+   :description: Prepare an enzyme PDB structure for AMBER QM/MM simulations: split residues, assess protonation states with H++, handle histidine tautomers, and run pdb4amber.
+   :keywords: AMBER protein preparation, pdb4amber, protonation states, histidine HID HIE HIP, H++ server, QM/MM setup
+
+**********************************
+Protein Parametrisation with AMBER
+**********************************
 
 .. important::
 

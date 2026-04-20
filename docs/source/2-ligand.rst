@@ -3,9 +3,13 @@
 .. include:: /includes/defs.rst
 .. include:: /includes/links.rst
 
-*********************
-Parameterizing Ligand
-*********************
+.. meta::
+   :description: Parametrise a small molecule ligand for AMBER QM/MM simulations using antechamber and GAFF2 force field. Calculate AM1-BCC charges and check missing parameters with parmchk2.
+   :keywords: antechamber GAFF2, AM1-BCC charges, parmchk2, ligand parametrisation, AMBER force field, mol2 frcmod
+
+***************************************
+Ligand Parametrisation with Antechamber
+***************************************
 
 ==================
 Know your ligands!

@@ -3,9 +3,13 @@
 .. include:: /includes/defs.rst
 .. include:: /includes/links.rst
 
-*********
-QM Region 
-*********
+.. meta::
+   :description: Select and converge the QM region for AMBER QM/MM simulations. Compute CM5 Hirshfeld and VDD atomic charges using Gaussian and TeraChem as external QM packages.
+   :keywords: QM region selection, AMBER qmmask, CM5 charges, Hirshfeld charges, VDD charges, TeraChem Gaussian, QM/MM convergence
+
+***************************************
+QM Region Selection and Charge Analysis
+***************************************
 
 ===================================
 Selection of Residues for QM Region  

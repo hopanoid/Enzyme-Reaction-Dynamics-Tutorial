@@ -3,9 +3,13 @@
 .. include:: /includes/defs.rst
 .. include:: /includes/links.rst
 
-*********************
-QM/MM SMD Simulations
-*********************
+.. meta::
+   :description: QM/MM Steered Molecular Dynamics (SMD) simulations with AMBER and TeraChem. Define collective variables for hydride transfer, run multiple SMD trajectories and compute free energy profiles.
+   :keywords: QM/MM SMD, steered molecular dynamics, collective variable, hydride transfer, free energy profile, AMBER sander, TeraChem, fluctuation-dissipation estimator
+
+**************************************
+QM/MM Steered Molecular Dynamics (SMD)
+**************************************
 
 ========================================
 Selection of A Collective Variables (CV)  

@@ -3,9 +3,13 @@
 .. include:: /includes/defs.rst
 .. include:: /includes/links.rst
 
-********************
-QM/MM Production Run
-********************
+.. meta::
+   :description: Run QM/MM production MD simulations with AMBER sander and TeraChem. Analyse geometrical parameters of the enzyme-substrate binding pose across multiple independent trajectories.
+   :keywords: QM/MM production MD, AMBER TeraChem, sander QM/MM, enzyme binding pose, B3LYP 6-31G*, independent trajectories
+
+**********************************
+QM/MM Production Run with TeraChem
+**********************************
 
 Now we are ready to run our QM/MM production run. We will use the output from one of the short 200 fs run we had simulated using
 QM4. Our aim is to run three *5 ps* independent QM/MM production runs. Here is the amber *mdin* :repo:`tutorial/simulations/mdin/qmmm-tc-prod.in` 

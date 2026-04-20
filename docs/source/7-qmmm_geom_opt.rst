@@ -3,9 +3,13 @@
 .. include:: /includes/defs.rst
 .. include:: /includes/links.rst
 
-***************************
-QM/MM Geometry Optimisation
-***************************
+.. meta::
+   :description: QM/MM geometry optimisation of enzyme reaction coordinates using Qsite. Truncate the solvated system and model reactant, transition state and product structures for biocatalysis.
+   :keywords: QM/MM geometry optimisation, Qsite, reaction coordinate, transition state, enzyme mechanism, truncated model, Schrodinger
+
+**************************************
+QM/MM Geometry Optimisation with Qsite
+**************************************
 
 ==================================
 Chose rightly and truncate wisely!

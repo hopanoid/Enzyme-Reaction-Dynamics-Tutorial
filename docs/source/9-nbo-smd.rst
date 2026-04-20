@@ -3,10 +3,13 @@
 .. include:: /includes/defs.rst
 .. include:: /includes/links.rst
 
+.. meta::
+   :description: Couple NBO (Natural Bond Orbital) analysis with QM/MM SMD simulations using TeraChem and NBO7. Save and process .47 wavefunction files to track orbital changes along the reaction coordinate.
+   :keywords: NBO analysis, natural bond orbital, QM/MM SMD, TeraChem NBO, wavefunction analysis, orbital reaction coordinate, NBO7
 
-################################
-Natural Bonding Orbital Analysis
-################################
+###################################
+Natural Bond Orbital (NBO) Analysis
+###################################
 
 **************************************
 NBO Coupled with QM/MM SMD Simulations
