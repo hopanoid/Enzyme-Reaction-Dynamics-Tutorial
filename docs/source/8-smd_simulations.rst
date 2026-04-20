@@ -11,9 +11,9 @@
 QM/MM Steered Molecular Dynamics (SMD)
 **************************************
 
-========================================
-Selection of A Collective Variables (CV)  
-========================================
+==========================================================
+Defining the Collective Variable (CV) for Hydride Transfer
+==========================================================
 
 Steered molecular dynamics (SMD) simulations are employed to explore potential structural variations along a pre-defined reaction coordinate or collective variable (CV). This technique is particularly useful for speeding up processes that might otherwise take a considerable amount of time to happen naturally. Subsequently, these generated configurations can serve two main purposes: they can shed light on the structural alterations relevant to the underlying reaction, and they can be employed to calculate free energy changes along the given CV. 
 

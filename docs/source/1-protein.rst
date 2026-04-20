@@ -21,9 +21,9 @@ Protein Parametrisation with AMBER
         guess bond order using supplied 3D coordinates and will assign ff parameter based on their
         guess. Be careful at this point! Sometimes a double bond might be treated as single or vice-versa.
 
-===============================
-Preparing your enzyme for amber
-===============================
+=========================================
+Preparing Your Enzyme Structure for AMBER
+=========================================
 
 
 Splitting the PDB in protein, ligand and water molecules
@@ -109,8 +109,8 @@ So we are going to use the first AmberTools tool: pdb4amber which prepares your 
 
 
 
-How to select protonation state of a specific residue?
-======================================================
+Setting Histidine Protonation State with AMBER LEaP
+===================================================
 
 We are using Ambertools to choose the desired protonation form of H178.
 You can select the appropriate form of HIS by renaming HIS to HIE (proton on NE2), 

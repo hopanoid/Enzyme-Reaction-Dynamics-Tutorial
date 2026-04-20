@@ -11,9 +11,9 @@
 Ligand Parametrisation with Antechamber
 ***************************************
 
-==================
-Know your ligands!
-==================
+==========================================
+Know Your Ligand: pKa and Ionisation State
+==========================================
 
 Pay attention to the polar hydrogens in your ligands, physiochemical pH tend to modulate the
 ionization of your ligands based on the pKa of these polar groups.There are several options to do so, 

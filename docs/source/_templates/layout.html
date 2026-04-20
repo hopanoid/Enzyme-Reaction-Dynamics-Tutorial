@@ -1,0 +1,35 @@
+{% extends "!layout.html" %}
+{% block extrahead %}
+{{ super() }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "Deciphering Oxime Biocatalysis \u2014 A QM/MM Tutorial",
+  "description": "Step-by-step QM/MM tutorial using AMBER and TeraChem to model oxime biocatalysis in XenA flavoenzyme. Covers force field parametrisation, system equilibration, QM region selection, SMD simulations and NBO orbital analysis.",
+  "url": "https://enzyme-reaction-dynamics-tutorial.readthedocs.io/",
+  "author": {
+    "@type": "Person",
+    "name": "Amit Singh Sahrawat",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "University of Graz"
+    }
+  },
+  "educationalLevel": "Graduate",
+  "keywords": "QM/MM, AMBER, TeraChem, SMD, NBO, enzyme catalysis, biocatalysis, flavoenzyme, steered molecular dynamics, GAFF2, oxime reduction",
+  "about": {
+    "@type": "Thing",
+    "name": "Enzyme-catalysed oxime reduction via QM/MM simulation"
+  },
+  "teaches": "QM/MM simulation workflow for modelling enzyme-catalysed reactions using AMBER, TeraChem and NBO",
+  "isAccessibleForFree": true,
+  "citation": {
+    "@type": "CreativeWork",
+    "url": "https://doi.org/10.1021/acscatal.3c04362"
+  },
+  "license": "https://github.com/hopanoid/Enzyme-Reaction-Dynamics-Tutorial/blob/main/LICENSE",
+  "codeRepository": "https://github.com/hopanoid/Enzyme-Reaction-Dynamics-Tutorial"
+}
+</script>
+{% endblock %}

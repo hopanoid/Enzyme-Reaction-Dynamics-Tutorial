@@ -11,13 +11,13 @@
 System Setup with tLEaP
 ***********************
 
-===============
-Bring together!
-===============
+===========================================
+Assembling the Enzyme-Ligand-Solvent System
+===========================================
 
 
-Build system with tLEap
-=======================
+Building the Solvated System with tLEaP
+=======================================
 
 Use the tLEap input file included in this tutorial for building a "matured" MD input system.
 
