@@ -11,8 +11,8 @@ QM/MM Geometry Optimisation
 Chose rightly and truncate wisely!
 ==================================
 
-From our three 5 ps QM/MM production runs, we can summarise the geomterical parameters of ligand-protein interactions. However, to get a representative
-structure for reactant, transition state and product state we need to optise the structure further. For this, we choose to took a random frame from our
+From our three 5 ps QM/MM production runs, we can summarise the geometrical parameters of ligand-protein interactions. However, to get a representative
+structure for reactant, transition state and product state we need to optimise the structure further. For this, we choose to take a random frame from our
 last QM/MM production run, and further truncated it to be used as input for a QM package. The truncation step involves, the removal of solvent molecules
 those are not within 5 Angstrom from any protein atom. Truncation step can be done by using the graphical structure modelling programs like VMD_ or Pymol_
 or by using any programming tools like Biopdb module of Biopython library in python. Our main goal is to understand the structure of the active site and
@@ -23,7 +23,7 @@ computation time as well.
 
         For modelling the structural coordinates of the biocatalysis reactions, we often took random snapshots from the
         MD simulations, usually more than one for better statistical assessment. We advice a more investigative approach
-        rather than choosing a random snapshot. In our case, we monitor some key geomterical parameters pertaining to hydride
+        rather than choosing a random snapshot. In our case, we monitor some key geometrical parameters pertaining to hydride
         transfer, like the distance between the hydride acceptor (N1) and donor (N5), the angle between the N5, N1 and hydride (H1)
         etc. A table summarising these geometrical parameters is available in our supplementary file (Table S1). The average value
         of the these parameters have been considered to obtain a frame from QM/MM MD simulations. This ensures that the chosen
@@ -31,8 +31,8 @@ computation time as well.
          
 
 We have used Qsite_ (the QM/MM module of the Schroedinger package) for modelling the reaction coordinates using the truncated structure as an input.
-A brief details of our chosen parameters for QM/MM geometry optimisation is available in our methodolgy section of supplementary information. There
-are already several tutorials available demonstrating the QM/MM geomtery optimisation of reaction coordinates:
+A brief description of our chosen parameters for QM/MM geometry optimisation is available in our methodology section of supplementary information. There
+are already several tutorials available demonstrating the QM/MM geometry optimisation of reaction coordinates:
 
 .. hlist::
         :columns: 1

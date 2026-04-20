@@ -131,7 +131,7 @@ There are minor changes in the bash script to run NBO_ alongwith the QM/MM SMD, 
                 mv old.tc_job.dat qm_log/${step}_tc_${count}.dat
                 mv scr/charge_vdd.xls scr/${step}_charge_vdd_${count}.xls
                 
-                # Save NBO inout file
+                # Save NBO input file
                 mv OHPORB.47  nbo/ohporb.${i}.${count}.47
                 
                 ((count=count+1))

@@ -40,7 +40,7 @@ Here is the content of the :file:`tutorial/metadata/system/2-tleap.in`
         source leaprc.water.spce
 
         # Load protein structure (Use the protonated PDB)
-        protein = loadPDB tutorial/metadata/input_strucutres/wt_protein.pdb
+        protein = loadPDB tutorial/metadata/input_structures/wt_protein.pdb
         check protein
         
         # Load flavins parameters and structure
@@ -76,7 +76,7 @@ Here is the content of the :file:`tutorial/metadata/system/2-tleap.in`
 
 Here is the final system, we just build
 
-.. figure:: figs/system_v2.png
+.. figure:: /figs/system_v2.png
         
         The final fully "matured" system. Its a octahedral box, where water molecules shown as transparent surface, protein in 
         gray cartoon, ions in light blue, flavin and OHP in yellow and cyan, respectively.

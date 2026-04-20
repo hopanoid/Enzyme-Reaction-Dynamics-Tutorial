@@ -3,6 +3,6 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "lumache"
-authors = [{name = "Amit Singh", email = "amit.amit@uni-graz.at"}]
+name = "oxime-biocatalysis-tutorial"
+authors = [{name = "Amit Singh Sahrawat", email = "amit.amit@uni-graz.at"}]
 dynamic = ["version", "description"]

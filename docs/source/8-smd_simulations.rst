@@ -15,18 +15,18 @@ Steered molecular dynamics (SMD) simulations are employed to explore potential s
 
 .. admonition:: How to choose a starting value for CV in SMD simulations?
 
-        SMD simulations will steer your chosen CV from the defined initial position to the final postition.
+        SMD simulations will steer your chosen CV from the defined initial position to the final position.
         In our case, we know that the hyride will be transferred to N1 atom of the substrate from the N5 atom
         of the flavin cofactor. So, we know that steering of hydride should stop once it reached to its 
         destination N1 atom of the substrate. However, the difficult question is, what should be the starting
         distance of hydride ion from the N1 atom to start steering? In our last 5 ps QM/MM production runs,
         we found that hydride atom has variable distances from the N1 atom, and it would be difficult to guess
-        the distance minima. There could be mutliple appraoches to handle this particular question, one should
-        take the average of the distances b/w hydride and N1 atom obtained from the QM/MM simulations, or it 
-        could be a plausible distance based on the existing studies where the distance between the hydride donor 
-        and acceptor is well defined. We had no experience of comparing these appraoches, however, we believe that
+        the distance minima. There could be multiple approaches to handle this particular question, one should
+        take the average of the distances b/w hydride and N1 atom obtained from the QM/MM simulations, or it
+        could be a plausible distance based on the existing studies where the distance between the hydride donor
+        and acceptor is well defined. We had no experience of comparing these approaches, however, we believe that
         one should consider this question genuinely, as this could save significant amount of computation time for
-        sampling the CV. We have chosen a different appraoch here, we ran a QM/MM scan along the N1-hydride distance
+        sampling the CV. We have chosen a different approach here, we ran a QM/MM scan along the N1-hydride distance
         using Qsite_ package (Gaussian_ can also be used). From the QM/MM scan, we found that the N1-hydride distance
         has an initial minimum around 2.0 Angstrom, hence we have chose 2.0 Angstrom our starting distance to steer 
         hydride atom from N5 atom to N1 atom.  
@@ -109,7 +109,7 @@ Here is the amber *mdin* file for running QM/MM SMD simulation along the hydride
         
         Chosing multiple starting configuration for SMD simulations!.
 
-        Now, given the stochastic nature of molecular dynamics simulations, it is generally advised to run multiple SMD trajectories from different initial configurations to better sample the reaction coordinate. We have chosen mutliple starting configuration from our last three QM/MM production runs, where the hydride CV has a value of 1.0 Angstrom . As mentioned before, the value of 1.0 Angstrom is based on the fact that the coordinate scan along the hyride transfer CV has shown minimum at this distance, hence we have chosen this as our starting point for steering. Using VMD_ we have saved 10 random configuration (with CV=1.0) from the QM/MM production runs, and randomly using them as an input, we have 95 independent QM/MM SMD simulations for hydride transfer, followed by same number of simulations for proton transfer CV. 
+        Now, given the stochastic nature of molecular dynamics simulations, it is generally advised to run multiple SMD trajectories from different initial configurations to better sample the reaction coordinate. We have chosen multiple starting configurations from our last three QM/MM production runs, where the hydride CV has a value of 1.0 Angstrom. As mentioned before, the value of 1.0 Angstrom is based on the fact that the coordinate scan along the hydride transfer CV has shown minimum at this distance, hence we have chosen this as our starting point for steering. Using VMD_ we have saved 10 random configurations (with CV=1.0) from the QM/MM production runs, and randomly using them as an input, we have 95 independent QM/MM SMD simulations for hydride transfer, followed by same number of simulations for proton transfer CV.
 
 We have employed a bash script that will run the desired number of SMD simulations, while randomly choosing a starting configuration for each SMD run. Here is the content of the automated script :file:`tutorial/simulations/4-amber-tc-smd-hy-1.sh`
  
@@ -162,7 +162,7 @@ We have employed a bash script that will run the desired number of SMD simulatio
 
 The first highlighted line defines that for each SMD run, a randomly selected input will be used from the 10 different starting configuration. This script will save and rename the *charge_vdd.xls* and *tc_job.dat* files at each step for each of the QM system. Later on, these files can be used to analyse the SCF, QM Energy, HOMO-LUMO Gap or the VDD charges etc.  
 
-The scond highlighted line will save the *CV-vs-work* output from each SMD run, those are later to be used to compute the free energy profile along the CV.
+The second highlighted line will save the *CV-vs-work* output from each SMD run, those are later to be used to compute the free energy profile along the CV.
 Finally, free energy profile along the CV have been calculated by the fluctuation-dissipation (FD) estimator, details of which is available in the supplementary 
 information of our article under section heading *QM/MM Steered Molecular Dynamics*.
 

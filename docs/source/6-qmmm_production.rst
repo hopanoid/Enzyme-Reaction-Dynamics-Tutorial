@@ -54,8 +54,8 @@ QM4. Our aim is to run three *5 ps* independent QM/MM production runs. Here is t
 
 .. admonition:: A more flexible view of binding pose!.
 
-        The binding pose of a ligand is often described by geomterical parameters like
-        distances, angle/dihedrals etc. without giving any statistical significance 
+        The binding pose of a ligand is often described by geometrical parameters like
+        distances, angle/dihedrals etc. without giving any statistical significance
         to the given values. Here, by running three independent simulations we are 
         aiming to compute the statistical significance for each of the geometrical
         parameters pertaining to the binding pose of our substrate. The computed standard

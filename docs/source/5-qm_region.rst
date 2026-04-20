@@ -13,7 +13,7 @@ Selection of Residues for QM Region
 
 What should be the composition of QM regions and which residues should be included. This is an important question to ask while modelling an enzymatic reaction using QM/MM simulations. A couple of articles available on this [#f1]_ but there are no straightforward answers. However, chemical intution or proximity could be a guiding approach, later on the perimter of QM region could be expanded if your computational resources permits. Following this, we also begin with the OYE active site residues and overall modelled six different QM regions, details of which are availabe in our supplementary pdf file of our article. We have evaluated the convergence of total atomic charges on the substrate along the increasing number of atoms in QM region, finally we have choosed the QM region comprising of Y27, H178, H181, Y183, LumiFlavin, substarte and the nearest water molecule.   
 
-Computationally, there are mainly two ways to compute the atomic charges, one is via population anaylsis and other one is using partitioning of electron density. [#f2]_ We have considered the both, CM5 charges were computed using Hirshfeld Population Analysis [#f3]_ and Vornoi Deformation Density (VDD) charges were computed from the extent to which electron density of a bonded atom differs from that of an unbonded atom [#f4]_ . For chemically meaningfull charges, both Hirshfeld and VDD approahces are recommended. [#f5]_ We have used Gaussian_ as an external QM package for the calculation of CM5 charges and TeraChem_ QM package for VDD charges. Here are the modified amber $.in files for generating the Hirshfeld and VDD charges using Gaussian_ and TeraChem_ as an external package. 
+Computationally, there are mainly two ways to compute the atomic charges, one is via population analysis and other one is using partitioning of electron density. [#f2]_ We have considered both, CM5 charges were computed using Hirshfeld Population Analysis [#f3]_ and Voronoi Deformation Density (VDD) charges were computed from the extent to which electron density of a bonded atom differs from that of an unbonded atom [#f4]_ . For chemically meaningful charges, both Hirshfeld and VDD approaches are recommended. [#f5]_ We have used Gaussian_ as an external QM package for the calculation of CM5 charges and TeraChem_ QM package for VDD charges. Here are the modified amber $.in files for generating the Hirshfeld and VDD charges using Gaussian_ and TeraChem_ as an external package.
 
 1. For computing Hirshfeld CM5 Atomic Charges using Gaussian_ 
         * First prepare a template Gaussian_ input file mentioning the flags for route section only. Name this file specifically as "gau_job.tpl", don't rename it to any other way. Here is the content of the :file:`tutorial/pre-processing/gau_job.tpl` 
@@ -79,8 +79,8 @@ This line specify the QM method/basis set, the maximum number of cycles for SCF 
                 precision mixed
                 poptype vdd
         end
-        
-These highlighted lines specify the basis set, QM method, the mixed precision (most effiecint way), and at the end set the flag for computing the vdd charges. You can do a lot more here, if you know TeraChem_ and wanna compute any other properties, use this template file. The run time flags like number of GPUs, memory etc should be specified in the below amber ".in" file. Here, is the content of the :file:`tutorial/pre-processing/mdin/qmmm-sys-vdd-chrg.in`
+
+These highlighted lines specify the basis set, QM method, the mixed precision (most efficient way), and at the end set the flag for computing the vdd charges. You can do a lot more here, if you know TeraChem_ and wanna compute any other properties, use this template file. The run time flags like number of GPUs, memory etc should be specified in the below amber ".in" file. Here, is the content of the :file:`tutorial/pre-processing/mdin/qmmm-sys-vdd-chrg.in`
 
 .. code-block::
         :emphasize-lines: 17,27,28,29,30,31,32,33,34,35
@@ -196,7 +196,7 @@ Now, its time to demonstrate how to compute and collect these charges while runn
         differ, the number of simulations may vary. So, read the above script carefully, there is a risk that you may
         overwrite existing files if you don't know this bash script very well.
 
-This script will save and rename the *gau_job.log* file at each step for each of the QM system. You can parse CM5 atomic charges from the Gaussian log file using any text file reader or using the progamming languagge of your choice. 
+This script will save and rename the *gau_job.log* file at each step for each of the QM system. You can parse CM5 atomic charges from the Gaussian log file using any text file reader or using the programming language of your choice.
 
 Whereas, the output of TeraChem_ is a bit different. It write a dat file as an output that consist of general stuff like SCF, energy, homo-lumo gap etc., whereas the extra parameters like the charges are stored in the scratch directory. Here, we are storing both the dat file as well as the charge_vdd.xls at each step. Here is the content of the :file:`tutorial/pre-processing/2-amber-qm-vs-vdd-chrgs.sh`    
 

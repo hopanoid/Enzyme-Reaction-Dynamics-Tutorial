@@ -15,7 +15,7 @@ Pay attention to the polar hydrogens in your ligands, physiochemical pH tend to 
 ionization of your ligands based on the pKa of these polar groups.There are several options to do so, 
 the most reliable is PubChem_, where you can find experimental pKa values if available for your ligand.
 
-We don't found any identical chemical structure for our ligand (OHP) on PubChem_. So we
+We found no identical chemical structure for our ligand (OHP) on PubChem_. So we
 need to calculate it. We have used quantum chemistry software Jaguar_, a paid tool, alternatively you can
 use MarvinSketch_, which is free for academic research (need a registration to get an academic licence key), 
 it has a nice visualisation of the protonation states at a different pH values.
@@ -27,9 +27,9 @@ it has a nice visualisation of the protonation states at a different pH values.
         which means both neutral and negatively charged species of OHP can exist equally in the solution at 
         physiological pH (7.4). However, enzymes do modulate the
         pKa of the ligands, for example, the reduced flavin (FMNH-) in the active site of OYE prefer a 
-        positive substrate rather than a negatively charged substrate. [#f2]_ This prefernce could shift 
+        positive substrate rather than a negatively charged substrate. [#f2]_ This preference could shift 
         the equilibrium towards neutral OHP. Hence, we considered modelling a neutral OHP based on the 
-        prefernce of active-site of our enzyme.
+        preference of active-site of our enzyme.
 
         .. figure:: /figs/marvin-pka-step-4.png
                 :align: center

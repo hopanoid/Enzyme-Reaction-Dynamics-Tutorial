@@ -72,10 +72,10 @@ Contents
    2-ligand
    3-system_setup
    4-settle_system
-   5-qm_region.rst
-   6-qmmm_production.rst
-   7-qmmm_geom_opt.rst
-   8-smd_simulations.rst
-   9-nbo-smd.rst
+   5-qm_region
+   6-qmmm_production
+   7-qmmm_geom_opt
+   8-smd_simulations
+   9-nbo-smd
    alternatives
    api

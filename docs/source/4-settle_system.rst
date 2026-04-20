@@ -8,17 +8,17 @@ Settle the System
 *****************
 
 ===================================================
-Removing bad atomic contacts and minimizing vaccum!
+Removing bad atomic contacts and minimizing vacuum!
 ===================================================
 
-We have just modelled a "matured" system, means we have placed all required molecules in a box. This step-wise placement could lead 
-to overlapping atomic positions or very close atomic contacts or very far atomic postions, this could results in atomic replusion or
-can forbidden possible atomic interactions too. To minimize these positional artifacts energy minimisation is a 
-crucial step before proceeding further. Essentially, we are going to use the potential energy terms derived from the force-field, 
+We have just modelled a "matured" system, means we have placed all required molecules in a box. This step-wise placement could lead
+to overlapping atomic positions or very close atomic contacts or very far atomic positions, this could result in atomic repulsion or
+can forbid possible atomic interactions too. To minimize these positional artifacts energy minimisation is a
+crucial step before proceeding further. Essentially, we are going to use the potential energy terms derived from the force-field,
 that will use the 3D coordinate as input and will try to optimise the positions of atoms, so that any clashes or
-vaccum therein will be minimsed.
+vacuum therein will be minimised.
 
-Breifly, the system will undergo sequentially through steps:
+Briefly, the system will undergo sequentially through steps:
 
 1. Classical Energy Minimization
         * Will try to optimize the position of atoms using the supplied molecular mechanics parameters e.g. bond-length, angle, van-der-waal etc
@@ -72,7 +72,7 @@ We are aiming to preserve the heavy atom positions, for this we are using a smal
         
 Its a 30 ps NVT equilibration where the temperature has been linearly increased from 0 to 298K from begining to 20 ps and for the rest of 10 ps, temperature will remain constant at 298K. Let's see if this is true or not!
 
-.. figure::  figs/step2-gradual-heat.png
+.. figure:: /figs/step2-gradual-heat.png
 
         Figure showing the changes in the temperature vs Time (ps), during thermalisation. Upto 20 ps its an linear increase thereafter remained at 298K.
         
