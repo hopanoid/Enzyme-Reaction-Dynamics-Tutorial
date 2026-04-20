@@ -41,7 +41,16 @@
 .. MarvinSketch
 .. _MarvinSketch: https://chemaxon.com/marvin
 
-.. Protein Databank   
+.. Modeller
+.. _Modeller: https://salilab.org/modeller/
+
+.. PROPKA
+.. _PROPKA: https://www.ddl.unimi.it/vegaol/propka.htm
+
+.. PDB2PQR
+.. _PDB2PQR: https://server.poissonboltzmann.org/pdb2pqr
+
+.. Protein Databank
 .. _8AU8: https://www.rcsb.org/structure/8AU8
 .. _`ATOM record of a PDB file`:
    https://www.wwpdb.org/documentation/file-format-content/format33/sect9.html#ATOM

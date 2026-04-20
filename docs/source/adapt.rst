@@ -3,9 +3,9 @@
 .. include:: /includes/defs.rst
 .. include:: /includes/links.rst
 
-*******************************
+***************************************
 Adapting This Tutorial to Your System
-*******************************
+***************************************
 
 This tutorial is built around a specific system: Xenobiotic reductase A
 (XenA) complexed with the oxime substrate OHP and the flavin cofactor FMH.
