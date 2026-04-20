@@ -50,6 +50,9 @@
 .. PDB2PQR
 .. _PDB2PQR: https://server.poissonboltzmann.org/pdb2pqr
 
+.. Published article
+.. _`Sahrawat et al. (2024)`: https://pubs.acs.org/doi/full/10.1021/acscatal.3c04362
+
 .. Protein Databank
 .. _8AU8: https://www.rcsb.org/structure/8AU8
 .. _`ATOM record of a PDB file`:

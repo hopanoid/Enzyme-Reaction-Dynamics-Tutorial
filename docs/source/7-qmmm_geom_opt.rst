@@ -29,13 +29,13 @@ computation time as well.
         MD simulations, usually more than one for better statistical assessment. We advise a more investigative approach
         rather than choosing a random snapshot. In our case, we monitor some key geometrical parameters pertaining to hydride
         transfer, like the distance between the hydride acceptor (N1) and donor (N5), the angle between the N5, N1 and hydride (H1)
-        etc. A table summarising these geometrical parameters is available in our supplementary file (Table S1). The average value
+        etc. A table summarising these geometrical parameters is available as Table S1 in `Sahrawat et al. (2024)`_. The average value
         of the these parameters have been considered to obtain a frame from QM/MM MD simulations. This ensures that the chosen
         structure represents the active site better than a randomly chosen structure.
          
 
 We have used Qsite_ (the QM/MM module of the Schroedinger package) for modelling the reaction coordinates using the truncated structure as an input.
-A brief description of our chosen parameters for QM/MM geometry optimisation is available in our methodology section of supplementary information. There
+A brief description of our chosen parameters for QM/MM geometry optimisation is available in the methodology section of the supplementary information of `Sahrawat et al. (2024)`_. There
 are already several tutorials available demonstrating the QM/MM geometry optimisation of reaction coordinates:
 
 .. hlist::

@@ -17,7 +17,7 @@ Selecting Active-Site Residues for the QM Region
 
 Deciding the composition of the QM region — which residues to include and where to draw the QM/MM boundary — is one of the most important choices in modelling an enzymatic reaction. A few articles address this question [#f1]_, but there are no universally applicable answers. Chemical intuition and spatial proximity to the active site offer a practical starting point; the perimeter of the QM region can be expanded later if computational resources allow.
 
-Following this approach, we began with the OYE active site residues and modelled six different QM regions, details of which are available in our supplementary material. We evaluated the convergence of total atomic charges on the substrate as the number of atoms in the QM region increased, and finally chose the QM region comprising Y27, H178, H181, Y183, LumiFlavin, the substrate, and the nearest water molecule.
+Following this approach, we began with the OYE active site residues and modelled six different QM regions, details of which are available in the supplementary material of `Sahrawat et al. (2024)`_. We evaluated the convergence of total atomic charges on the substrate as the number of atoms in the QM region increased, and finally chose the QM region comprising Y27, H178, H181, Y183, LumiFlavin, the substrate, and the nearest water molecule.
 
 Computationally, there are mainly two ways to compute the atomic charges, one is via population analysis and other one is using partitioning of electron density. [#f2]_ We have considered both, CM5 charges were computed using Hirshfeld Population Analysis [#f3]_ and Voronoi Deformation Density (VDD) charges were computed from the extent to which electron density of a bonded atom differs from that of an unbonded atom [#f4]_ . For chemically meaningful charges, both Hirshfeld and VDD approaches are recommended. [#f5]_ We have used Gaussian_ as an external QM package for the calculation of CM5 charges and TeraChem_ QM package for VDD charges. Here are the modified amber $.in files for generating the Hirshfeld and VDD charges using Gaussian_ and TeraChem_ as an external package.
 
@@ -263,9 +263,9 @@ This script will save and rename the *charge_vdd.xls* file at each step for each
         It has been reported for QM/MM simulations of proteins and other solvated molecules,
         that the HOMO-LUMO gap turned down to zero! [#f6]_ This case should be avoided, hence we
         suggest to monitor the HOMO-LUMO gap for your chosen QM region. The corresponding 
-        figure depicting the HOMO-LUMO gap for our QM regions is supplementary figure S26(b).  
+        figure depicting the HOMO-LUMO gap for our QM regions is figure S26(b) of `Sahrawat et al. (2024)`_.
 
-Finally, we have analysed the total atomic charges of the substrate *vs* the six different QM regions. Please follow the supplementary figure S26(a), where you can see that the substrate's partial charge don't vary significantly from QM4 to QM6. Hence, we have selected the QM4 region as our choice for subsequent QM/MM simulations as follows.
+Finally, we have analysed the total atomic charges of the substrate *vs* the six different QM regions. Please follow figure S26(a) of `Sahrawat et al. (2024)`_, where you can see that the substrate's partial charge does not vary significantly from QM4 to QM6. Hence, we have selected the QM4 region as our choice for subsequent QM/MM simulations as follows.
 
 
 

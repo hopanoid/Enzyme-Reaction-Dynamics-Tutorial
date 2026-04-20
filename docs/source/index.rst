@@ -36,12 +36,16 @@ Deciphering Oxime Biocatalysis (A QM/MM Tutorial)
 Objective
 =========
 
-To decipher the newly discovered mechanistic intricacies of the conversion of oximes 
-to amines via imines by reductive dehydration. Using QM/MM simulations, we aim to model 
-the molecular structures corresponding to the respective reaction coordinates 
-(Reactant, Transition States and Products) for each reaction pathway. Finally, the energy 
-barrier would be computed using QM/MM Steered Molecular Dynamics (SMD) simulations. For more
-details about this biotransformation scheme, please read our publication doi:10.1021/acscatal.3c04362.
+To decipher the newly discovered mechanistic intricacies of the conversion of oximes
+to amines via imines by reductive dehydration. Using QM/MM simulations, we aim to model
+the molecular structures corresponding to the respective reaction coordinates
+(Reactant, Transition States and Products) for each reaction pathway. Finally, the energy
+barrier is computed using QM/MM Steered Molecular Dynamics (SMD) simulations. For full
+details of the science behind this tutorial, please read `Sahrawat et al. (2024)`_:
+
+        Sahrawat, A. S. *Deciphering the Unconventional Reduction of C=N Bonds by Old Yellow
+        Enzymes Using QM/MM.* **ACS Catalysis** 2024.
+        `doi:10.1021/acscatal.3c04362 <https://pubs.acs.org/doi/full/10.1021/acscatal.3c04362>`_
 
 
 Tutorial files
@@ -53,6 +57,21 @@ All of the necessary tutorial files can be found on GitHub in the
 directory, which can be easily obtained by git-cloning the repository::
 
   git clone https://github.com/hopanoid/Enzyme-Reaction-Dynamics-Tutorial.git
+
+
+How to Cite
+===========
+
+If this tutorial contributes to your research, please cite the accompanying peer-reviewed article:
+
+.. admonition:: Citation
+
+        Sahrawat, A. S. *Deciphering the Unconventional Reduction of C=N Bonds by Old Yellow
+        Enzymes Using QM/MM.* **ACS Catalysis** 2024.
+        `doi:10.1021/acscatal.3c04362 <https://pubs.acs.org/doi/full/10.1021/acscatal.3c04362>`_
+
+A ``CITATION.CFF`` file is included in the repository for automated citation tools (e.g., GitHub's
+*Cite this repository* button).
 
 
 Workflow overview

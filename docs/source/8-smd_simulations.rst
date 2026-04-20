@@ -41,7 +41,7 @@ Steered molecular dynamics (SMD) simulations are employed to explore potential s
                 
                 The 1D QM/MM scan along the distance b/w hydride receiver N1 atom and the hydride atom (H5) 
 
-In the context of our work, we are examining a sequential reaction involving an initial hydride transfer followed by a proton transfer. Guided by our QM/MM scan, we've determined that the hydride transfer occurs first, necessitating that we focus on steering the system along the CV corresponding to hydride transfer before turning our attention to the proton transfer CV. Details concerning our chosen CVs are provided in supplementary figure S27. Here is the CV file for the hyride transfer CV to be used for running QM/MM SMD simulations :repo:`tutorial/simulations/mdin/cv-hy-1.in`  
+In the context of our work, we are examining a sequential reaction involving an initial hydride transfer followed by a proton transfer. Guided by our QM/MM scan, we've determined that the hydride transfer occurs first, necessitating that we focus on steering the system along the CV corresponding to hydride transfer before turning our attention to the proton transfer CV. Details concerning our chosen CVs are provided in figure S27 of `Sahrawat et al. (2024)`_. Here is the CV file for the hyride transfer CV to be used for running QM/MM SMD simulations :repo:`tutorial/simulations/mdin/cv-hy-1.in`  
 
 .. code-block:: 
         :emphasize-lines: 4,5,6,7
@@ -168,6 +168,6 @@ The first highlighted line defines that for each SMD run, a randomly selected in
 
 The second highlighted line will save the *CV-vs-work* output from each SMD run, those are later to be used to compute the free energy profile along the CV.
 Finally, free energy profile along the CV have been calculated by the fluctuation-dissipation (FD) estimator, details of which is available in the supplementary 
-information of our article under section heading *QM/MM Steered Molecular Dynamics*.
+information of `Sahrawat et al. (2024)`_ under section heading *QM/MM Steered Molecular Dynamics*.
 
 Apart from these 95 SMD simulations, we have run 5 SMD simulations those are coupled with NBO analysis along the CV. Details of which is available in the next section.

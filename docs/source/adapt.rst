@@ -99,7 +99,7 @@ indices for your active-site residues.
 As described in :doc:`5-qm_region`, run short QM/MM MD simulations
 with progressively larger QM regions and monitor the total atomic charge
 of the substrate. Stop expanding once the charges stabilise (see
-supplementary figure S26(a) in the original article for an example).
+figure S26(a) of `Sahrawat et al. (2024)`_ for an example).
 
 .. admonition:: Rule of thumb
 
