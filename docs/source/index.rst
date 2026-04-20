@@ -77,9 +77,9 @@ A ``CITATION.CFF`` file is included in the repository for automated citation too
 Workflow overview
 =================
 
-For this tutorial we'll use Amber_ (2021, 2022 should
-work) to set up the system, combined with Terachem_ to run the QM/MM simulations, and NBO_ to 
-perform orbital analysis. An initial structure is provided, which can be found in the
+For this tutorial we'll use Amber_ (v22) to set up the system, combined with TeraChem_ (v1.96H-beta,
+CUDA 12.1) to run the QM/MM simulations, and NBO_ (v7.0) to perform orbital analysis.
+Exact version details and hardware requirements are documented in the :doc:`hardware` page. An initial structure is provided, which can be found in the
 :repodir:`tutorial/metadata/input_structures` directory, as well as the input files that
 are necessary for running Amber. The overall workflow consists of the following steps:
 

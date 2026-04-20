@@ -5,11 +5,43 @@
 
 .. meta::
    :description: Hardware requirements for QM/MM simulations with AMBER, TeraChem and NBO. GPU recommendations for TeraChem CUDA, pmemd.cuda and CPU requirements for sander QM/MM and NBO analysis.
-   :keywords: TeraChem GPU requirements, AMBER pmemd.cuda GPU, sander CPU QM/MM, NBO CPU, CUDA cores, RTX 3090, RTX 4090, Nvidia GPU QM/MM
+   :keywords: TeraChem v1.96 GPU requirements, AMBER 22 pmemd.cuda GPU, sander CPU QM/MM, NBO 7 CPU, CUDA 12 cores, RTX 3090, RTX 4090, Nvidia GPU QM/MM
 
 ****************************
 Hardware Requirements
 ****************************
+
+==========================================
+Software Versions Used in This Tutorial
+==========================================
+
+The results presented in `Sahrawat et al. (2024)`_ were produced with the following software versions.
+Using different versions may require minor adjustments to input flags or file formats.
+
+.. list-table::
+   :header-rows: 1
+   :widths: 20 25 55
+
+   * - Software
+     - Version
+     - Notes
+   * - AMBER_
+     - **22** (SANDER 2022)
+     - Classical MD with ``pmemd.cuda``; QM/MM production and SMD with ``sander``
+   * - TeraChem_
+     - **v1.96H-beta** (build 2023-04-07)
+     - Development build; compiled against CUDA 12.1; supports SM 5.0–9.0 (Turing, Ampere, Ada)
+   * - NBO_
+     - **7.0** (Linux x64)
+     - Binary distribution; called via TeraChem at each QM/MM SMD step
+
+.. note::
+
+        TeraChem v1.96H-beta is a development release from PetaChem. If you are using a stable
+        release or a newer version, the input syntax and available keywords should remain compatible,
+        but confirm with the `TeraChem release notes <http://www.petachem.com/products.html>`_ if
+        you encounter unexpected behaviour.
+
 
 ==========================================
 What You Need to Run This Tutorial
