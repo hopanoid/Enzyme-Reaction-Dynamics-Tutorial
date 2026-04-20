@@ -1,5 +1,8 @@
 .. -*- encoding: utf-8 -*-
 
+.. include:: /includes/defs.rst
+.. include:: /includes/links.rst
+
 .. meta::
    :description: Glossary of QM/MM, AMBER, and computational chemistry terms used in this biocatalysis tutorial. Definitions for SMD, NBO, CV, GAFF2, electronic embedding, and more.
    :keywords: QM/MM glossary, AMBER terms, SMD definition, NBO definition, collective variable, GAFF2, electronic embedding, computational chemistry
