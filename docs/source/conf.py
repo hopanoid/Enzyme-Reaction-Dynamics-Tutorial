@@ -8,8 +8,8 @@ project = 'Oxime-Biocatalysis'
 copyright = '2023-2025, Amit Singh Sahrawat'
 author = 'Amit Singh Sahrawat'
 
-release = '0.1'
-version = '0.1.0'
+release = '1.0'
+version = '1.0.0'
 
 html_baseurl = 'https://enzyme-reaction-dynamics-tutorial.readthedocs.io/'
 
